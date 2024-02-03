@@ -18,7 +18,6 @@ namespace AdventureVillageEstadisticas
 		private string puerto = "3306";
 		private string CadenaConexion;
 
-
 		public ConexionBD()
 		{
 			CadenaConexion = "server=" + server +
@@ -34,7 +33,6 @@ namespace AdventureVillageEstadisticas
 			{
 				conexion.ConnectionString = CadenaConexion;
 				conexion.Open();
-				MessageBox.Show("Exito");
 			}
 			catch (MySqlException e)
             {
