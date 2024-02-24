@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySqlConnector;
 
 namespace AdventureVillageEstadisticas
@@ -53,6 +54,48 @@ namespace AdventureVillageEstadisticas
             Conectar.Close();
 
             return ListaRoles;
+        }
+
+        public void AgregarModificarUsuario(ModeloUsuario NewUser, bool Nuevo)
+        {
+            List<ModeloRoles> Rols = Roles();
+            MySqlConnection Conectar = EstablecerConexion();
+            string Query;
+
+            for (int i = 0; i < Rols.Count; i++)
+            {
+                if(NewUser._idRol == Rols[i]._Rol)
+                {
+                    NewUser._idRol = Rols[i]._idRol;
+                    break;
+                }
+            }
+
+            if(Nuevo)
+            {
+                Query = "INSERT INTO Usuario (idUsuario, idRol, Contraseña, Fecha_Registro) VALUES" +
+                    "(@idUsuario, @idRol, @Contraseña, @FechaRegistro);";
+                ConfirmarQueryUsuario(Query, Conectar, NewUser);
+            }
+            else
+            {
+                Query = "UPDATE Usuario SET idRol = @idRol, Contraseña = @Contraseña, Fecha_Registro = @FechaRegistro WHERE idUsuario = @idUsuario;";
+                ConfirmarQueryUsuario(Query, Conectar, NewUser);
+            }
+
+        }
+
+        private void ConfirmarQueryUsuario(string Query, MySqlConnection Conectar, ModeloUsuario NewUser)
+        {
+            using (MySqlCommand cmds = new MySqlCommand(Query, Conectar))
+            {
+                cmds.Parameters.AddWithValue("@idUsuario", NewUser._idUsuario);
+                cmds.Parameters.AddWithValue("@idRol", NewUser._idRol);
+                cmds.Parameters.AddWithValue("@Contraseña", NewUser._Contraseña);
+                cmds.Parameters.AddWithValue("@FechaRegistro", NewUser._Fecha_Registro);
+                cmds.ExecuteNonQuery();
+                Conectar.Close();
+            }
         }
     }
 }

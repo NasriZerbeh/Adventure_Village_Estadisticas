@@ -31,12 +31,12 @@ namespace AdventureVillageEstadisticas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ControlCerrar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlMaximizar = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -66,11 +66,9 @@ namespace AdventureVillageEstadisticas
             this.TpCrearUser = new System.Windows.Forms.TabPage();
             this.LogoJuegoUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelFormUser = new Guna.UI2.WinForms.Guna2Panel();
-            this.PanelCenterFormUser = new Guna.UI2.WinForms.Guna2Panel();
+            this.BotonRegresoUser = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.BotonGuardarUser = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.ContraseñaTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ComboBoxRoles = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.UsuarioTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.BotonLimpiarUser = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.TpVerUser = new System.Windows.Forms.TabPage();
             this.DataGridUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +82,14 @@ namespace AdventureVillageEstadisticas
             this.TpOpciones = new System.Windows.Forms.TabPage();
             this.BordeForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.GunaMessageBox = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MoverBotones = new System.Windows.Forms.Timer(this.components);
+            this.LabelContraseñasNo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.PanelCenterFormUser = new Guna.UI2.WinForms.Guna2Panel();
+            this.ConfirmTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ContraseñaTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ComboBoxRoles = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.UsuarioTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GunaMessageBoxOK = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.PanelControl.SuspendLayout();
             this.PanelMenu.SuspendLayout();
             this.PanelOpciones.SuspendLayout();
@@ -98,9 +104,9 @@ namespace AdventureVillageEstadisticas
             this.TpCrearUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoJuegoUser)).BeginInit();
             this.PanelFormUser.SuspendLayout();
-            this.PanelCenterFormUser.SuspendLayout();
             this.TpVerUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridUsuarios)).BeginInit();
+            this.PanelCenterFormUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // ControlCerrar
@@ -166,6 +172,7 @@ namespace AdventureVillageEstadisticas
             // PanelMenu
             // 
             this.PanelMenu.AutoScroll = true;
+            this.PanelMenu.BackColor = System.Drawing.Color.Transparent;
             this.PanelMenu.BorderColor = System.Drawing.Color.Transparent;
             this.PanelMenu.Controls.Add(this.PanelOpciones);
             this.PanelMenu.Controls.Add(this.PanelUsuarios);
@@ -421,6 +428,7 @@ namespace AdventureVillageEstadisticas
             // 
             // guna2VSeparator1
             // 
+            this.guna2VSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.guna2VSeparator1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2VSeparator1.Location = new System.Drawing.Point(160, 30);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
@@ -595,34 +603,61 @@ namespace AdventureVillageEstadisticas
             this.PanelFormUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelFormUser.BackColor = System.Drawing.Color.Transparent;
             this.PanelFormUser.Controls.Add(this.PanelCenterFormUser);
-            this.PanelFormUser.Location = new System.Drawing.Point(184, 0);
+            this.PanelFormUser.Controls.Add(this.LabelContraseñasNo);
+            this.PanelFormUser.Controls.Add(this.BotonRegresoUser);
+            this.PanelFormUser.Controls.Add(this.BotonGuardarUser);
+            this.PanelFormUser.Controls.Add(this.BotonLimpiarUser);
+            this.PanelFormUser.Location = new System.Drawing.Point(108, -24);
             this.PanelFormUser.Name = "PanelFormUser";
-            this.PanelFormUser.Size = new System.Drawing.Size(254, 392);
+            this.PanelFormUser.Size = new System.Drawing.Size(405, 416);
             this.PanelFormUser.TabIndex = 1;
             // 
-            // PanelCenterFormUser
+            // BotonRegresoUser
             // 
-            this.PanelCenterFormUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.PanelCenterFormUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.PanelCenterFormUser.BorderRadius = 10;
-            this.PanelCenterFormUser.BorderThickness = 2;
-            this.PanelCenterFormUser.Controls.Add(this.BotonGuardarUser);
-            this.PanelCenterFormUser.Controls.Add(this.ContraseñaTextBox);
-            this.PanelCenterFormUser.Controls.Add(this.ComboBoxRoles);
-            this.PanelCenterFormUser.Controls.Add(this.UsuarioTextBox);
-            this.PanelCenterFormUser.FillColor = System.Drawing.Color.Black;
-            this.PanelCenterFormUser.Location = new System.Drawing.Point(4, 80);
-            this.PanelCenterFormUser.Name = "PanelCenterFormUser";
-            this.PanelCenterFormUser.Size = new System.Drawing.Size(246, 224);
-            this.PanelCenterFormUser.TabIndex = 8;
+            this.BotonRegresoUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BotonRegresoUser.BackColor = System.Drawing.Color.Transparent;
+            this.BotonRegresoUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonRegresoUser.BorderRadius = 8;
+            this.BotonRegresoUser.BorderThickness = 2;
+            this.BotonRegresoUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonRegresoUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.BotonRegresoUser.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BotonRegresoUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonRegresoUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonRegresoUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonRegresoUser.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonRegresoUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonRegresoUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            this.BotonRegresoUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(0)))));
+            this.BotonRegresoUser.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BotonRegresoUser.ForeColor = System.Drawing.Color.White;
+            this.BotonRegresoUser.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.BotonRegresoUser.Location = new System.Drawing.Point(43, 108);
+            this.BotonRegresoUser.Name = "BotonRegresoUser";
+            this.BotonRegresoUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BotonRegresoUser.ShadowDecoration.BorderRadius = 10;
+            this.BotonRegresoUser.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.BotonRegresoUser.ShadowDecoration.Depth = 100;
+            this.BotonRegresoUser.ShadowDecoration.Enabled = true;
+            this.BotonRegresoUser.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.BotonRegresoUser.Size = new System.Drawing.Size(99, 40);
+            this.BotonRegresoUser.TabIndex = 11;
+            this.BotonRegresoUser.Tag = "";
+            this.BotonRegresoUser.Text = "Salir";
+            this.BotonRegresoUser.Click += new System.EventHandler(this.BotonRegresoUser_Click);
+            this.BotonRegresoUser.MouseEnter += new System.EventHandler(this.BotonRegresoUser_MouseEnter);
+            this.BotonRegresoUser.MouseLeave += new System.EventHandler(this.BotonRegresoUser_MouseLeave);
             // 
             // BotonGuardarUser
             // 
+            this.BotonGuardarUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BotonGuardarUser.BackColor = System.Drawing.Color.Transparent;
             this.BotonGuardarUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
             this.BotonGuardarUser.BorderRadius = 8;
             this.BotonGuardarUser.BorderThickness = 2;
             this.BotonGuardarUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonGuardarUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.BotonGuardarUser.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonGuardarUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonGuardarUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BotonGuardarUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -633,121 +668,57 @@ namespace AdventureVillageEstadisticas
             this.BotonGuardarUser.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold);
             this.BotonGuardarUser.ForeColor = System.Drawing.Color.White;
             this.BotonGuardarUser.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.BotonGuardarUser.Location = new System.Drawing.Point(53, 172);
+            this.BotonGuardarUser.Location = new System.Drawing.Point(46, 199);
             this.BotonGuardarUser.Name = "BotonGuardarUser";
+            this.BotonGuardarUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BotonGuardarUser.ShadowDecoration.BorderRadius = 10;
             this.BotonGuardarUser.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.BotonGuardarUser.ShadowDecoration.Depth = 100;
             this.BotonGuardarUser.ShadowDecoration.Enabled = true;
             this.BotonGuardarUser.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.BotonGuardarUser.Size = new System.Drawing.Size(140, 40);
+            this.BotonGuardarUser.Size = new System.Drawing.Size(114, 40);
             this.BotonGuardarUser.TabIndex = 4;
-            this.BotonGuardarUser.Tag = "Opciones";
+            this.BotonGuardarUser.Tag = "";
             this.BotonGuardarUser.Text = "Guardar";
+            this.BotonGuardarUser.Click += new System.EventHandler(this.BotonGuardarUser_Click);
+            this.BotonGuardarUser.MouseEnter += new System.EventHandler(this.BotonGuardarUser_MouseEnter);
+            this.BotonGuardarUser.MouseLeave += new System.EventHandler(this.BotonGuardarUser_MouseLeave);
             // 
-            // ContraseñaTextBox
+            // BotonLimpiarUser
             // 
-            this.ContraseñaTextBox.Animated = true;
-            this.ContraseñaTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.ContraseñaTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.ContraseñaTextBox.BorderRadius = 10;
-            this.ContraseñaTextBox.BorderThickness = 2;
-            this.ContraseñaTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ContraseñaTextBox.DefaultText = "";
-            this.ContraseñaTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ContraseñaTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ContraseñaTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ContraseñaTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ContraseñaTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            this.ContraseñaTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
-            this.ContraseñaTextBox.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContraseñaTextBox.ForeColor = System.Drawing.Color.Black;
-            this.ContraseñaTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(23, 109);
-            this.ContraseñaTextBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.ContraseñaTextBox.Name = "ContraseñaTextBox";
-            this.ContraseñaTextBox.PasswordChar = '\0';
-            this.ContraseñaTextBox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.ContraseñaTextBox.PlaceholderText = "Ingrese la Contraseña.";
-            this.ContraseñaTextBox.SelectedText = "";
-            this.ContraseñaTextBox.ShadowDecoration.BorderRadius = 10;
-            this.ContraseñaTextBox.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            this.ContraseñaTextBox.ShadowDecoration.Depth = 100;
-            this.ContraseñaTextBox.ShadowDecoration.Enabled = true;
-            this.ContraseñaTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ContraseñaTextBox.Size = new System.Drawing.Size(200, 48);
-            this.ContraseñaTextBox.TabIndex = 2;
-            this.ContraseñaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ComboBoxRoles
-            // 
-            this.ComboBoxRoles.BackColor = System.Drawing.Color.Transparent;
-            this.ComboBoxRoles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.ComboBoxRoles.BorderRadius = 10;
-            this.ComboBoxRoles.BorderThickness = 2;
-            this.ComboBoxRoles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ComboBoxRoles.DropDownHeight = 999;
-            this.ComboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxRoles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            this.ComboBoxRoles.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
-            this.ComboBoxRoles.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
-            this.ComboBoxRoles.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxRoles.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxRoles.IntegralHeight = false;
-            this.ComboBoxRoles.ItemHeight = 30;
-            this.ComboBoxRoles.Items.AddRange(new object[] {
-            "Selecciona Rol"});
-            this.ComboBoxRoles.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(95)))), ((int)(((byte)(191)))));
-            this.ComboBoxRoles.ItemsAppearance.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxRoles.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxRoles.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(64)))), ((int)(((byte)(160)))));
-            this.ComboBoxRoles.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxRoles.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
-            this.ComboBoxRoles.Location = new System.Drawing.Point(53, 10);
-            this.ComboBoxRoles.Name = "ComboBoxRoles";
-            this.ComboBoxRoles.ShadowDecoration.BorderRadius = 10;
-            this.ComboBoxRoles.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            this.ComboBoxRoles.ShadowDecoration.Depth = 100;
-            this.ComboBoxRoles.ShadowDecoration.Enabled = true;
-            this.ComboBoxRoles.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ComboBoxRoles.Size = new System.Drawing.Size(140, 36);
-            this.ComboBoxRoles.StartIndex = 0;
-            this.ComboBoxRoles.TabIndex = 0;
-            this.ComboBoxRoles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // UsuarioTextBox
-            // 
-            this.UsuarioTextBox.Animated = true;
-            this.UsuarioTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.UsuarioTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.UsuarioTextBox.BorderRadius = 10;
-            this.UsuarioTextBox.BorderThickness = 2;
-            this.UsuarioTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UsuarioTextBox.DefaultText = "";
-            this.UsuarioTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UsuarioTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UsuarioTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UsuarioTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UsuarioTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            this.UsuarioTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
-            this.UsuarioTextBox.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioTextBox.ForeColor = System.Drawing.Color.Black;
-            this.UsuarioTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UsuarioTextBox.Location = new System.Drawing.Point(23, 56);
-            this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.PasswordChar = '\0';
-            this.UsuarioTextBox.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.UsuarioTextBox.PlaceholderText = "Ingrese el nombre de Usuario.";
-            this.UsuarioTextBox.SelectedText = "";
-            this.UsuarioTextBox.ShadowDecoration.BorderRadius = 10;
-            this.UsuarioTextBox.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            this.UsuarioTextBox.ShadowDecoration.Depth = 100;
-            this.UsuarioTextBox.ShadowDecoration.Enabled = true;
-            this.UsuarioTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.UsuarioTextBox.Size = new System.Drawing.Size(200, 48);
-            this.UsuarioTextBox.TabIndex = 1;
-            this.UsuarioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BotonLimpiarUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BotonLimpiarUser.BackColor = System.Drawing.Color.Transparent;
+            this.BotonLimpiarUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonLimpiarUser.BorderRadius = 8;
+            this.BotonLimpiarUser.BorderThickness = 2;
+            this.BotonLimpiarUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonLimpiarUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.BotonLimpiarUser.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BotonLimpiarUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonLimpiarUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonLimpiarUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonLimpiarUser.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonLimpiarUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonLimpiarUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            this.BotonLimpiarUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(0)))));
+            this.BotonLimpiarUser.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BotonLimpiarUser.ForeColor = System.Drawing.Color.White;
+            this.BotonLimpiarUser.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.BotonLimpiarUser.Location = new System.Drawing.Point(46, 153);
+            this.BotonLimpiarUser.Name = "BotonLimpiarUser";
+            this.BotonLimpiarUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BotonLimpiarUser.ShadowDecoration.BorderRadius = 10;
+            this.BotonLimpiarUser.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.BotonLimpiarUser.ShadowDecoration.Depth = 100;
+            this.BotonLimpiarUser.ShadowDecoration.Enabled = true;
+            this.BotonLimpiarUser.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.BotonLimpiarUser.Size = new System.Drawing.Size(107, 40);
+            this.BotonLimpiarUser.TabIndex = 5;
+            this.BotonLimpiarUser.Tag = "";
+            this.BotonLimpiarUser.Text = "Limpiar";
+            this.BotonLimpiarUser.Click += new System.EventHandler(this.BotonLimpiarUser_Click);
+            this.BotonLimpiarUser.MouseEnter += new System.EventHandler(this.BotonLimpiarUser_MouseEnter);
+            this.BotonLimpiarUser.MouseLeave += new System.EventHandler(this.BotonLimpiarUser_MouseLeave);
             // 
             // TpVerUser
             // 
@@ -764,20 +735,20 @@ namespace AdventureVillageEstadisticas
             this.DataGridUsuarios.AllowUserToAddRows = false;
             this.DataGridUsuarios.AllowUserToDeleteRows = false;
             this.DataGridUsuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.DataGridUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.DataGridUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
             this.DataGridUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridUsuarios.ColumnHeadersHeight = 45;
             this.DataGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
@@ -788,38 +759,38 @@ namespace AdventureVillageEstadisticas
             this.Modificar,
             this.Bloquear,
             this.Relleno});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridUsuarios.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridUsuarios.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.DataGridUsuarios.Location = new System.Drawing.Point(0, 0);
             this.DataGridUsuarios.Name = "DataGridUsuarios";
             this.DataGridUsuarios.ReadOnly = true;
             this.DataGridUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridUsuarios.RowHeadersVisible = false;
             this.DataGridUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridUsuarios.RowTemplate.Height = 30;
             this.DataGridUsuarios.Size = new System.Drawing.Size(622, 392);
             this.DataGridUsuarios.TabIndex = 0;
@@ -895,13 +866,13 @@ namespace AdventureVillageEstadisticas
             // Modificar
             // 
             this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.Modificar.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Modificar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modificar.Frozen = true;
             this.Modificar.HeaderText = "";
@@ -960,17 +931,205 @@ namespace AdventureVillageEstadisticas
             this.GunaMessageBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.GunaMessageBox.Text = null;
             // 
+            // MoverBotones
+            // 
+            this.MoverBotones.Interval = 1;
+            this.MoverBotones.Tick += new System.EventHandler(this.MoverBotones_Tick);
+            // 
+            // LabelContraseñasNo
+            // 
+            this.LabelContraseñasNo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LabelContraseñasNo.AutoSize = false;
+            this.LabelContraseñasNo.BackColor = System.Drawing.Color.Black;
+            this.LabelContraseñasNo.ForeColor = System.Drawing.Color.White;
+            this.LabelContraseñasNo.Location = new System.Drawing.Point(83, 319);
+            this.LabelContraseñasNo.Name = "LabelContraseñasNo";
+            this.LabelContraseñasNo.Size = new System.Drawing.Size(243, 19);
+            this.LabelContraseñasNo.TabIndex = 13;
+            this.LabelContraseñasNo.Text = "Las contraseñas no coinciden";
+            this.LabelContraseñasNo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelContraseñasNo.Visible = false;
+            // 
+            // PanelCenterFormUser
+            // 
+            this.PanelCenterFormUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.PanelCenterFormUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.PanelCenterFormUser.BorderRadius = 10;
+            this.PanelCenterFormUser.BorderThickness = 2;
+            this.PanelCenterFormUser.Controls.Add(this.ConfirmTextBox);
+            this.PanelCenterFormUser.Controls.Add(this.ContraseñaTextBox);
+            this.PanelCenterFormUser.Controls.Add(this.ComboBoxRoles);
+            this.PanelCenterFormUser.Controls.Add(this.UsuarioTextBox);
+            this.PanelCenterFormUser.FillColor = System.Drawing.Color.Black;
+            this.PanelCenterFormUser.Location = new System.Drawing.Point(79, 96);
+            this.PanelCenterFormUser.Name = "PanelCenterFormUser";
+            this.PanelCenterFormUser.Size = new System.Drawing.Size(246, 224);
+            this.PanelCenterFormUser.TabIndex = 14;
+            // 
+            // ConfirmTextBox
+            // 
+            this.ConfirmTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ConfirmTextBox.Animated = true;
+            this.ConfirmTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.ConfirmTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.ConfirmTextBox.BorderRadius = 10;
+            this.ConfirmTextBox.BorderThickness = 2;
+            this.ConfirmTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ConfirmTextBox.DefaultText = "";
+            this.ConfirmTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ConfirmTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.ConfirmTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ConfirmTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ConfirmTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.ConfirmTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ConfirmTextBox.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmTextBox.ForeColor = System.Drawing.Color.Black;
+            this.ConfirmTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ConfirmTextBox.Location = new System.Drawing.Point(23, 159);
+            this.ConfirmTextBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.ConfirmTextBox.Name = "ConfirmTextBox";
+            this.ConfirmTextBox.PasswordChar = '\0';
+            this.ConfirmTextBox.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.ConfirmTextBox.PlaceholderText = "Confirme la Contraseña.";
+            this.ConfirmTextBox.SelectedText = "";
+            this.ConfirmTextBox.ShadowDecoration.BorderRadius = 10;
+            this.ConfirmTextBox.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ConfirmTextBox.ShadowDecoration.Depth = 100;
+            this.ConfirmTextBox.ShadowDecoration.Enabled = true;
+            this.ConfirmTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ConfirmTextBox.Size = new System.Drawing.Size(200, 48);
+            this.ConfirmTextBox.TabIndex = 3;
+            this.ConfirmTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ContraseñaTextBox
+            // 
+            this.ContraseñaTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ContraseñaTextBox.Animated = true;
+            this.ContraseñaTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.ContraseñaTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.ContraseñaTextBox.BorderRadius = 10;
+            this.ContraseñaTextBox.BorderThickness = 2;
+            this.ContraseñaTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ContraseñaTextBox.DefaultText = "";
+            this.ContraseñaTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ContraseñaTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.ContraseñaTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ContraseñaTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ContraseñaTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.ContraseñaTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ContraseñaTextBox.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContraseñaTextBox.ForeColor = System.Drawing.Color.Black;
+            this.ContraseñaTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(23, 103);
+            this.ContraseñaTextBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.ContraseñaTextBox.Name = "ContraseñaTextBox";
+            this.ContraseñaTextBox.PasswordChar = '\0';
+            this.ContraseñaTextBox.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.ContraseñaTextBox.PlaceholderText = "Ingrese la Contraseña.";
+            this.ContraseñaTextBox.SelectedText = "";
+            this.ContraseñaTextBox.ShadowDecoration.BorderRadius = 10;
+            this.ContraseñaTextBox.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ContraseñaTextBox.ShadowDecoration.Depth = 100;
+            this.ContraseñaTextBox.ShadowDecoration.Enabled = true;
+            this.ContraseñaTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ContraseñaTextBox.Size = new System.Drawing.Size(200, 48);
+            this.ContraseñaTextBox.TabIndex = 2;
+            this.ContraseñaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ComboBoxRoles
+            // 
+            this.ComboBoxRoles.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ComboBoxRoles.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxRoles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.ComboBoxRoles.BorderRadius = 10;
+            this.ComboBoxRoles.BorderThickness = 2;
+            this.ComboBoxRoles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxRoles.DropDownHeight = 999;
+            this.ComboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxRoles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.ComboBoxRoles.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxRoles.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxRoles.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxRoles.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxRoles.IntegralHeight = false;
+            this.ComboBoxRoles.ItemHeight = 30;
+            this.ComboBoxRoles.Items.AddRange(new object[] {
+            "Selecciona Rol"});
+            this.ComboBoxRoles.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(255)))), ((int)(((byte)(154)))));
+            this.ComboBoxRoles.ItemsAppearance.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxRoles.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxRoles.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxRoles.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxRoles.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
+            this.ComboBoxRoles.Location = new System.Drawing.Point(53, 7);
+            this.ComboBoxRoles.Name = "ComboBoxRoles";
+            this.ComboBoxRoles.ShadowDecoration.BorderRadius = 10;
+            this.ComboBoxRoles.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxRoles.ShadowDecoration.Depth = 100;
+            this.ComboBoxRoles.ShadowDecoration.Enabled = true;
+            this.ComboBoxRoles.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ComboBoxRoles.Size = new System.Drawing.Size(140, 36);
+            this.ComboBoxRoles.StartIndex = 0;
+            this.ComboBoxRoles.TabIndex = 0;
+            this.ComboBoxRoles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.UsuarioTextBox.Animated = true;
+            this.UsuarioTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.UsuarioTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.UsuarioTextBox.BorderRadius = 10;
+            this.UsuarioTextBox.BorderThickness = 2;
+            this.UsuarioTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UsuarioTextBox.DefaultText = "";
+            this.UsuarioTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UsuarioTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.UsuarioTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UsuarioTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UsuarioTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.UsuarioTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.UsuarioTextBox.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioTextBox.ForeColor = System.Drawing.Color.Black;
+            this.UsuarioTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.UsuarioTextBox.Location = new System.Drawing.Point(23, 48);
+            this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.PasswordChar = '\0';
+            this.UsuarioTextBox.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.UsuarioTextBox.PlaceholderText = "Ingrese el nombre de Usuario.";
+            this.UsuarioTextBox.SelectedText = "";
+            this.UsuarioTextBox.ShadowDecoration.BorderRadius = 10;
+            this.UsuarioTextBox.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.UsuarioTextBox.ShadowDecoration.Depth = 100;
+            this.UsuarioTextBox.ShadowDecoration.Enabled = true;
+            this.UsuarioTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.UsuarioTextBox.Size = new System.Drawing.Size(200, 48);
+            this.UsuarioTextBox.TabIndex = 1;
+            this.UsuarioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // GunaMessageBoxOK
+            // 
+            this.GunaMessageBoxOK.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.GunaMessageBoxOK.Caption = null;
+            this.GunaMessageBoxOK.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.GunaMessageBoxOK.Parent = this;
+            this.GunaMessageBoxOK.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.GunaMessageBoxOK.Text = null;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.TabControlAll);
             this.Controls.Add(this.guna2VSeparator1);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.PanelControl);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -994,9 +1153,9 @@ namespace AdventureVillageEstadisticas
             this.TpCrearUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoJuegoUser)).EndInit();
             this.PanelFormUser.ResumeLayout(false);
-            this.PanelCenterFormUser.ResumeLayout(false);
             this.TpVerUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridUsuarios)).EndInit();
+            this.PanelCenterFormUser.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1041,14 +1200,20 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2MessageDialog GunaMessageBox;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonOpciones;
         private Guna.UI2.WinForms.Guna2PictureBox LogoJuegoUser;
-        private Guna.UI2.WinForms.Guna2Panel PanelCenterFormUser;
-        private Guna.UI2.WinForms.Guna2GradientTileButton BotonGuardarUser;
-        private Guna.UI2.WinForms.Guna2TextBox ContraseñaTextBox;
-        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxRoles;
-        private Guna.UI2.WinForms.Guna2TextBox UsuarioTextBox;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonUsuarios;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonHome;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonMenu;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonSalir;
+        private Guna.UI2.WinForms.Guna2GradientTileButton BotonRegresoUser;
+        private Guna.UI2.WinForms.Guna2GradientTileButton BotonGuardarUser;
+        private Guna.UI2.WinForms.Guna2GradientTileButton BotonLimpiarUser;
+        private System.Windows.Forms.Timer MoverBotones;
+        private Guna.UI2.WinForms.Guna2Panel PanelCenterFormUser;
+        private Guna.UI2.WinForms.Guna2TextBox ConfirmTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox ContraseñaTextBox;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxRoles;
+        private Guna.UI2.WinForms.Guna2TextBox UsuarioTextBox;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelContraseñasNo;
+        private Guna.UI2.WinForms.Guna2MessageDialog GunaMessageBoxOK;
     }
 }
