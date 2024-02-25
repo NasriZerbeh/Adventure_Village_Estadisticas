@@ -15,6 +15,10 @@ namespace AdventureVillageEstadisticas
         {
             InitializeComponent();
             TabControlAll.TabMenuVisible = false;
+            MinimizarPanel();
+            Login InicioSesion = new Login();
+            this.Show();
+            InicioSesion.ShowDialog();
         }
 
         #region Funciones fuera del tappages
@@ -179,7 +183,7 @@ namespace AdventureVillageEstadisticas
             ComboBoxRoles.Items.Clear();
             ComboBoxRoles.Items.Add("Selecciona Rol");
             ComboBoxRoles.StartIndex = 0;
-            Controladores Info = new Controladores();
+            ControladorAdmin Info = new ControladorAdmin();
             List<ModeloRoles> Roles = Info.Roles();
             foreach (var Rol in Roles)
             {
@@ -191,7 +195,7 @@ namespace AdventureVillageEstadisticas
         private void RellenarTablaUsuarios()
         {
             DataGridUsuarios.Rows.Clear();
-            Controladores Info = new Controladores();
+            ControladorAdmin Info = new ControladorAdmin();
             List<ModeloUsuario> Users = Info.Usuarios();
             foreach (var Usuario in Users)
             {
@@ -285,7 +289,7 @@ namespace AdventureVillageEstadisticas
 
             if (Verficado)
             {
-                Controladores Control = new Controladores();
+                ControladorAdmin Control = new ControladorAdmin();
                 List<ModeloUsuario> Usuarios = Control.Usuarios();
                 ModeloUsuario NewUser = new ModeloUsuario(UsuarioTextBox.Text, ComboBoxRoles.Text, ContraseñaTextBox.Text);
                 bool Coincidencia = false;
@@ -386,7 +390,7 @@ namespace AdventureVillageEstadisticas
 
         private void DataGridUsuarios_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Controladores Control = new Controladores();
+            ControladorAdmin Control = new ControladorAdmin();
 
             if (e.ColumnIndex == DataGridUsuarios.Columns.IndexOf(Modificar))
             {
