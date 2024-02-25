@@ -48,6 +48,7 @@ namespace AdventureVillageEstadisticas
                 User._idRol = Lectura["Rol"].ToString();
                 User._Contraseña = Lectura["Contraseña"].ToString();
                 User._Fecha_Registro = Convert.ToDateTime(Lectura["Fecha_Registro"]);
+                User._Activo = Convert.ToBoolean(Lectura["Activo"]);
                 ListaRoles.Add(User);
             }
 
@@ -73,13 +74,13 @@ namespace AdventureVillageEstadisticas
 
             if(Nuevo)
             {
-                Query = "INSERT INTO Usuario (idUsuario, idRol, Contraseña, Fecha_Registro) VALUES" +
-                    "(@idUsuario, @idRol, @Contraseña, @FechaRegistro);";
+                Query = "INSERT INTO Usuario (idUsuario, idRol, Contraseña, Fecha_Registro, Activo) VALUES" +
+                    "(@idUsuario, @idRol, @Contraseña, @FechaRegistro, @Activo);";
                 ConfirmarQueryUsuario(Query, Conectar, NewUser);
             }
             else
             {
-                Query = "UPDATE Usuario SET idRol = @idRol, Contraseña = @Contraseña, Fecha_Registro = @FechaRegistro WHERE idUsuario = @idUsuario;";
+                Query = "UPDATE Usuario SET idRol = @idRol, Contraseña = @Contraseña, Fecha_Registro = @FechaRegistro, Activo = @Activo WHERE idUsuario = @idUsuario;";
                 ConfirmarQueryUsuario(Query, Conectar, NewUser);
             }
 
@@ -93,6 +94,22 @@ namespace AdventureVillageEstadisticas
                 cmds.Parameters.AddWithValue("@idRol", NewUser._idRol);
                 cmds.Parameters.AddWithValue("@Contraseña", NewUser._Contraseña);
                 cmds.Parameters.AddWithValue("@FechaRegistro", NewUser._Fecha_Registro);
+                cmds.Parameters.AddWithValue("@Activo", NewUser._Activo);
+                cmds.ExecuteNonQuery();
+                Conectar.Close();
+            }
+        }
+
+        public void BloqueoUsuario(string idUsuario, bool Activo)
+        {
+            string query;
+            if (Activo) query = "UPDATE Usuario SET Activo = FALSE WHERE idUsuario = @idUsuario;";
+            else query = "UPDATE Usuario SET Activo = TRUE WHERE idUsuario = @idUsuario;";
+            MySqlConnection Conectar = EstablecerConexion();
+
+            using (MySqlCommand cmds = new MySqlCommand(query, Conectar))
+            {
+                cmds.Parameters.AddWithValue("@idUsuario", idUsuario);
                 cmds.ExecuteNonQuery();
                 Conectar.Close();
             }

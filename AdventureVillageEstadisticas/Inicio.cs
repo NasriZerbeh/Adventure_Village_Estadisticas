@@ -19,9 +19,6 @@ namespace AdventureVillageEstadisticas
 
         #region Funciones fuera del tappages
 
-        private int MoveX, MoveY;
-        private bool MenuExtendido;
-
         #region Botones
 
         private void BotonMenu_Click(object sender, EventArgs e)
@@ -39,6 +36,11 @@ namespace AdventureVillageEstadisticas
             if (MenuExtendido) MinimizarPanel();
             TabControlAll.SelectTab("TpUsuarios");
         }
+        private void BotonArticulos_Click(object sender, EventArgs e)
+        {
+            if (MenuExtendido) MinimizarPanel();
+            TabControlAll.SelectTab("TpArticulos");
+        }
         private void BotonOpciones_Click(object sender, EventArgs e)
         {
             if (MenuExtendido) MinimizarPanel();
@@ -50,7 +52,6 @@ namespace AdventureVillageEstadisticas
             Close();
         }
 
-
         #endregion
 
         #region Funciones
@@ -61,6 +62,7 @@ namespace AdventureVillageEstadisticas
             BotonMenu.Text = "";
             BotonHome.Text = "";
             BotonUsuarios.Text = "";
+            BotonArticulos.Text = "";
             BotonOpciones.Text = "";
             BotonSalir.Text = "";
         }
@@ -73,6 +75,7 @@ namespace AdventureVillageEstadisticas
             BotonMenu.Text = BotonMenu.Tag.ToString();
             BotonHome.Text = BotonHome.Tag.ToString();
             BotonUsuarios.Text = BotonUsuarios.Tag.ToString();
+            BotonArticulos.Text = BotonArticulos.Tag.ToString();
             BotonOpciones.Text = BotonOpciones.Tag.ToString();
             BotonSalir.Text = BotonSalir.Tag.ToString();
         }
@@ -80,6 +83,9 @@ namespace AdventureVillageEstadisticas
         #endregion
 
         #region Eventos adicionales
+
+        private int MoveX, MoveY;
+        private bool MenuExtendido;
 
         private void AnimacionTiempo_Tick(object sender, EventArgs e)
         {
@@ -112,13 +118,11 @@ namespace AdventureVillageEstadisticas
                 else e.Cancel = true;
             }
         }
-
         private void Inicio_SizeChanged(object sender, EventArgs e)
         {
             PanelBotonesUser.Height = TabControlAll.Height;
             PanelFormUser.Height = TabControlAll.Height;
         }
-
         private void PanelControl_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -143,9 +147,12 @@ namespace AdventureVillageEstadisticas
 
         #endregion
 
-        #region Tappage Usuario
+        #region Tappage Usuario, Crear y Tabla
 
-        bool btnregreso, btnlimpiar, btnguardar;
+
+        #region Seleccionar Opciones
+
+        #region Botones
 
         private void BotonCrearUsuario_Click(object sender, EventArgs e)
         {
@@ -162,6 +169,10 @@ namespace AdventureVillageEstadisticas
             RellenarTablaUsuarios();
             TabControlAll.SelectTab("TpVerUser");
         }
+
+        #endregion
+
+        #region Funciones
 
         private void RellenarComboRol()
         {
@@ -184,17 +195,32 @@ namespace AdventureVillageEstadisticas
             List<ModeloUsuario> Users = Info.Usuarios();
             foreach (var Usuario in Users)
             {
-                DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Contraseña,
-                    Usuario._Fecha_Registro.ToString(), true, "Modificar", "Bloquear");
+                if (Usuario._Activo)
+                {
+                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Contraseña,
+                        Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Bloquear");
+                }
+                else
+                {
+                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Contraseña,
+                        Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Desbloquear");
+                }
             }
         }
+
+        #endregion
+
+        #endregion
+
+        #region Crear Usuarios
+
+        #region Botones
 
         private void BotonRegresoUser_MouseEnter(object sender, EventArgs e)
         {
             btnregreso = true;
             MoverBotones.Start();
         }
-
         private void BotonLimpiarUser_MouseEnter(object sender, EventArgs e)
         {
             btnlimpiar = true;
@@ -205,37 +231,29 @@ namespace AdventureVillageEstadisticas
             btnguardar = true;
             MoverBotones.Start();
         }
-
+        private void BotonRegresoUser_MouseLeave(object sender, EventArgs e)
+        {
+            btnregreso = false;
+            MoverBotones.Start();
+        }
         private void BotonLimpiarUser_MouseLeave(object sender, EventArgs e)
         {
             btnlimpiar = false;
             MoverBotones.Start();
         }
-
         private void BotonGuardarUser_MouseLeave(object sender, EventArgs e)
         {
             btnguardar = false;
             MoverBotones.Start();
         }
-
         private void BotonRegresoUser_Click(object sender, EventArgs e)
         {
             TabControlAll.SelectTab("TpUsuarios");
         }
-
         private void BotonLimpiarUser_Click(object sender, EventArgs e)
         {
             LimpiarTextos();
         }
-    
-        private void LimpiarTextos()
-        {
-            ComboBoxRoles.SelectedIndex = 0;
-            UsuarioTextBox.Text = "";
-            ContraseñaTextBox.Text = "";
-            ConfirmTextBox.Text = "";
-        }
-
         private void BotonGuardarUser_Click(object sender, EventArgs e)
         {
             bool Verficado = true;
@@ -246,13 +264,13 @@ namespace AdventureVillageEstadisticas
                 LabelContraseñasNo.Visible = true;
                 Verficado = false;
             }
-            if(UsuarioTextBox.Text.Length < 3)
+            if (UsuarioTextBox.Text.Length < 3)
             {
                 LabelContraseñasNo.Text = "Ingrese un usuario con mas de 3 letras";
                 LabelContraseñasNo.Visible = true;
                 Verficado = false;
             }
-            if(ContraseñaTextBox.Text.Length < 8)
+            if (ContraseñaTextBox.Text.Length < 8)
             {
                 LabelContraseñasNo.Text = "La contraseña es muy debil";
                 LabelContraseñasNo.Visible = true;
@@ -278,6 +296,7 @@ namespace AdventureVillageEstadisticas
                     {
                         Coincidencia = true;
                         NewUser._Fecha_Registro = Usuarios[i]._Fecha_Registro;
+                        NewUser._Activo = Usuarios[i]._Activo;
                         DialogResult Confirmar = GunaMessageBox.Show("Este usuario existe ¿Deseas actualizarlo?", "¡Alerta!");
                         if (Confirmar == DialogResult.Yes)
                         {
@@ -297,11 +316,23 @@ namespace AdventureVillageEstadisticas
             }
         }
 
-        private void BotonRegresoUser_MouseLeave(object sender, EventArgs e)
+        #endregion
+
+        #region Funciones
+
+        private void LimpiarTextos()
         {
-            btnregreso = false;
-            MoverBotones.Start();
+            ComboBoxRoles.SelectedIndex = 0;
+            UsuarioTextBox.Text = "";
+            ContraseñaTextBox.Text = "";
+            ConfirmTextBox.Text = "";
         }
+
+        #endregion
+
+        #region Eventos Adicionales
+
+        bool btnregreso, btnlimpiar, btnguardar;
 
         private void MoverBotones_Tick(object sender, EventArgs e)
         {
@@ -345,13 +376,51 @@ namespace AdventureVillageEstadisticas
             if (cerrar1 && cerrar2 && cerrar3) MoverBotones.Stop();
         }
 
+        #endregion
+
+        #endregion
+
+        #region Tabla
+
+        #region Eventos Adicionales
+
         private void DataGridUsuarios_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            Controladores Control = new Controladores();
+
             if (e.ColumnIndex == DataGridUsuarios.Columns.IndexOf(Modificar))
             {
-                MessageBox.Show(e.RowIndex + " y " + DataGridUsuarios.CurrentRow.Cells["idUsuario"].Value);
+                if (e.RowIndex != -1)
+                {
+                    List<ModeloRoles> Rols = Control.Roles();
+                    RellenarComboRol();
+                    for(int i = 0; i < Rols.Count; i++)
+                    {
+                        if(Rols[i]._Rol == DataGridUsuarios.CurrentRow.Cells["idRol"].Value.ToString())
+                        {
+                            ComboBoxRoles.StartIndex = i+1;
+                            break;
+                        }
+                    }
+                    UsuarioTextBox.Text = DataGridUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString();
+                    ContraseñaTextBox.Text = DataGridUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
+                    TabControlAll.SelectTab("TpCrearUser");
+                }
+            }
+
+            if (e.ColumnIndex == DataGridUsuarios.Columns.IndexOf(Bloquear))
+            {
+                if(e.RowIndex != -1)
+                {
+                    Control.BloqueoUsuario(DataGridUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString(), Convert.ToBoolean(DataGridUsuarios.CurrentRow.Cells["Activo"].Value));
+                    RellenarTablaUsuarios();
+                }
             }
         }
+
+        #endregion 
+
+        #endregion
 
         #endregion
     }
