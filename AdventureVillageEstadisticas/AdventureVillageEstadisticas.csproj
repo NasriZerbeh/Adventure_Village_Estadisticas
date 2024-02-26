@@ -112,11 +112,17 @@
     <Compile Include="ControladorLogin.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="ControladorAdmin.cs" />
-    <Compile Include="Inicio.cs">
+    <Compile Include="ModuloAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="ModuloAdministrador.Designer.cs">
+      <DependentUpon>ModuloAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazCarga.Designer.cs">
+      <DependentUpon>InterfazCarga.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -128,8 +134,11 @@
     <Compile Include="ModeloUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="ModuloAdministrador.resx">
+      <DependentUpon>ModuloAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazCarga.resx">
+      <DependentUpon>InterfazCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -9,16 +9,12 @@ using System.Windows.Forms;
 
 namespace AdventureVillageEstadisticas
 {
-    public partial class Inicio : Form
+    public partial class ModuloAdministrador : Form
     {
-        public Inicio()
+        public ModuloAdministrador()
         {
             InitializeComponent();
             TabControlAll.TabMenuVisible = false;
-            MinimizarPanel();
-            Login InicioSesion = new Login();
-            this.Show();
-            InicioSesion.ShowDialog();
         }
 
         #region Funciones fuera del tappages
@@ -422,9 +418,23 @@ namespace AdventureVillageEstadisticas
             }
         }
 
-        #endregion 
+        #endregion
 
         #endregion
+
+        #endregion
+
+        #region Opciones
+
+        private void SwitchDescanso_Click(object sender, EventArgs e)
+        {
+            InterfazCarga Descanso = new InterfazCarga();
+            Descanso.Descanso();
+            this.Hide();
+            SwitchDescanso.Checked = false;
+            Descanso.ShowDialog();
+            this.Show();
+        }
 
         #endregion
     }

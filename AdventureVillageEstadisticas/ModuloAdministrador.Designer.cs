@@ -1,7 +1,7 @@
 ﻿
 namespace AdventureVillageEstadisticas
 {
-    partial class Inicio
+    partial class ModuloAdministrador
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace AdventureVillageEstadisticas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModuloAdministrador));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -87,12 +87,13 @@ namespace AdventureVillageEstadisticas
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Bloquear = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Relleno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TpArticulos = new System.Windows.Forms.TabPage();
             this.TpOpciones = new System.Windows.Forms.TabPage();
+            this.SwitchDescanso = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.BordeForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.GunaMessageBox = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.MoverBotones = new System.Windows.Forms.Timer(this.components);
             this.GunaMessageBoxOK = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.TpArticulos = new System.Windows.Forms.TabPage();
             this.PanelControl.SuspendLayout();
             this.PanelMenu.SuspendLayout();
             this.PanelOpciones.SuspendLayout();
@@ -111,6 +112,7 @@ namespace AdventureVillageEstadisticas
             this.PanelCenterFormUser.SuspendLayout();
             this.TpVerUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridUsuarios)).BeginInit();
+            this.TpOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // ControlCerrar
@@ -1123,15 +1125,42 @@ namespace AdventureVillageEstadisticas
             this.Relleno.Name = "Relleno";
             this.Relleno.ReadOnly = true;
             // 
+            // TpArticulos
+            // 
+            this.TpArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
+            this.TpArticulos.Location = new System.Drawing.Point(4, 24);
+            this.TpArticulos.Name = "TpArticulos";
+            this.TpArticulos.Padding = new System.Windows.Forms.Padding(3);
+            this.TpArticulos.Size = new System.Drawing.Size(622, 392);
+            this.TpArticulos.TabIndex = 5;
+            this.TpArticulos.Text = "Articulos";
+            // 
             // TpOpciones
             // 
             this.TpOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
+            this.TpOpciones.Controls.Add(this.SwitchDescanso);
             this.TpOpciones.Location = new System.Drawing.Point(4, 24);
             this.TpOpciones.Name = "TpOpciones";
             this.TpOpciones.Padding = new System.Windows.Forms.Padding(3);
             this.TpOpciones.Size = new System.Drawing.Size(622, 392);
             this.TpOpciones.TabIndex = 1;
             this.TpOpciones.Text = "Opciones";
+            // 
+            // SwitchDescanso
+            // 
+            this.SwitchDescanso.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SwitchDescanso.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SwitchDescanso.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.SwitchDescanso.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.SwitchDescanso.Location = new System.Drawing.Point(95, 71);
+            this.SwitchDescanso.Name = "SwitchDescanso";
+            this.SwitchDescanso.Size = new System.Drawing.Size(50, 27);
+            this.SwitchDescanso.TabIndex = 0;
+            this.SwitchDescanso.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SwitchDescanso.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SwitchDescanso.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.SwitchDescanso.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.SwitchDescanso.Click += new System.EventHandler(this.SwitchDescanso_Click);
             // 
             // BordeForm
             // 
@@ -1166,17 +1195,7 @@ namespace AdventureVillageEstadisticas
             this.GunaMessageBoxOK.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.GunaMessageBoxOK.Text = null;
             // 
-            // TpArticulos
-            // 
-            this.TpArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
-            this.TpArticulos.Location = new System.Drawing.Point(4, 24);
-            this.TpArticulos.Name = "TpArticulos";
-            this.TpArticulos.Padding = new System.Windows.Forms.Padding(3);
-            this.TpArticulos.Size = new System.Drawing.Size(622, 392);
-            this.TpArticulos.TabIndex = 5;
-            this.TpArticulos.Text = "Articulos";
-            // 
-            // Inicio
+            // ModuloAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -1193,7 +1212,7 @@ namespace AdventureVillageEstadisticas
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 450);
-            this.Name = "Inicio";
+            this.Name = "ModuloAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adventure Village Estadisticas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
@@ -1216,6 +1235,7 @@ namespace AdventureVillageEstadisticas
             this.PanelCenterFormUser.ResumeLayout(false);
             this.TpVerUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridUsuarios)).EndInit();
+            this.TpOpciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1278,5 +1298,6 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2Panel PanelArticulos;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonArticulos;
         private System.Windows.Forms.TabPage TpArticulos;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch SwitchDescanso;
     }
 }

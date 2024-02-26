@@ -24,12 +24,15 @@ namespace AdventureVillageEstadisticas
             if (VerificarCampos())
             {
                 ControladorLogin Control = new ControladorLogin();
-                if (Control.IniciarSesion(UsuarioTextBoxLogin.Text, ContraseñaTextBoxLogin.Text))
+                string Respuesta = Control.IniciarSesion(UsuarioTextBoxLogin.Text, ContraseñaTextBoxLogin.Text);
+                if (Respuesta == "Exito")
                 {
                     string[] RolUser = Control.RolUser(UsuarioTextBoxLogin.Text);
+                    InterfazCarga Entrar = new InterfazCarga();
+                    Entrar.Bienvenida(RolUser[0], RolUser[1]);
                     this.Hide();
                 }
-                else GunaMessageBoxLogin.Show("Datos invalidos.", "Error");
+                else GunaMessageBoxLogin.Show(Respuesta, "Error");
             }
         }
 

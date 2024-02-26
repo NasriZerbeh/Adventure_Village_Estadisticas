@@ -9,13 +9,13 @@ namespace AdventureVillageEstadisticas
 {
     class ControladorLogin : ConexionBD
     {
-        public bool IniciarSesion(string User, string Password)
+        public string IniciarSesion(string User, string Password)
         {
             try
             {
                 MySqlConnection Conectar = EstablecerConexion();
                 MySqlDataReader Lectura;
-                string query = "SELECT idUsuario FROM Usuario WHERE idUsuario = @idUduario AND Contraseña = @Contraseña;";
+                string query = "SELECT Activo FROM Usuario WHERE idUsuario = @idUsuario AND Contraseña = @Contraseña;";
 
                 using (MySqlCommand cmds = new MySqlCommand(query, Conectar))
                 {
@@ -25,10 +25,18 @@ namespace AdventureVillageEstadisticas
                     Lectura = cmds.ExecuteReader();
                 }
 
-                if (Lectura.Read()) return true;
-                else return false;
+                if (Lectura.Read())
+                {
+                    if (Convert.ToBoolean(Lectura["Activo"]))
+                    {
+                        Conectar.Close();
+                        return "Exito";
+                    }
+                    else return "Usuario Bloqueado";
+                }
+                else return "Datos incorrectos";
             }
-            catch { return false; }
+            catch { return "No hay conexión"; }
         }
 
         public string[] RolUser(string User)
@@ -38,8 +46,8 @@ namespace AdventureVillageEstadisticas
             {
                 MySqlConnection Conectar = EstablecerConexion();
                 MySqlDataReader Lectura;
-                string query = "SELECT u.idUsuario, r.Rol FROM Usuario u INNER JOIN Rol r ON u.idUsuario = r.idUsuario " +
-                    "WHERE idUsuario = @idUduario;";
+                string query = "SELECT u.idUsuario, r.Rol FROM Usuario u INNER JOIN Rol r ON u.idRol = r.idRol " +
+                    "WHERE idUsuario = @idUsuario;";
 
                 using (MySqlCommand cmds = new MySqlCommand(query, Conectar))
                 {
@@ -50,8 +58,8 @@ namespace AdventureVillageEstadisticas
 
                 if (Lectura.Read())
                 {
-                    UsuarioIngresado[0] = Lectura["idUsuario"].ToString();
-                    UsuarioIngresado[1] = Lectura["Rol"].ToString();
+                    UsuarioIngresado[0] = Lectura["Rol"].ToString();
+                    UsuarioIngresado[1] = Lectura["idUsuario"].ToString();
                 }
                 return UsuarioIngresado;
             }

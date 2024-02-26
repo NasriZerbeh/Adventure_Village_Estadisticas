@@ -252,7 +252,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(250, 350);
             this.Name = "Login";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login AdvVillg";
             this.PanelLogin.ResumeLayout(false);
