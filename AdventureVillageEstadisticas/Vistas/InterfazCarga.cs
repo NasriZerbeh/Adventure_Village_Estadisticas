@@ -30,9 +30,11 @@ namespace AdventureVillageEstadisticas
 
         public void Bienvenida(string rol, string user)
         {
+            LabelBienvenida.Text = "Bienvenido/a";
             LabelRol.Text = rol;
             LabelNombre.Text = user;
-            PanelCargando.Visible = true;
+            LabelWait.Text = "Por favor espere un momento...";
+            IconoPlay.Visible = false;
             if (rol == "Administrador") Permisos = true;
             this.Show();
             TerminarCarga.Start();
@@ -40,11 +42,10 @@ namespace AdventureVillageEstadisticas
 
         public void Descanso()
         {
-            LabelBienvenida.Text = "Descansando";
+            LabelBienvenida.Text = "";
             LabelNombre.Text = "";
-            LabelRol.Text = "";
+            LabelRol.Text = "Descansando";
             LabelWait.Text = "ZzzZzzZzz...";
-            PanelCargando.Visible = true;
             IconoPlay.Visible = true;
         }
 
@@ -64,8 +65,8 @@ namespace AdventureVillageEstadisticas
             }
             else
             {
-                ModuloAdministrador Admin = new ModuloAdministrador();
-                Admin.Show();
+                ModuloUsuario User = new ModuloUsuario();
+                User.Show();
                 this.Close();
             }
             TerminarCarga.Stop();

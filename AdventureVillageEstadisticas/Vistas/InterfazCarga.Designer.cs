@@ -34,10 +34,10 @@ namespace AdventureVillageEstadisticas
             this.GunaBordeCargando = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelCargando = new Guna.UI2.WinForms.Guna2Panel();
-            this.LabelBienvenida = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.LabelWait = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelBienvenida = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.TerminarCarga = new System.Windows.Forms.Timer(this.components);
             this.IconoPlay = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -82,49 +82,6 @@ namespace AdventureVillageEstadisticas
             this.PanelCargando.Name = "PanelCargando";
             this.PanelCargando.Size = new System.Drawing.Size(300, 250);
             this.PanelCargando.TabIndex = 2;
-            this.PanelCargando.Visible = false;
-            // 
-            // LabelBienvenida
-            // 
-            this.LabelBienvenida.AutoSize = false;
-            this.LabelBienvenida.BackColor = System.Drawing.Color.Transparent;
-            this.LabelBienvenida.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelBienvenida.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBienvenida.ForeColor = System.Drawing.Color.White;
-            this.LabelBienvenida.Location = new System.Drawing.Point(0, 0);
-            this.LabelBienvenida.Name = "LabelBienvenida";
-            this.LabelBienvenida.Size = new System.Drawing.Size(300, 56);
-            this.LabelBienvenida.TabIndex = 2;
-            this.LabelBienvenida.Text = "Bienvenido/a";
-            this.LabelBienvenida.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LabelRol
-            // 
-            this.LabelRol.AutoSize = false;
-            this.LabelRol.BackColor = System.Drawing.Color.Transparent;
-            this.LabelRol.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelRol.Font = new System.Drawing.Font("Script MT Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelRol.ForeColor = System.Drawing.Color.White;
-            this.LabelRol.Location = new System.Drawing.Point(0, 56);
-            this.LabelRol.Name = "LabelRol";
-            this.LabelRol.Size = new System.Drawing.Size(300, 41);
-            this.LabelRol.TabIndex = 3;
-            this.LabelRol.Text = "Rol";
-            this.LabelRol.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // LabelNombre
-            // 
-            this.LabelNombre.AutoSize = false;
-            this.LabelNombre.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNombre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelNombre.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNombre.ForeColor = System.Drawing.Color.White;
-            this.LabelNombre.Location = new System.Drawing.Point(0, 97);
-            this.LabelNombre.Name = "LabelNombre";
-            this.LabelNombre.Size = new System.Drawing.Size(300, 46);
-            this.LabelNombre.TabIndex = 4;
-            this.LabelNombre.Text = "Nombre";
-            this.LabelNombre.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LabelWait
             // 
@@ -140,6 +97,48 @@ namespace AdventureVillageEstadisticas
             this.LabelWait.Text = "Por favor espere un momento...\r\n";
             this.LabelWait.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // LabelNombre
+            // 
+            this.LabelNombre.AutoSize = false;
+            this.LabelNombre.BackColor = System.Drawing.Color.Transparent;
+            this.LabelNombre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelNombre.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNombre.ForeColor = System.Drawing.Color.White;
+            this.LabelNombre.Location = new System.Drawing.Point(0, 97);
+            this.LabelNombre.Name = "LabelNombre";
+            this.LabelNombre.Size = new System.Drawing.Size(300, 46);
+            this.LabelNombre.TabIndex = 4;
+            this.LabelNombre.Text = "Nombre";
+            this.LabelNombre.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // LabelRol
+            // 
+            this.LabelRol.AutoSize = false;
+            this.LabelRol.BackColor = System.Drawing.Color.Transparent;
+            this.LabelRol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelRol.Font = new System.Drawing.Font("Script MT Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelRol.ForeColor = System.Drawing.Color.White;
+            this.LabelRol.Location = new System.Drawing.Point(0, 56);
+            this.LabelRol.Name = "LabelRol";
+            this.LabelRol.Size = new System.Drawing.Size(300, 41);
+            this.LabelRol.TabIndex = 3;
+            this.LabelRol.Text = "Rol";
+            this.LabelRol.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // LabelBienvenida
+            // 
+            this.LabelBienvenida.AutoSize = false;
+            this.LabelBienvenida.BackColor = System.Drawing.Color.Transparent;
+            this.LabelBienvenida.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelBienvenida.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBienvenida.ForeColor = System.Drawing.Color.White;
+            this.LabelBienvenida.Location = new System.Drawing.Point(0, 0);
+            this.LabelBienvenida.Name = "LabelBienvenida";
+            this.LabelBienvenida.Size = new System.Drawing.Size(300, 56);
+            this.LabelBienvenida.TabIndex = 2;
+            this.LabelBienvenida.Text = "Bienvenido/a";
+            this.LabelBienvenida.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TerminarCarga
             // 
             this.TerminarCarga.Interval = 5000;
@@ -153,7 +152,7 @@ namespace AdventureVillageEstadisticas
             this.IconoPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IconoPlay.FillColor = System.Drawing.Color.Transparent;
             this.IconoPlay.ImageRotate = 0F;
-            this.IconoPlay.Location = new System.Drawing.Point(375, 360);
+            this.IconoPlay.Location = new System.Drawing.Point(557, 201);
             this.IconoPlay.Name = "IconoPlay";
             this.IconoPlay.Size = new System.Drawing.Size(50, 50);
             this.IconoPlay.TabIndex = 3;

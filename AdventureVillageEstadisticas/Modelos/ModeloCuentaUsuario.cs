@@ -58,5 +58,10 @@ namespace AdventureVillageEstadisticas
             Energia = Energy;
             TiempoJugado_Mins = Play;
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

@@ -109,38 +109,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControladorLogin.cs" />
-    <Compile Include="ConexionBD.cs" />
-    <Compile Include="ControladorAdmin.cs" />
-    <Compile Include="ModuloAdministrador.cs">
+    <Compile Include="Controladores\ControladorLogin.cs" />
+    <Compile Include="Conexiones\ConexionBD.cs" />
+    <Compile Include="Controladores\ControladorAdmin.cs" />
+    <Compile Include="Controladores\ControladorUser.cs" />
+    <Compile Include="Modelos\ModeloArticulos.cs" />
+    <Compile Include="Modelos\ModeloCuentaUsuario.cs" />
+    <Compile Include="Modelos\ModeloModoStats.cs" />
+    <Compile Include="Modelos\ModeloTipoStats.cs" />
+    <Compile Include="Modelos\ModeloTipoArticulo.cs" />
+    <Compile Include="Vistas\ModuloUusario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModuloAdministrador.Designer.cs">
+    <Compile Include="Vistas\ModuloUusario.Designer.cs">
+      <DependentUpon>ModuloUusario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ModuloAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ModuloAdministrador.Designer.cs">
       <DependentUpon>ModuloAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazCarga.cs">
+    <Compile Include="Vistas\InterfazCarga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazCarga.Designer.cs">
+    <Compile Include="Vistas\InterfazCarga.Designer.cs">
       <DependentUpon>InterfazCarga.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Vistas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Vistas\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModeloRoles.cs" />
-    <Compile Include="ModeloUsuario.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Modelos\ModeloRoles.cs" />
+    <Compile Include="Modelos\ModeloUsuario.cs" />
+    <Compile Include="Conexiones\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ModuloAdministrador.resx">
+    <EmbeddedResource Include="Vistas\ModuloUusario.resx">
+      <DependentUpon>ModuloUusario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ModuloAdministrador.resx">
       <DependentUpon>ModuloAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazCarga.resx">
+    <EmbeddedResource Include="Vistas\InterfazCarga.resx">
       <DependentUpon>InterfazCarga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Vistas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -168,10 +183,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\majestuoso-pico-montana-tranquilo-paisaje-invernal-generado-ia.jpg" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <Folder Include="ImagenesOpenFile\Articulos\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
