@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace AdventureVillageEstadisticas
@@ -42,6 +44,14 @@ namespace AdventureVillageEstadisticas
             if (MenuExtendido) MinimizarPanel();
             TabControlAll.SelectTab("TpArticulos");
         }
+        private void BotonReportes_Click(object sender, EventArgs e)
+        {
+            if (MenuExtendido) MinimizarPanel();
+            RellenarGraficoIzq();
+            RellenarGraficoDer();
+            RellenarTotales();
+            TabControlAll.SelectTab("TpReportes");
+        }
         private void BotonOpciones_Click(object sender, EventArgs e)
         {
             if (MenuExtendido) MinimizarPanel();
@@ -64,6 +74,7 @@ namespace AdventureVillageEstadisticas
             BotonHome.Text = "";
             BotonUsuarios.Text = "";
             BotonArticulos.Text = "";
+            BotonReportes.Text = "";
             BotonOpciones.Text = "";
             BotonSalir.Text = "";
         }
@@ -77,6 +88,7 @@ namespace AdventureVillageEstadisticas
             BotonHome.Text = BotonHome.Tag.ToString();
             BotonUsuarios.Text = BotonUsuarios.Tag.ToString();
             BotonArticulos.Text = BotonArticulos.Tag.ToString();
+            BotonReportes.Text = BotonReportes.Tag.ToString();
             BotonOpciones.Text = BotonOpciones.Tag.ToString();
             BotonSalir.Text = BotonSalir.Tag.ToString();
         }
@@ -195,12 +207,12 @@ namespace AdventureVillageEstadisticas
             {
                 if (Usuario._Activo)
                 {
-                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Contraseña,
+                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Correo,
                         Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Bloquear");
                 }
                 else
                 {
-                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Contraseña,
+                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Correo,
                         Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Desbloquear");
                 }
             }
@@ -254,6 +266,7 @@ namespace AdventureVillageEstadisticas
         }
         private void BotonGuardarUser_Click(object sender, EventArgs e)
         {
+            string EmailFormat = "\\w+([-+.’]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             bool Verficado = true;
 
             if (ComboBoxRoles.SelectedIndex == 0)
@@ -265,6 +278,12 @@ namespace AdventureVillageEstadisticas
             if (UsuarioTextBox.Text.Length < 3)
             {
                 LabelContraseñasNo.Text = "Ingrese un usuario con mas de 3 letras";
+                LabelContraseñasNo.Visible = true;
+                Verficado = false;
+            }
+            if (!Regex.IsMatch(TexBoxCorreoUser.Text, EmailFormat))
+            {
+                LabelContraseñasNo.Text = "El correo no es valido";
                 LabelContraseñasNo.Visible = true;
                 Verficado = false;
             }
@@ -285,7 +304,7 @@ namespace AdventureVillageEstadisticas
             {
                 ControladorAdmin Control = new ControladorAdmin();
                 List<ModeloUsuario> Usuarios = Control.Usuarios();
-                ModeloUsuario NewUser = new ModeloUsuario(UsuarioTextBox.Text, ComboBoxRoles.Text, ContraseñaTextBox.Text);
+                ModeloUsuario NewUser = new ModeloUsuario(UsuarioTextBox.Text, ComboBoxRoles.Text, ContraseñaTextBox.Text, TexBoxCorreoUser.Text);
                 bool Coincidencia = false;
 
                 for (int i = 0; i < Usuarios.Count; i++)
@@ -322,6 +341,7 @@ namespace AdventureVillageEstadisticas
             ComboBoxRoles.SelectedIndex = 0;
             UsuarioTextBox.Text = "";
             ContraseñaTextBox.Text = "";
+            TexBoxCorreoUser.Text = "";
             ConfirmTextBox.Text = "";
             LabelContraseñasNo.Visible = false;
         }
@@ -391,6 +411,7 @@ namespace AdventureVillageEstadisticas
                 if (e.RowIndex != -1)
                 {
                     List<ModeloRoles> Rols = Control.Roles();
+                    List<ModeloUsuario> Usuario = Control.Usuarios();
                     RellenarComboRol();
                     for (int i = 0; i < Rols.Count; i++)
                     {
@@ -400,8 +421,16 @@ namespace AdventureVillageEstadisticas
                             break;
                         }
                     }
-                    UsuarioTextBox.Text = DataGridUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString();
-                    ContraseñaTextBox.Text = DataGridUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
+                    foreach (var User in Usuario)
+                    {
+                        if (User._idUsuario.ToLower() == DataGridUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString().ToLower())
+                        {
+                            UsuarioTextBox.Text = User._idUsuario;
+                            TexBoxCorreoUser.Text = User._Correo;
+                            ContraseñaTextBox.Text = User._Contraseña;
+                            ConfirmTextBox.Text = User._Contraseña;
+                        }
+                    }
                     TabControlAll.SelectTab("TpCrearUser");
                 }
             }
@@ -655,6 +684,22 @@ namespace AdventureVillageEstadisticas
 
         bool btnregresoArticulo, btnlimpiarArticulo, btnguardarArticulo;
 
+        private void DatePickGrafDeIzq_ValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoIzq();
+
+        }
+
+        private void DatePickGrafHastaIzq_ValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoIzq();
+        }
+
+        private void ComboBoxRangoIzq_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoIzq();
+        }
+
         private void MoverBotonesArticulos_Tick(object sender, EventArgs e)
         {
             bool cerrar1 = false;
@@ -695,6 +740,11 @@ namespace AdventureVillageEstadisticas
             }
 
             if (cerrar1 && cerrar2 && cerrar3) MoverBotonesArticulos.Stop();
+        }
+
+        private void ComboBoxOpcionDer_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoDer();
         }
 
         #endregion
@@ -760,6 +810,97 @@ namespace AdventureVillageEstadisticas
                 }
             }
         }
+
+        int r = 120, g = 120, b = 120;
+        bool reversa = false;
+        private void CambiarColor_Tick(object sender, EventArgs e)
+        {
+            if(!reversa)
+            {
+                LabelTotalUsuariosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelTotalArticulosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalUsuarios.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalArticulos.ForeColor = Color.FromArgb(r, g, b);
+                r += 10; g += 30; b += 10;
+                if (g >= 240) reversa = true;
+            }
+            else
+            {
+                LabelTotalUsuariosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelTotalArticulosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalUsuarios.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalArticulos.ForeColor = Color.FromArgb(r, g, b);
+                r -= 10; g -= 30; b -= 10;
+                if (g <= 120) reversa = false;
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Reportes
+
+        #region Botones
+
+        private void BotonGenerarReporteA_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog Guardar = new SaveFileDialog();
+            Guardar.FileName = "ReporteUsuario_" + DateTime.Now.ToString("dd-MM-yyyy") + ".pdf";
+            Guardar.Filter = "Archivo PDF|.pdf";
+            if (Guardar.ShowDialog() == DialogResult.OK)
+            {
+                Controladores.Reportes Reporte = new Controladores.Reportes();
+                ControladorAdmin Info = new ControladorAdmin();
+                Reporte.ReporteUsuarios(Guardar.FileName, Info.Usuarios());
+                GunaMessageBoxOK.Show("Reporte exportado exitosamente.", "Información.");
+            }
+        }
+
+        #endregion
+
+        #region Funciones
+
+        private void RellenarGraficoIzq()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            List<Modelos.ModeloRangoCantidad> RangoCantidad = new List<Modelos.ModeloRangoCantidad>();
+            ArrayList Rangos = new ArrayList();
+            ArrayList Cantidad = new ArrayList();
+
+            RangoCantidad = Info.RangoUsuariosGraficoIzq(DatePickGrafDeIzq.Value.ToString("yyyy-MM-dd"), DatePickGrafHastaIzq.Value.ToString("yyyy-MM-dd"), ComboBoxRangoIzq.SelectedIndex);
+            foreach (var Rang in RangoCantidad)
+            {
+                Rangos.Add(Rang._Rango);
+                Cantidad.Add(Rang._Cantidad);
+            }
+            ChartIzq.Series[0].Points.DataBindXY(Rangos, Cantidad);
+        }
+
+        private void RellenarGraficoDer()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            List<Modelos.ModeloRangoCantidad> RangoCantidad = new List<Modelos.ModeloRangoCantidad>();
+            ArrayList Rangos = new ArrayList();
+            ArrayList Cantidad = new ArrayList();
+
+            RangoCantidad = Info.RangoArticulosGraficoDer(ComboBoxOpcionDer.SelectedIndex);
+            foreach (var Rang in RangoCantidad)
+            {
+                Rangos.Add(Rang._Rango);
+                Cantidad.Add(Rang._Cantidad);
+            }
+            ChartDer.Series[0].Points.DataBindXY(Rangos, Cantidad);
+        }
+
+        private void RellenarTotales()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            LabelCantTotalUsuarios.Text = Info.CantidadTotalDe(1).ToString();
+            LabelCantTotalArticulos.Text = Info.CantidadTotalDe(2).ToString();
+        }
+
+        
 
         #endregion
 

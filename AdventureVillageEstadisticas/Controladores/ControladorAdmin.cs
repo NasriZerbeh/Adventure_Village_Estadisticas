@@ -129,6 +129,7 @@ namespace AdventureVillageEstadisticas
                     User._idUsuario = Lectura["idUsuario"].ToString();
                     User._idRol = Lectura["Rol"].ToString();
                     User._Contraseña = Lectura["Contraseña"].ToString();
+                    User._Correo = Lectura["Correo"].ToString();
                     User._Fecha_Registro = Convert.ToDateTime(Lectura["Fecha_Registro"]);
                     User._Activo = Convert.ToBoolean(Lectura["Activo"]);
                     ListaUsers.Add(User);
@@ -174,6 +175,112 @@ namespace AdventureVillageEstadisticas
             return ListaArticulos;
         }
 
+        public List<Modelos.ModeloRangoCantidad> RangoUsuariosGraficoIzq(string Desde, string Hasta, int Rango)
+        {
+            List<Modelos.ModeloRangoCantidad> Listado = new List<Modelos.ModeloRangoCantidad>();
+
+            Desde += " 00:00:00";
+            Hasta += " 23:59:59";
+            try
+            {
+                string query = string.Empty;
+                if (Rango == 0)
+                {
+                    query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y-%m-%d') AS Fecha " +
+                    "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta GROUP BY Fecha ORDER BY Fecha;";
+                }
+                if (Rango == 1)
+                {
+                    query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y-%m') AS Fecha " +
+                    "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta GROUP BY Fecha ORDER BY Fecha;";
+                }
+                if (Rango == 2)
+                {
+                    query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y') AS Fecha " +
+                    "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta GROUP BY Fecha ORDER BY Fecha;";
+                }
+
+                MySqlConnection Conectar = EstablecerConexion();
+                MySqlCommand ComandoSQL = new MySqlCommand(query, Conectar);
+                ComandoSQL.Parameters.AddWithValue("@FechaDesde", Desde);
+                ComandoSQL.Parameters.AddWithValue("@FechaHasta", Hasta);
+                ComandoSQL.ExecuteNonQuery();
+                MySqlDataReader Lectura = ComandoSQL.ExecuteReader();
+
+                while (Lectura.Read())
+                {
+                    Modelos.ModeloRangoCantidad RangoC = new Modelos.ModeloRangoCantidad();
+                    RangoC._Cantidad = Convert.ToInt32(Lectura["Cantidad"]);
+                    RangoC._Rango = Lectura["Fecha"].ToString();
+                    Listado.Add(RangoC);
+                }
+
+                Conectar.Close();
+            }
+            catch { }
+            return Listado;
+        }
+
+        public List<Modelos.ModeloRangoCantidad> RangoArticulosGraficoDer(int Opcion)
+        {
+            List<Modelos.ModeloRangoCantidad> Listado = new List<Modelos.ModeloRangoCantidad>();
+            try
+            {
+                string query = string.Empty;
+
+                if (Opcion == 0) query = "SELECT COUNT(idArticulo) AS Cantidad, Nombre_Tipo AS Busqueda FROM Articulo a INNER JOIN Tipo_Articulo t ON a.idTipo = t.idTipo GROUP BY Nombre_Tipo;";
+                if (Opcion == 1) query = "SELECT COUNT(idArticulo) AS Cantidad, NombreStat AS Busqueda FROM Articulo a INNER JOIN Tipo_Stats t ON a.idTipo_Stats = t.idTipo_Stats GROUP BY NombreStat;";
+                if (Opcion == 2) query = "SELECT COUNT(idArticulo) AS Cantidad, ModoStats AS Busqueda FROM Articulo a INNER JOIN Modo_Stats m ON a.idModo_Stats = m.idModo_Stats GROUP BY ModoStats;";
+
+                MySqlConnection Conectar = EstablecerConexion();
+                MySqlCommand ComandoSQL = new MySqlCommand(query, Conectar);
+                MySqlDataReader Lectura = ComandoSQL.ExecuteReader();
+
+                while (Lectura.Read())
+                {
+                    Modelos.ModeloRangoCantidad RangoC = new Modelos.ModeloRangoCantidad();
+                    RangoC._Cantidad = Convert.ToInt32(Lectura["Cantidad"]);
+                    RangoC._Rango = Lectura["Busqueda"].ToString();
+                    Listado.Add(RangoC);
+                }
+
+                Conectar.Close();
+            }
+            catch { }
+            return Listado;
+        }
+
+        public int CantidadTotalDe(int Indice)
+        {
+            string query = string.Empty;
+            int cantidad = 0;
+
+            try
+            {
+                switch (Indice)
+                {
+                    case 1:
+                        query = "SELECT COUNT(idUsuario) AS Cantidad FROM Usuario;";
+                        break;
+                    case 2:
+                        query = "SELECT COUNT(idArticulo) AS Cantidad FROM Articulo;";
+                        break;
+                    default:
+                        break;
+                }
+
+                MySqlConnection Conectar = EstablecerConexion();
+                MySqlCommand ComandoSQL = new MySqlCommand(query, Conectar);
+                MySqlDataReader Lectura = ComandoSQL.ExecuteReader();
+
+                if (Lectura.Read()) cantidad = Convert.ToInt32(Lectura["Cantidad"]);
+
+                Conectar.Close();
+            }
+            catch { }
+            return cantidad;
+        }
+
         #endregion
 
         #region Funciones
@@ -197,13 +304,13 @@ namespace AdventureVillageEstadisticas
 
                 if (Nuevo)
                 {
-                    Query = "INSERT INTO Usuario (idUsuario, idRol, Contraseña, Fecha_Registro, Activo) VALUES" +
-                        "(@idUsuario, @idRol, @Contraseña, @FechaRegistro, @Activo);";
+                    Query = "INSERT INTO Usuario (idUsuario, idRol, Contraseña, Correo, Fecha_Registro, Activo) VALUES" +
+                        "(@idUsuario, @idRol, @Contraseña, @Correo, @FechaRegistro, @Activo);";
                     ConfirmarQueryUsuario(Query, Conectar, NewUser);
                 }
                 else
                 {
-                    Query = "UPDATE Usuario SET idRol = @idRol, Contraseña = @Contraseña, Fecha_Registro = @FechaRegistro, Activo = @Activo WHERE idUsuario = @idUsuario;";
+                    Query = "UPDATE Usuario SET idRol = @idRol, Contraseña = @Contraseña, Correo = @Correo, Fecha_Registro = @FechaRegistro, Activo = @Activo WHERE idUsuario = @idUsuario;";
                     ConfirmarQueryUsuario(Query, Conectar, NewUser);
                 }
             }
@@ -217,6 +324,7 @@ namespace AdventureVillageEstadisticas
                 cmds.Parameters.AddWithValue("@idUsuario", NewUser._idUsuario);
                 cmds.Parameters.AddWithValue("@idRol", NewUser._idRol);
                 cmds.Parameters.AddWithValue("@Contraseña", NewUser._Contraseña);
+                cmds.Parameters.AddWithValue("@Correo", NewUser._Correo);
                 cmds.Parameters.AddWithValue("@FechaRegistro", NewUser._Fecha_Registro);
                 cmds.Parameters.AddWithValue("@Activo", NewUser._Activo);
                 cmds.ExecuteNonQuery();

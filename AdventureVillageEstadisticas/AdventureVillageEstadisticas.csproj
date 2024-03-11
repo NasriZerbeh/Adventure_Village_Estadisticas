@@ -32,7 +32,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -41,6 +50,12 @@
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
@@ -95,6 +110,7 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -113,9 +129,11 @@
     <Compile Include="Conexiones\ConexionBD.cs" />
     <Compile Include="Controladores\ControladorAdmin.cs" />
     <Compile Include="Controladores\ControladorUser.cs" />
+    <Compile Include="Controladores\Reportes.cs" />
     <Compile Include="Modelos\ModeloArticulos.cs" />
     <Compile Include="Modelos\ModeloCuentaUsuario.cs" />
     <Compile Include="Modelos\ModeloModoStats.cs" />
+    <Compile Include="Modelos\ModeloRangoCantidad.cs" />
     <Compile Include="Modelos\ModeloTipoStats.cs" />
     <Compile Include="Modelos\ModeloTipoArticulo.cs" />
     <Compile Include="Vistas\ModuloUusario.cs">
@@ -187,7 +205,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ImagenesOpenFile\Articulos\" />
-    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PlantillasHTMLReportes\ReportesPagina.html" />
+    <None Include="Resources\informe-de-ganancias.png" />
+    <None Include="Resources\LogoJuego.png" />
+    <None Include="Resources\informe.png" />
+    <None Include="Resources\usuario-de-perfil.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\hogar.png" />
+    <None Include="Resources\ajustes-de-engranajes.png" />
+    <None Include="Resources\cerrar-sesion.png" />
+    <None Include="Resources\limpieza-de-datos.png" />
+    <None Include="Resources\disquete.png" />
+    <None Include="Resources\deshacer.png" />
+    <None Include="Resources\3d %281%29.png" />
+    <None Include="Resources\galeria-de-imagenes.png" />
+    <None Include="Resources\lupa.png" />
+    <None Include="Resources\LogoNegro.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
