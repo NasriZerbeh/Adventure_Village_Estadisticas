@@ -69,6 +69,7 @@ namespace AdventureVillageEstadisticas
             // 
             // PanelCargando
             // 
+            this.PanelCargando.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PanelCargando.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(24)))), ((int)(((byte)(49)))));
             this.PanelCargando.BorderColor = System.Drawing.Color.White;
             this.PanelCargando.BorderRadius = 10;
@@ -146,6 +147,7 @@ namespace AdventureVillageEstadisticas
             // 
             // IconoPlay
             // 
+            this.IconoPlay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.IconoPlay.BackColor = System.Drawing.Color.Transparent;
             this.IconoPlay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IconoPlay.BackgroundImage")));
             this.IconoPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

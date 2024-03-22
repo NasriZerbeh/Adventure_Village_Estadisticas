@@ -208,6 +208,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PlantillasHTMLReportes\ReportesPagina.html" />
+    <None Include="Resources\agregar.png" />
+    <None Include="Resources\lapiz.png" />
+    <None Include="Resources\boton-menos.png" />
+    <None Include="Resources\cheque.png" />
+    <None Include="Resources\boton-x.png" />
+    <None Include="Resources\boton-mas.png" />
     <None Include="Resources\informe-de-ganancias.png" />
     <None Include="Resources\LogoJuego.png" />
     <None Include="Resources\informe.png" />

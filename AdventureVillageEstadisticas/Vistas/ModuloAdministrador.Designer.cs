@@ -31,26 +31,27 @@ namespace AdventureVillageEstadisticas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModuloAdministrador));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.ControlCerrar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlMaximizar = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -58,13 +59,15 @@ namespace AdventureVillageEstadisticas
             this.PanelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.PanelOpciones = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonOpciones = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.PanelMenuDatos = new Guna.UI2.WinForms.Guna2Panel();
+            this.BotonAggDatos = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.PanelReportes = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonReportes = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.PanelArticulos = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonArticulos = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.PanelUsuarios = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonUsuarios = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.SeparadorMenuSalir = new Guna.UI2.WinForms.Guna2Separator();
             this.PanelSalida = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonSalir = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.PanelHome = new Guna.UI2.WinForms.Guna2Panel();
@@ -73,7 +76,7 @@ namespace AdventureVillageEstadisticas
             this.PanelInicio = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonMenu = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.AnimacionMenu = new System.Windows.Forms.Timer(this.components);
-            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.SeparadorMenuTab = new Guna.UI2.WinForms.Guna2VSeparator();
             this.TabControlAll = new Guna.UI2.WinForms.Guna2TabControl();
             this.TpHome = new System.Windows.Forms.TabPage();
             this.TpUsuarios = new System.Windows.Forms.TabPage();
@@ -139,7 +142,62 @@ namespace AdventureVillageEstadisticas
             this.MostrarArticulos = new System.Windows.Forms.DataGridViewButtonColumn();
             this.RellenoArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TpReportes = new System.Windows.Forms.TabPage();
+            this.ScrollBarReportes = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.PanelAllReportes = new Guna.UI2.WinForms.Guna2Panel();
+            this.TablaPanelReportesGraficos = new System.Windows.Forms.TableLayoutPanel();
+            this.ChartIzq = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartDer = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.TablaFechasBusqueda = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelGraficIzqRango = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelHastaGraficIzq = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelDeGraficIzq = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.DatePickGrafDeIzq = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DatePickGrafHastaIzq = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.ComboBoxRangoIzq = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelGraficDerRango = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.ComboBoxOpcionDer = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.SeparadorReportes2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.TablaPanelReportesTotales = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelCantTotalUsuarios = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelCantTotalArticulos = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelTotalArticulosTittle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.BotonGenerarReporteA = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.LabelTotalUsuariosTittle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SeparadorReportes = new Guna.UI2.WinForms.Guna2Separator();
+            this.PanelTituloReporte = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelTituloReportes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.TpAggNuevo = new System.Windows.Forms.TabPage();
+            this.TablaPanelAgregarTipos = new System.Windows.Forms.TableLayoutPanel();
+            this.PanelAggTipoArticulo = new Guna.UI2.WinForms.Guna2Panel();
+            this.TextBoxAggTipoArticulo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ComboBoxTiposArticuloAgg = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelTiposArticuloAgg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.PanelAggTipoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.TextBoxAggTipoStats = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ComboBoxTipoEstadisticaAgg = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelTipoEstadisticaAgg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.PanelAggModoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.TextBoxAggModoStats = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ComboBoxAggModoStats = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelModoEstadisticaAgg = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.PanelAggOpcionTiposArt = new Guna.UI2.WinForms.Guna2Panel();
+            this.PanelConfirmTipoArticulo = new Guna.UI2.WinForms.Guna2Panel();
+            this.PanelCUDTipoArticulo = new Guna.UI2.WinForms.Guna2Panel();
+            this.BotonDeleteTipoArticulo = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonUpdateTipoArticulo = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonAddTipoArticulo = new Guna.UI2.WinForms.Guna2Button();
+            this.PanelAggOpcionTipoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.PanelConfirmTipoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.PanelCUDTipoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.BotonDeleteTipoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonUpdateTipoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonAddTipoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.PanelAggOpcionModoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.PanelConfirmModoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.PanelCUDModoStats = new Guna.UI2.WinForms.Guna2Panel();
+            this.BotonDeleteModoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonUpdateModoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonAddModoStats = new Guna.UI2.WinForms.Guna2Button();
             this.TpOpciones = new System.Windows.Forms.TabPage();
             this.SwitchDescanso = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.BordeForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -149,32 +207,16 @@ namespace AdventureVillageEstadisticas
             this.OpenFileArticulos = new System.Windows.Forms.OpenFileDialog();
             this.MoverBotonesArticulos = new System.Windows.Forms.Timer(this.components);
             this.CambiarColor = new System.Windows.Forms.Timer(this.components);
-            this.ScrollBarReportes = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.PanelTituloReporte = new Guna.UI2.WinForms.Guna2Panel();
-            this.LabelTituloReportes = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.TablaPanelReportesGraficos = new System.Windows.Forms.TableLayoutPanel();
-            this.ChartIzq = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ChartDer = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.TablaFechasBusqueda = new System.Windows.Forms.TableLayoutPanel();
-            this.LabelGraficIzqRango = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabLabelHastaGraficIzqel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelDeGraficIzq = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.DatePickGrafDeIzq = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.DatePickGrafHastaIzq = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.ComboBoxRangoIzq = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.LabelGraficDerRango = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.ComboBoxOpcionDer = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.TablaPanelReportesTotales = new System.Windows.Forms.TableLayoutPanel();
-            this.LabelCantTotalUsuarios = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelCantTotalArticulos = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelTotalArticulosTittle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.BotonGenerarReporteA = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.LabelTotalUsuariosTittle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.SeparadorReportes = new Guna.UI2.WinForms.Guna2Separator();
+            this.BotonConfirmarTipoArticulo = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonConfirmarTipoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonConfirmarModoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonCancelTipoArticulo = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonCancelTipoStats = new Guna.UI2.WinForms.Guna2Button();
+            this.BotonCancelModoStats = new Guna.UI2.WinForms.Guna2Button();
             this.PanelControl.SuspendLayout();
             this.PanelMenu.SuspendLayout();
             this.PanelOpciones.SuspendLayout();
+            this.PanelMenuDatos.SuspendLayout();
             this.PanelReportes.SuspendLayout();
             this.PanelArticulos.SuspendLayout();
             this.PanelUsuarios.SuspendLayout();
@@ -206,13 +248,27 @@ namespace AdventureVillageEstadisticas
             ((System.ComponentModel.ISupportInitialize)(this.DataGridArticulos)).BeginInit();
             this.TpReportes.SuspendLayout();
             this.PanelAllReportes.SuspendLayout();
-            this.TpOpciones.SuspendLayout();
-            this.PanelTituloReporte.SuspendLayout();
             this.TablaPanelReportesGraficos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDer)).BeginInit();
             this.TablaFechasBusqueda.SuspendLayout();
             this.TablaPanelReportesTotales.SuspendLayout();
+            this.PanelTituloReporte.SuspendLayout();
+            this.TpAggNuevo.SuspendLayout();
+            this.TablaPanelAgregarTipos.SuspendLayout();
+            this.PanelAggTipoArticulo.SuspendLayout();
+            this.PanelAggTipoStats.SuspendLayout();
+            this.PanelAggModoStats.SuspendLayout();
+            this.PanelAggOpcionTiposArt.SuspendLayout();
+            this.PanelConfirmTipoArticulo.SuspendLayout();
+            this.PanelCUDTipoArticulo.SuspendLayout();
+            this.PanelAggOpcionTipoStats.SuspendLayout();
+            this.PanelConfirmTipoStats.SuspendLayout();
+            this.PanelCUDTipoStats.SuspendLayout();
+            this.PanelAggOpcionModoStats.SuspendLayout();
+            this.PanelConfirmModoStats.SuspendLayout();
+            this.PanelCUDModoStats.SuspendLayout();
+            this.TpOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // ControlCerrar
@@ -281,10 +337,11 @@ namespace AdventureVillageEstadisticas
             this.PanelMenu.BackColor = System.Drawing.Color.Transparent;
             this.PanelMenu.BorderColor = System.Drawing.Color.Transparent;
             this.PanelMenu.Controls.Add(this.PanelOpciones);
+            this.PanelMenu.Controls.Add(this.PanelMenuDatos);
             this.PanelMenu.Controls.Add(this.PanelReportes);
             this.PanelMenu.Controls.Add(this.PanelArticulos);
             this.PanelMenu.Controls.Add(this.PanelUsuarios);
-            this.PanelMenu.Controls.Add(this.guna2Separator1);
+            this.PanelMenu.Controls.Add(this.SeparadorMenuSalir);
             this.PanelMenu.Controls.Add(this.PanelSalida);
             this.PanelMenu.Controls.Add(this.PanelHome);
             this.PanelMenu.Controls.Add(this.SeparadorHome);
@@ -301,11 +358,11 @@ namespace AdventureVillageEstadisticas
             // 
             this.PanelOpciones.Controls.Add(this.BotonOpciones);
             this.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelOpciones.Location = new System.Drawing.Point(0, 260);
+            this.PanelOpciones.Location = new System.Drawing.Point(0, 310);
             this.PanelOpciones.Name = "PanelOpciones";
             this.PanelOpciones.Padding = new System.Windows.Forms.Padding(5);
             this.PanelOpciones.Size = new System.Drawing.Size(160, 50);
-            this.PanelOpciones.TabIndex = 10;
+            this.PanelOpciones.TabIndex = 13;
             // 
             // BotonOpciones
             // 
@@ -338,6 +395,50 @@ namespace AdventureVillageEstadisticas
             this.BotonOpciones.TabIndex = 3;
             this.BotonOpciones.Tag = "Opciones";
             this.BotonOpciones.Text = "Opciones";
+            this.BotonOpciones.Click += new System.EventHandler(this.BotonOpciones_Click);
+            // 
+            // PanelMenuDatos
+            // 
+            this.PanelMenuDatos.Controls.Add(this.BotonAggDatos);
+            this.PanelMenuDatos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelMenuDatos.Location = new System.Drawing.Point(0, 260);
+            this.PanelMenuDatos.Name = "PanelMenuDatos";
+            this.PanelMenuDatos.Padding = new System.Windows.Forms.Padding(5);
+            this.PanelMenuDatos.Size = new System.Drawing.Size(160, 50);
+            this.PanelMenuDatos.TabIndex = 12;
+            // 
+            // BotonAggDatos
+            // 
+            this.BotonAggDatos.BackColor = System.Drawing.Color.Transparent;
+            this.BotonAggDatos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonAggDatos.BorderRadius = 8;
+            this.BotonAggDatos.BorderThickness = 2;
+            this.BotonAggDatos.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.BotonAggDatos.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_mas;
+            this.BotonAggDatos.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BotonAggDatos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAggDatos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAggDatos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonAggDatos.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonAggDatos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonAggDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BotonAggDatos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            this.BotonAggDatos.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(0)))));
+            this.BotonAggDatos.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BotonAggDatos.ForeColor = System.Drawing.Color.White;
+            this.BotonAggDatos.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.BotonAggDatos.Location = new System.Drawing.Point(5, 5);
+            this.BotonAggDatos.Name = "BotonAggDatos";
+            this.BotonAggDatos.ShadowDecoration.BorderRadius = 10;
+            this.BotonAggDatos.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.BotonAggDatos.ShadowDecoration.Depth = 100;
+            this.BotonAggDatos.ShadowDecoration.Enabled = true;
+            this.BotonAggDatos.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.BotonAggDatos.Size = new System.Drawing.Size(150, 40);
+            this.BotonAggDatos.TabIndex = 3;
+            this.BotonAggDatos.Tag = "Datos";
+            this.BotonAggDatos.Text = "Datos";
+            this.BotonAggDatos.Click += new System.EventHandler(this.BotonAggDatos_Click);
             // 
             // PanelReportes
             // 
@@ -468,13 +569,13 @@ namespace AdventureVillageEstadisticas
             this.BotonUsuarios.Text = "Usuarios";
             this.BotonUsuarios.Click += new System.EventHandler(this.BotonUsuarios_Click);
             // 
-            // guna2Separator1
+            // SeparadorMenuSalir
             // 
-            this.guna2Separator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Separator1.Location = new System.Drawing.Point(0, 360);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(160, 10);
-            this.guna2Separator1.TabIndex = 5;
+            this.SeparadorMenuSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SeparadorMenuSalir.Location = new System.Drawing.Point(0, 360);
+            this.SeparadorMenuSalir.Name = "SeparadorMenuSalir";
+            this.SeparadorMenuSalir.Size = new System.Drawing.Size(160, 10);
+            this.SeparadorMenuSalir.TabIndex = 5;
             // 
             // PanelSalida
             // 
@@ -620,14 +721,14 @@ namespace AdventureVillageEstadisticas
             this.AnimacionMenu.Interval = 5;
             this.AnimacionMenu.Tick += new System.EventHandler(this.AnimacionTiempo_Tick);
             // 
-            // guna2VSeparator1
+            // SeparadorMenuTab
             // 
-            this.guna2VSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2VSeparator1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(160, 30);
-            this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 420);
-            this.guna2VSeparator1.TabIndex = 6;
+            this.SeparadorMenuTab.BackColor = System.Drawing.Color.Transparent;
+            this.SeparadorMenuTab.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SeparadorMenuTab.Location = new System.Drawing.Point(160, 30);
+            this.SeparadorMenuTab.Name = "SeparadorMenuTab";
+            this.SeparadorMenuTab.Size = new System.Drawing.Size(10, 420);
+            this.SeparadorMenuTab.TabIndex = 6;
             // 
             // TabControlAll
             // 
@@ -639,6 +740,7 @@ namespace AdventureVillageEstadisticas
             this.TabControlAll.Controls.Add(this.TpCrearArticulos);
             this.TabControlAll.Controls.Add(this.TpVerArticulos);
             this.TabControlAll.Controls.Add(this.TpReportes);
+            this.TabControlAll.Controls.Add(this.TpAggNuevo);
             this.TabControlAll.Controls.Add(this.TpOpciones);
             this.TabControlAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlAll.ItemSize = new System.Drawing.Size(50, 20);
@@ -1162,20 +1264,20 @@ namespace AdventureVillageEstadisticas
             this.DataGridUsuarios.AllowUserToAddRows = false;
             this.DataGridUsuarios.AllowUserToDeleteRows = false;
             this.DataGridUsuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.DataGridUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.DataGridUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
             this.DataGridUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridUsuarios.ColumnHeadersHeight = 45;
             this.DataGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
@@ -1186,38 +1288,38 @@ namespace AdventureVillageEstadisticas
             this.Modificar,
             this.Bloquear,
             this.Relleno});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridUsuarios.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridUsuarios.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.DataGridUsuarios.Location = new System.Drawing.Point(0, 0);
             this.DataGridUsuarios.Name = "DataGridUsuarios";
             this.DataGridUsuarios.ReadOnly = true;
             this.DataGridUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridUsuarios.RowHeadersVisible = false;
             this.DataGridUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridUsuarios.RowTemplate.Height = 30;
             this.DataGridUsuarios.Size = new System.Drawing.Size(622, 392);
             this.DataGridUsuarios.TabIndex = 2;
@@ -1293,13 +1395,13 @@ namespace AdventureVillageEstadisticas
             // Modificar
             // 
             this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            this.Modificar.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Modificar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modificar.Frozen = true;
             this.Modificar.HeaderText = "";
@@ -1926,20 +2028,20 @@ namespace AdventureVillageEstadisticas
             this.DataGridArticulos.AllowUserToAddRows = false;
             this.DataGridArticulos.AllowUserToDeleteRows = false;
             this.DataGridArticulos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
-            this.DataGridArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.DataGridArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridArticulos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
             this.DataGridArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DataGridArticulos.ColumnHeadersHeight = 45;
             this.DataGridArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDArticulo,
@@ -1950,38 +2052,38 @@ namespace AdventureVillageEstadisticas
             this.ModificarArticulos,
             this.MostrarArticulos,
             this.RellenoArticulo});
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridArticulos.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridArticulos.DefaultCellStyle = dataGridViewCellStyle10;
             this.DataGridArticulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridArticulos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.DataGridArticulos.Location = new System.Drawing.Point(0, 0);
             this.DataGridArticulos.Name = "DataGridArticulos";
             this.DataGridArticulos.ReadOnly = true;
             this.DataGridArticulos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridArticulos.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridArticulos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.DataGridArticulos.RowHeadersVisible = false;
             this.DataGridArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridArticulos.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(169)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridArticulos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.DataGridArticulos.RowTemplate.Height = 30;
             this.DataGridArticulos.Size = new System.Drawing.Size(622, 392);
             this.DataGridArticulos.TabIndex = 1;
@@ -2057,13 +2159,13 @@ namespace AdventureVillageEstadisticas
             // ModificarArticulos
             // 
             this.ModificarArticulos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
-            this.ModificarArticulos.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.ModificarArticulos.DefaultCellStyle = dataGridViewCellStyle9;
             this.ModificarArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ModificarArticulos.Frozen = true;
             this.ModificarArticulos.HeaderText = "";
@@ -2107,13 +2209,29 @@ namespace AdventureVillageEstadisticas
             this.TpReportes.TabIndex = 8;
             this.TpReportes.Text = "Reportes";
             // 
+            // ScrollBarReportes
+            // 
+            this.ScrollBarReportes.BindingContainer = this.PanelAllReportes;
+            this.ScrollBarReportes.BorderColor = System.Drawing.Color.White;
+            this.ScrollBarReportes.BorderRadius = 2;
+            this.ScrollBarReportes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScrollBarReportes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ScrollBarReportes.InUpdate = false;
+            this.ScrollBarReportes.LargeChange = 10;
+            this.ScrollBarReportes.Location = new System.Drawing.Point(601, 3);
+            this.ScrollBarReportes.Name = "ScrollBarReportes";
+            this.ScrollBarReportes.ScrollbarSize = 18;
+            this.ScrollBarReportes.Size = new System.Drawing.Size(18, 386);
+            this.ScrollBarReportes.TabIndex = 27;
+            this.ScrollBarReportes.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            // 
             // PanelAllReportes
             // 
             this.PanelAllReportes.AutoScroll = true;
             this.PanelAllReportes.BackColor = System.Drawing.Color.Transparent;
             this.PanelAllReportes.Controls.Add(this.TablaPanelReportesGraficos);
             this.PanelAllReportes.Controls.Add(this.TablaFechasBusqueda);
-            this.PanelAllReportes.Controls.Add(this.guna2Separator2);
+            this.PanelAllReportes.Controls.Add(this.SeparadorReportes2);
             this.PanelAllReportes.Controls.Add(this.TablaPanelReportesTotales);
             this.PanelAllReportes.Controls.Add(this.SeparadorReportes);
             this.PanelAllReportes.Controls.Add(this.PanelTituloReporte);
@@ -2123,125 +2241,6 @@ namespace AdventureVillageEstadisticas
             this.PanelAllReportes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.PanelAllReportes.Size = new System.Drawing.Size(616, 386);
             this.PanelAllReportes.TabIndex = 12;
-            // 
-            // TpOpciones
-            // 
-            this.TpOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
-            this.TpOpciones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TpOpciones.BackgroundImage")));
-            this.TpOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TpOpciones.Controls.Add(this.SwitchDescanso);
-            this.TpOpciones.Location = new System.Drawing.Point(4, 24);
-            this.TpOpciones.Name = "TpOpciones";
-            this.TpOpciones.Padding = new System.Windows.Forms.Padding(3);
-            this.TpOpciones.Size = new System.Drawing.Size(622, 392);
-            this.TpOpciones.TabIndex = 1;
-            this.TpOpciones.Text = "Opciones";
-            // 
-            // SwitchDescanso
-            // 
-            this.SwitchDescanso.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SwitchDescanso.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SwitchDescanso.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.SwitchDescanso.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.SwitchDescanso.Location = new System.Drawing.Point(95, 71);
-            this.SwitchDescanso.Name = "SwitchDescanso";
-            this.SwitchDescanso.Size = new System.Drawing.Size(50, 27);
-            this.SwitchDescanso.TabIndex = 0;
-            this.SwitchDescanso.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.SwitchDescanso.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.SwitchDescanso.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.SwitchDescanso.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.SwitchDescanso.Click += new System.EventHandler(this.SwitchDescanso_Click);
-            // 
-            // BordeForm
-            // 
-            this.BordeForm.AnimationInterval = 5;
-            this.BordeForm.BorderRadius = 10;
-            this.BordeForm.ContainerControl = this;
-            this.BordeForm.DockIndicatorColor = System.Drawing.Color.DarkRed;
-            this.BordeForm.DockIndicatorTransparencyValue = 1D;
-            this.BordeForm.DragStartTransparencyValue = 1D;
-            this.BordeForm.TransparentWhileDrag = true;
-            // 
-            // GunaMessageBox
-            // 
-            this.GunaMessageBox.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OKCancel;
-            this.GunaMessageBox.Caption = null;
-            this.GunaMessageBox.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.GunaMessageBox.Parent = this;
-            this.GunaMessageBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.GunaMessageBox.Text = null;
-            // 
-            // MoverBotones
-            // 
-            this.MoverBotones.Interval = 1;
-            this.MoverBotones.Tick += new System.EventHandler(this.MoverBotones_Tick);
-            // 
-            // GunaMessageBoxOK
-            // 
-            this.GunaMessageBoxOK.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.GunaMessageBoxOK.Caption = null;
-            this.GunaMessageBoxOK.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-            this.GunaMessageBoxOK.Parent = this;
-            this.GunaMessageBoxOK.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.GunaMessageBoxOK.Text = null;
-            // 
-            // OpenFileArticulos
-            // 
-            this.OpenFileArticulos.Filter = "Imagenes PNG|*.png|Imagenes JPG|*.jpg|Imagenes JPEG|*.jpeg";
-            // 
-            // MoverBotonesArticulos
-            // 
-            this.MoverBotonesArticulos.Interval = 1;
-            this.MoverBotonesArticulos.Tick += new System.EventHandler(this.MoverBotonesArticulos_Tick);
-            // 
-            // CambiarColor
-            // 
-            this.CambiarColor.Enabled = true;
-            this.CambiarColor.Interval = 300;
-            this.CambiarColor.Tick += new System.EventHandler(this.CambiarColor_Tick);
-            // 
-            // ScrollBarReportes
-            // 
-            this.ScrollBarReportes.BindingContainer = this.PanelAllReportes;
-            this.ScrollBarReportes.BorderColor = System.Drawing.Color.White;
-            this.ScrollBarReportes.BorderRadius = 2;
-            this.ScrollBarReportes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ScrollBarReportes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ScrollBarReportes.InUpdate = false;
-            this.ScrollBarReportes.LargeChange = 353;
-            this.ScrollBarReportes.Location = new System.Drawing.Point(601, 3);
-            this.ScrollBarReportes.Maximum = 405;
-            this.ScrollBarReportes.Name = "ScrollBarReportes";
-            this.ScrollBarReportes.ScrollbarSize = 18;
-            this.ScrollBarReportes.Size = new System.Drawing.Size(18, 386);
-            this.ScrollBarReportes.SmallChange = 5;
-            this.ScrollBarReportes.TabIndex = 27;
-            this.ScrollBarReportes.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            // 
-            // PanelTituloReporte
-            // 
-            this.PanelTituloReporte.BackColor = System.Drawing.Color.Transparent;
-            this.PanelTituloReporte.Controls.Add(this.LabelTituloReportes);
-            this.PanelTituloReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTituloReporte.Location = new System.Drawing.Point(10, 0);
-            this.PanelTituloReporte.Name = "PanelTituloReporte";
-            this.PanelTituloReporte.Size = new System.Drawing.Size(579, 33);
-            this.PanelTituloReporte.TabIndex = 29;
-            // 
-            // LabelTituloReportes
-            // 
-            this.LabelTituloReportes.AutoSize = false;
-            this.LabelTituloReportes.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTituloReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelTituloReportes.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTituloReportes.ForeColor = System.Drawing.Color.White;
-            this.LabelTituloReportes.Location = new System.Drawing.Point(0, 0);
-            this.LabelTituloReportes.Name = "LabelTituloReportes";
-            this.LabelTituloReportes.Size = new System.Drawing.Size(579, 33);
-            this.LabelTituloReportes.TabIndex = 0;
-            this.LabelTituloReportes.Text = "REPORTES";
-            this.LabelTituloReportes.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TablaPanelReportesGraficos
             // 
@@ -2262,110 +2261,121 @@ namespace AdventureVillageEstadisticas
             // 
             this.ChartIzq.BackColor = System.Drawing.Color.Transparent;
             this.ChartIzq.BorderlineWidth = 2;
-            chartArea5.AxisX.InterlacedColor = System.Drawing.Color.White;
-            chartArea5.AxisX.IsLabelAutoFit = false;
-            chartArea5.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea5.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.Title = "Fecha";
-            chartArea5.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.White;
-            chartArea5.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea5.AxisY.IsLabelAutoFit = false;
-            chartArea5.AxisY.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea5.AxisY.LineColor = System.Drawing.Color.White;
-            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea5.AxisY.Title = "Cantidad";
-            chartArea5.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea5.AxisY.TitleForeColor = System.Drawing.Color.White;
-            chartArea5.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.BorderColor = System.Drawing.Color.White;
-            chartArea5.Name = "ChartArea1";
-            this.ChartIzq.ChartAreas.Add(chartArea5);
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.Title = "Fecha";
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.Title = "Cantidad";
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.ChartIzq.ChartAreas.Add(chartArea1);
             this.ChartIzq.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.BackColor = System.Drawing.Color.Transparent;
-            legend5.BorderColor = System.Drawing.Color.White;
-            legend5.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
-            legend5.ForeColor = System.Drawing.Color.White;
-            legend5.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend5.IsTextAutoFit = false;
-            legend5.ItemColumnSeparatorColor = System.Drawing.Color.White;
-            legend5.Name = "Legend1";
-            legend5.TitleForeColor = System.Drawing.Color.White;
-            legend5.TitleSeparatorColor = System.Drawing.Color.White;
-            this.ChartIzq.Legends.Add(legend5);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.BorderColor = System.Drawing.Color.White;
+            legend1.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend1.IsTextAutoFit = false;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend1.Name = "Legend1";
+            legend1.TitleForeColor = System.Drawing.Color.White;
+            legend1.TitleSeparatorColor = System.Drawing.Color.White;
+            this.ChartIzq.Legends.Add(legend1);
             this.ChartIzq.Location = new System.Drawing.Point(3, 3);
             this.ChartIzq.Name = "ChartIzq";
-            series5.BorderWidth = 4;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series5.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series5.IsValueShownAsLabel = true;
-            series5.LabelBackColor = System.Drawing.Color.Transparent;
-            series5.LabelBorderColor = System.Drawing.Color.Transparent;
-            series5.LabelBorderWidth = 2;
-            series5.LabelForeColor = System.Drawing.Color.White;
-            series5.Legend = "Legend1";
-            series5.LegendText = "Usuarios";
-            series5.Name = "Usuarios";
-            this.ChartIzq.Series.Add(series5);
+            series1.BorderWidth = 4;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series1.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
+            series1.LabelBorderColor = System.Drawing.Color.Transparent;
+            series1.LabelBorderWidth = 2;
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.LegendText = "Usuarios";
+            series1.Name = "Usuarios";
+            series2.BorderWidth = 4;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Olive;
+            series2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.LabelBorderWidth = 2;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Activos";
+            this.ChartIzq.Series.Add(series1);
+            this.ChartIzq.Series.Add(series2);
             this.ChartIzq.Size = new System.Drawing.Size(283, 252);
             this.ChartIzq.TabIndex = 0;
-            title5.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
-            title5.ForeColor = System.Drawing.Color.White;
-            title5.Name = "TituloCartIzq";
-            title5.Text = "Cantidad de Usuarios Ingresados";
-            this.ChartIzq.Titles.Add(title5);
+            title1.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
+            title1.ForeColor = System.Drawing.Color.White;
+            title1.Name = "TituloCartIzq";
+            title1.Text = "Cantidad de Usuarios Ingresados";
+            this.ChartIzq.Titles.Add(title1);
             // 
             // ChartDer
             // 
             this.ChartDer.BackColor = System.Drawing.Color.Transparent;
             this.ChartDer.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea6.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.BorderColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.ChartDer.ChartAreas.Add(chartArea6);
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.BorderColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.ChartDer.ChartAreas.Add(chartArea2);
             this.ChartDer.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.BackColor = System.Drawing.Color.Transparent;
-            legend6.BorderColor = System.Drawing.Color.White;
-            legend6.BorderWidth = 2;
-            legend6.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend6.ForeColor = System.Drawing.Color.White;
-            legend6.IsTextAutoFit = false;
-            legend6.Name = "Legend1";
-            this.ChartDer.Legends.Add(legend6);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.BorderColor = System.Drawing.Color.White;
+            legend2.BorderWidth = 2;
+            legend2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.ChartDer.Legends.Add(legend2);
             this.ChartDer.Location = new System.Drawing.Point(292, 3);
             this.ChartDer.Name = "ChartDer";
             this.ChartDer.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.ChartDer.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(201)))), ((int)(((byte)(120))))),
-        System.Drawing.Color.SeaGreen,
-        System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(34))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(121)))), ((int)(((byte)(66))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(187)))), ((int)(((byte)(23))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(183)))), ((int)(((byte)(46))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(59))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(104))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(112)))), ((int)(((byte)(77)))))};
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series6.IsValueShownAsLabel = true;
-            series6.LabelForeColor = System.Drawing.Color.White;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            series6.YValuesPerPoint = 2;
-            this.ChartDer.Series.Add(series6);
+        System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(112)))), ((int)(((byte)(77))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(183)))), ((int)(((byte)(46))))),
+        System.Drawing.Color.SeaGreen,
+        System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(121)))), ((int)(((byte)(66))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(34))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(187)))), ((int)(((byte)(23))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(104)))))};
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsValueShownAsLabel = true;
+            series3.LabelForeColor = System.Drawing.Color.White;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.YValuesPerPoint = 2;
+            this.ChartDer.Series.Add(series3);
             this.ChartDer.Size = new System.Drawing.Size(284, 252);
             this.ChartDer.TabIndex = 1;
-            title6.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title6.ForeColor = System.Drawing.Color.White;
-            title6.Name = "Title1";
-            title6.Text = "Cantidad de Articulos";
-            this.ChartDer.Titles.Add(title6);
+            title2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.ForeColor = System.Drawing.Color.White;
+            title2.Name = "Title1";
+            title2.Text = "Cantidad de Articulos";
+            this.ChartDer.Titles.Add(title2);
             // 
             // TablaFechasBusqueda
             // 
@@ -2377,7 +2387,7 @@ namespace AdventureVillageEstadisticas
             this.TablaFechasBusqueda.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.9998F));
             this.TablaFechasBusqueda.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999933F));
             this.TablaFechasBusqueda.Controls.Add(this.LabelGraficIzqRango, 2, 0);
-            this.TablaFechasBusqueda.Controls.Add(this.guna2HtmlLabLabelHastaGraficIzqel1, 1, 0);
+            this.TablaFechasBusqueda.Controls.Add(this.LabelHastaGraficIzq, 1, 0);
             this.TablaFechasBusqueda.Controls.Add(this.LabelDeGraficIzq, 0, 0);
             this.TablaFechasBusqueda.Controls.Add(this.DatePickGrafDeIzq, 0, 1);
             this.TablaFechasBusqueda.Controls.Add(this.DatePickGrafHastaIzq, 1, 1);
@@ -2407,19 +2417,19 @@ namespace AdventureVillageEstadisticas
             this.LabelGraficIzqRango.Text = "Rango:";
             this.LabelGraficIzqRango.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabLabelHastaGraficIzqel1
+            // LabelHastaGraficIzq
             // 
-            this.guna2HtmlLabLabelHastaGraficIzqel1.AutoSize = false;
-            this.guna2HtmlLabLabelHastaGraficIzqel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabLabelHastaGraficIzqel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2HtmlLabLabelHastaGraficIzqel1.Font = new System.Drawing.Font("Agency FB", 11.75F);
-            this.guna2HtmlLabLabelHastaGraficIzqel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabLabelHastaGraficIzqel1.Location = new System.Drawing.Point(99, 3);
-            this.guna2HtmlLabLabelHastaGraficIzqel1.Name = "guna2HtmlLabLabelHastaGraficIzqel1";
-            this.guna2HtmlLabLabelHastaGraficIzqel1.Size = new System.Drawing.Size(90, 19);
-            this.guna2HtmlLabLabelHastaGraficIzqel1.TabIndex = 11;
-            this.guna2HtmlLabLabelHastaGraficIzqel1.Text = "Hasta:";
-            this.guna2HtmlLabLabelHastaGraficIzqel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelHastaGraficIzq.AutoSize = false;
+            this.LabelHastaGraficIzq.BackColor = System.Drawing.Color.Transparent;
+            this.LabelHastaGraficIzq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelHastaGraficIzq.Font = new System.Drawing.Font("Agency FB", 11.75F);
+            this.LabelHastaGraficIzq.ForeColor = System.Drawing.Color.White;
+            this.LabelHastaGraficIzq.Location = new System.Drawing.Point(99, 3);
+            this.LabelHastaGraficIzq.Name = "LabelHastaGraficIzq";
+            this.LabelHastaGraficIzq.Size = new System.Drawing.Size(90, 19);
+            this.LabelHastaGraficIzq.TabIndex = 11;
+            this.LabelHastaGraficIzq.Text = "Hasta:";
+            this.LabelHastaGraficIzq.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LabelDeGraficIzq
             // 
@@ -2571,15 +2581,15 @@ namespace AdventureVillageEstadisticas
             this.ComboBoxOpcionDer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ComboBoxOpcionDer.SelectedValueChanged += new System.EventHandler(this.ComboBoxOpcionDer_SelectedValueChanged);
             // 
-            // guna2Separator2
+            // SeparadorReportes2
             // 
-            this.guna2Separator2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Separator2.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2Separator2.FillThickness = 2;
-            this.guna2Separator2.Location = new System.Drawing.Point(10, 113);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(579, 10);
-            this.guna2Separator2.TabIndex = 36;
+            this.SeparadorReportes2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SeparadorReportes2.FillStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.SeparadorReportes2.FillThickness = 2;
+            this.SeparadorReportes2.Location = new System.Drawing.Point(10, 113);
+            this.SeparadorReportes2.Name = "SeparadorReportes2";
+            this.SeparadorReportes2.Size = new System.Drawing.Size(579, 10);
+            this.SeparadorReportes2.TabIndex = 36;
             // 
             // TablaPanelReportesTotales
             // 
@@ -2700,6 +2710,792 @@ namespace AdventureVillageEstadisticas
             this.SeparadorReportes.Size = new System.Drawing.Size(579, 10);
             this.SeparadorReportes.TabIndex = 35;
             // 
+            // PanelTituloReporte
+            // 
+            this.PanelTituloReporte.BackColor = System.Drawing.Color.Transparent;
+            this.PanelTituloReporte.Controls.Add(this.LabelTituloReportes);
+            this.PanelTituloReporte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTituloReporte.Location = new System.Drawing.Point(10, 0);
+            this.PanelTituloReporte.Name = "PanelTituloReporte";
+            this.PanelTituloReporte.Size = new System.Drawing.Size(579, 33);
+            this.PanelTituloReporte.TabIndex = 29;
+            // 
+            // LabelTituloReportes
+            // 
+            this.LabelTituloReportes.AutoSize = false;
+            this.LabelTituloReportes.BackColor = System.Drawing.Color.Transparent;
+            this.LabelTituloReportes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelTituloReportes.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTituloReportes.ForeColor = System.Drawing.Color.White;
+            this.LabelTituloReportes.Location = new System.Drawing.Point(0, 0);
+            this.LabelTituloReportes.Name = "LabelTituloReportes";
+            this.LabelTituloReportes.Size = new System.Drawing.Size(579, 33);
+            this.LabelTituloReportes.TabIndex = 0;
+            this.LabelTituloReportes.Text = "REPORTES";
+            this.LabelTituloReportes.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TpAggNuevo
+            // 
+            this.TpAggNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TpAggNuevo.BackgroundImage")));
+            this.TpAggNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TpAggNuevo.Controls.Add(this.TablaPanelAgregarTipos);
+            this.TpAggNuevo.Location = new System.Drawing.Point(4, 24);
+            this.TpAggNuevo.Name = "TpAggNuevo";
+            this.TpAggNuevo.Padding = new System.Windows.Forms.Padding(3);
+            this.TpAggNuevo.Size = new System.Drawing.Size(622, 392);
+            this.TpAggNuevo.TabIndex = 9;
+            this.TpAggNuevo.Text = "TpAggNuevo";
+            this.TpAggNuevo.UseVisualStyleBackColor = true;
+            // 
+            // TablaPanelAgregarTipos
+            // 
+            this.TablaPanelAgregarTipos.ColumnCount = 4;
+            this.TablaPanelAgregarTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TablaPanelAgregarTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TablaPanelAgregarTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TablaPanelAgregarTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TablaPanelAgregarTipos.Controls.Add(this.PanelAggTipoArticulo, 1, 1);
+            this.TablaPanelAgregarTipos.Controls.Add(this.PanelAggTipoStats, 1, 2);
+            this.TablaPanelAgregarTipos.Controls.Add(this.PanelAggModoStats, 1, 3);
+            this.TablaPanelAgregarTipos.Controls.Add(this.PanelAggOpcionTiposArt, 2, 1);
+            this.TablaPanelAgregarTipos.Controls.Add(this.PanelAggOpcionTipoStats, 2, 2);
+            this.TablaPanelAgregarTipos.Controls.Add(this.PanelAggOpcionModoStats, 2, 3);
+            this.TablaPanelAgregarTipos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TablaPanelAgregarTipos.Location = new System.Drawing.Point(3, 3);
+            this.TablaPanelAgregarTipos.Name = "TablaPanelAgregarTipos";
+            this.TablaPanelAgregarTipos.RowCount = 5;
+            this.TablaPanelAgregarTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TablaPanelAgregarTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TablaPanelAgregarTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TablaPanelAgregarTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TablaPanelAgregarTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TablaPanelAgregarTipos.Size = new System.Drawing.Size(616, 386);
+            this.TablaPanelAgregarTipos.TabIndex = 0;
+            // 
+            // PanelAggTipoArticulo
+            // 
+            this.PanelAggTipoArticulo.Controls.Add(this.TextBoxAggTipoArticulo);
+            this.PanelAggTipoArticulo.Controls.Add(this.ComboBoxTiposArticuloAgg);
+            this.PanelAggTipoArticulo.Controls.Add(this.LabelTiposArticuloAgg);
+            this.PanelAggTipoArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelAggTipoArticulo.Location = new System.Drawing.Point(157, 80);
+            this.PanelAggTipoArticulo.Name = "PanelAggTipoArticulo";
+            this.PanelAggTipoArticulo.Size = new System.Drawing.Size(148, 71);
+            this.PanelAggTipoArticulo.TabIndex = 3;
+            // 
+            // TextBoxAggTipoArticulo
+            // 
+            this.TextBoxAggTipoArticulo.Animated = true;
+            this.TextBoxAggTipoArticulo.BackColor = System.Drawing.Color.Transparent;
+            this.TextBoxAggTipoArticulo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.TextBoxAggTipoArticulo.BorderRadius = 10;
+            this.TextBoxAggTipoArticulo.BorderThickness = 2;
+            this.TextBoxAggTipoArticulo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxAggTipoArticulo.DefaultText = "";
+            this.TextBoxAggTipoArticulo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxAggTipoArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxAggTipoArticulo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAggTipoArticulo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAggTipoArticulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TextBoxAggTipoArticulo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.TextBoxAggTipoArticulo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.TextBoxAggTipoArticulo.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxAggTipoArticulo.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxAggTipoArticulo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxAggTipoArticulo.Location = new System.Drawing.Point(0, 51);
+            this.TextBoxAggTipoArticulo.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.TextBoxAggTipoArticulo.Name = "TextBoxAggTipoArticulo";
+            this.TextBoxAggTipoArticulo.PasswordChar = '\0';
+            this.TextBoxAggTipoArticulo.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.TextBoxAggTipoArticulo.PlaceholderText = "Ingrese de 3-10 caracteres.";
+            this.TextBoxAggTipoArticulo.SelectedText = "";
+            this.TextBoxAggTipoArticulo.ShadowDecoration.BorderRadius = 10;
+            this.TextBoxAggTipoArticulo.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.TextBoxAggTipoArticulo.ShadowDecoration.Depth = 100;
+            this.TextBoxAggTipoArticulo.ShadowDecoration.Enabled = true;
+            this.TextBoxAggTipoArticulo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.TextBoxAggTipoArticulo.Size = new System.Drawing.Size(148, 36);
+            this.TextBoxAggTipoArticulo.TabIndex = 6;
+            this.TextBoxAggTipoArticulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxAggTipoArticulo.Visible = false;
+            // 
+            // ComboBoxTiposArticuloAgg
+            // 
+            this.ComboBoxTiposArticuloAgg.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxTiposArticuloAgg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.ComboBoxTiposArticuloAgg.BorderRadius = 10;
+            this.ComboBoxTiposArticuloAgg.BorderThickness = 2;
+            this.ComboBoxTiposArticuloAgg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComboBoxTiposArticuloAgg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxTiposArticuloAgg.DropDownHeight = 999;
+            this.ComboBoxTiposArticuloAgg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxTiposArticuloAgg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.ComboBoxTiposArticuloAgg.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxTiposArticuloAgg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxTiposArticuloAgg.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTiposArticuloAgg.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTiposArticuloAgg.IntegralHeight = false;
+            this.ComboBoxTiposArticuloAgg.ItemHeight = 30;
+            this.ComboBoxTiposArticuloAgg.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(255)))), ((int)(((byte)(154)))));
+            this.ComboBoxTiposArticuloAgg.ItemsAppearance.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTiposArticuloAgg.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTiposArticuloAgg.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxTiposArticuloAgg.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTiposArticuloAgg.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
+            this.ComboBoxTiposArticuloAgg.Location = new System.Drawing.Point(0, 15);
+            this.ComboBoxTiposArticuloAgg.Name = "ComboBoxTiposArticuloAgg";
+            this.ComboBoxTiposArticuloAgg.ShadowDecoration.BorderRadius = 10;
+            this.ComboBoxTiposArticuloAgg.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxTiposArticuloAgg.ShadowDecoration.Depth = 100;
+            this.ComboBoxTiposArticuloAgg.ShadowDecoration.Enabled = true;
+            this.ComboBoxTiposArticuloAgg.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ComboBoxTiposArticuloAgg.Size = new System.Drawing.Size(148, 36);
+            this.ComboBoxTiposArticuloAgg.TabIndex = 1;
+            this.ComboBoxTiposArticuloAgg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LabelTiposArticuloAgg
+            // 
+            this.LabelTiposArticuloAgg.AutoSize = false;
+            this.LabelTiposArticuloAgg.BackColor = System.Drawing.Color.Transparent;
+            this.LabelTiposArticuloAgg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelTiposArticuloAgg.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTiposArticuloAgg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelTiposArticuloAgg.Location = new System.Drawing.Point(0, 0);
+            this.LabelTiposArticuloAgg.Name = "LabelTiposArticuloAgg";
+            this.LabelTiposArticuloAgg.Size = new System.Drawing.Size(148, 15);
+            this.LabelTiposArticuloAgg.TabIndex = 2;
+            this.LabelTiposArticuloAgg.Text = "Tipos de Articulos:";
+            this.LabelTiposArticuloAgg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelAggTipoStats
+            // 
+            this.PanelAggTipoStats.Controls.Add(this.TextBoxAggTipoStats);
+            this.PanelAggTipoStats.Controls.Add(this.ComboBoxTipoEstadisticaAgg);
+            this.PanelAggTipoStats.Controls.Add(this.LabelTipoEstadisticaAgg);
+            this.PanelAggTipoStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelAggTipoStats.Location = new System.Drawing.Point(157, 157);
+            this.PanelAggTipoStats.Name = "PanelAggTipoStats";
+            this.PanelAggTipoStats.Size = new System.Drawing.Size(148, 71);
+            this.PanelAggTipoStats.TabIndex = 4;
+            // 
+            // TextBoxAggTipoStats
+            // 
+            this.TextBoxAggTipoStats.Animated = true;
+            this.TextBoxAggTipoStats.BackColor = System.Drawing.Color.Transparent;
+            this.TextBoxAggTipoStats.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.TextBoxAggTipoStats.BorderRadius = 10;
+            this.TextBoxAggTipoStats.BorderThickness = 2;
+            this.TextBoxAggTipoStats.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxAggTipoStats.DefaultText = "";
+            this.TextBoxAggTipoStats.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxAggTipoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxAggTipoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAggTipoStats.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAggTipoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TextBoxAggTipoStats.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.TextBoxAggTipoStats.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.TextBoxAggTipoStats.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxAggTipoStats.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxAggTipoStats.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxAggTipoStats.Location = new System.Drawing.Point(0, 51);
+            this.TextBoxAggTipoStats.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.TextBoxAggTipoStats.Name = "TextBoxAggTipoStats";
+            this.TextBoxAggTipoStats.PasswordChar = '\0';
+            this.TextBoxAggTipoStats.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.TextBoxAggTipoStats.PlaceholderText = "Ingrese de 2-5 caracteres.";
+            this.TextBoxAggTipoStats.SelectedText = "";
+            this.TextBoxAggTipoStats.ShadowDecoration.BorderRadius = 10;
+            this.TextBoxAggTipoStats.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.TextBoxAggTipoStats.ShadowDecoration.Depth = 100;
+            this.TextBoxAggTipoStats.ShadowDecoration.Enabled = true;
+            this.TextBoxAggTipoStats.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.TextBoxAggTipoStats.Size = new System.Drawing.Size(148, 36);
+            this.TextBoxAggTipoStats.TabIndex = 7;
+            this.TextBoxAggTipoStats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ComboBoxTipoEstadisticaAgg
+            // 
+            this.ComboBoxTipoEstadisticaAgg.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxTipoEstadisticaAgg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.ComboBoxTipoEstadisticaAgg.BorderRadius = 10;
+            this.ComboBoxTipoEstadisticaAgg.BorderThickness = 2;
+            this.ComboBoxTipoEstadisticaAgg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComboBoxTipoEstadisticaAgg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxTipoEstadisticaAgg.DropDownHeight = 999;
+            this.ComboBoxTipoEstadisticaAgg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxTipoEstadisticaAgg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.ComboBoxTipoEstadisticaAgg.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxTipoEstadisticaAgg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxTipoEstadisticaAgg.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTipoEstadisticaAgg.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTipoEstadisticaAgg.IntegralHeight = false;
+            this.ComboBoxTipoEstadisticaAgg.ItemHeight = 30;
+            this.ComboBoxTipoEstadisticaAgg.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(255)))), ((int)(((byte)(154)))));
+            this.ComboBoxTipoEstadisticaAgg.ItemsAppearance.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTipoEstadisticaAgg.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTipoEstadisticaAgg.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxTipoEstadisticaAgg.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTipoEstadisticaAgg.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
+            this.ComboBoxTipoEstadisticaAgg.Location = new System.Drawing.Point(0, 15);
+            this.ComboBoxTipoEstadisticaAgg.Name = "ComboBoxTipoEstadisticaAgg";
+            this.ComboBoxTipoEstadisticaAgg.ShadowDecoration.BorderRadius = 10;
+            this.ComboBoxTipoEstadisticaAgg.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxTipoEstadisticaAgg.ShadowDecoration.Depth = 100;
+            this.ComboBoxTipoEstadisticaAgg.ShadowDecoration.Enabled = true;
+            this.ComboBoxTipoEstadisticaAgg.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ComboBoxTipoEstadisticaAgg.Size = new System.Drawing.Size(148, 36);
+            this.ComboBoxTipoEstadisticaAgg.TabIndex = 1;
+            this.ComboBoxTipoEstadisticaAgg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LabelTipoEstadisticaAgg
+            // 
+            this.LabelTipoEstadisticaAgg.AutoSize = false;
+            this.LabelTipoEstadisticaAgg.BackColor = System.Drawing.Color.Transparent;
+            this.LabelTipoEstadisticaAgg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelTipoEstadisticaAgg.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTipoEstadisticaAgg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelTipoEstadisticaAgg.Location = new System.Drawing.Point(0, 0);
+            this.LabelTipoEstadisticaAgg.Name = "LabelTipoEstadisticaAgg";
+            this.LabelTipoEstadisticaAgg.Size = new System.Drawing.Size(148, 15);
+            this.LabelTipoEstadisticaAgg.TabIndex = 2;
+            this.LabelTipoEstadisticaAgg.Text = "Tipos de Estadistica:";
+            this.LabelTipoEstadisticaAgg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelAggModoStats
+            // 
+            this.PanelAggModoStats.Controls.Add(this.TextBoxAggModoStats);
+            this.PanelAggModoStats.Controls.Add(this.ComboBoxAggModoStats);
+            this.PanelAggModoStats.Controls.Add(this.LabelModoEstadisticaAgg);
+            this.PanelAggModoStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelAggModoStats.Location = new System.Drawing.Point(157, 234);
+            this.PanelAggModoStats.Name = "PanelAggModoStats";
+            this.PanelAggModoStats.Size = new System.Drawing.Size(148, 71);
+            this.PanelAggModoStats.TabIndex = 5;
+            // 
+            // TextBoxAggModoStats
+            // 
+            this.TextBoxAggModoStats.Animated = true;
+            this.TextBoxAggModoStats.BackColor = System.Drawing.Color.Transparent;
+            this.TextBoxAggModoStats.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.TextBoxAggModoStats.BorderRadius = 10;
+            this.TextBoxAggModoStats.BorderThickness = 2;
+            this.TextBoxAggModoStats.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxAggModoStats.DefaultText = "";
+            this.TextBoxAggModoStats.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxAggModoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxAggModoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAggModoStats.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAggModoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TextBoxAggModoStats.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.TextBoxAggModoStats.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.TextBoxAggModoStats.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxAggModoStats.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxAggModoStats.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxAggModoStats.Location = new System.Drawing.Point(0, 51);
+            this.TextBoxAggModoStats.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.TextBoxAggModoStats.Name = "TextBoxAggModoStats";
+            this.TextBoxAggModoStats.PasswordChar = '\0';
+            this.TextBoxAggModoStats.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.TextBoxAggModoStats.PlaceholderText = "Ingrese de 1-4 caracteres.";
+            this.TextBoxAggModoStats.SelectedText = "";
+            this.TextBoxAggModoStats.ShadowDecoration.BorderRadius = 10;
+            this.TextBoxAggModoStats.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.TextBoxAggModoStats.ShadowDecoration.Depth = 100;
+            this.TextBoxAggModoStats.ShadowDecoration.Enabled = true;
+            this.TextBoxAggModoStats.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.TextBoxAggModoStats.Size = new System.Drawing.Size(148, 36);
+            this.TextBoxAggModoStats.TabIndex = 7;
+            this.TextBoxAggModoStats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ComboBoxAggModoStats
+            // 
+            this.ComboBoxAggModoStats.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxAggModoStats.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.ComboBoxAggModoStats.BorderRadius = 10;
+            this.ComboBoxAggModoStats.BorderThickness = 2;
+            this.ComboBoxAggModoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComboBoxAggModoStats.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxAggModoStats.DropDownHeight = 999;
+            this.ComboBoxAggModoStats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxAggModoStats.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(197)))), ((int)(((byte)(91)))));
+            this.ComboBoxAggModoStats.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxAggModoStats.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(23)))), ((int)(((byte)(58)))));
+            this.ComboBoxAggModoStats.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxAggModoStats.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxAggModoStats.IntegralHeight = false;
+            this.ComboBoxAggModoStats.ItemHeight = 30;
+            this.ComboBoxAggModoStats.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(255)))), ((int)(((byte)(154)))));
+            this.ComboBoxAggModoStats.ItemsAppearance.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxAggModoStats.ItemsAppearance.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxAggModoStats.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxAggModoStats.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxAggModoStats.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
+            this.ComboBoxAggModoStats.Location = new System.Drawing.Point(0, 15);
+            this.ComboBoxAggModoStats.Name = "ComboBoxAggModoStats";
+            this.ComboBoxAggModoStats.ShadowDecoration.BorderRadius = 10;
+            this.ComboBoxAggModoStats.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
+            this.ComboBoxAggModoStats.ShadowDecoration.Depth = 100;
+            this.ComboBoxAggModoStats.ShadowDecoration.Enabled = true;
+            this.ComboBoxAggModoStats.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ComboBoxAggModoStats.Size = new System.Drawing.Size(148, 36);
+            this.ComboBoxAggModoStats.TabIndex = 1;
+            this.ComboBoxAggModoStats.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LabelModoEstadisticaAgg
+            // 
+            this.LabelModoEstadisticaAgg.AutoSize = false;
+            this.LabelModoEstadisticaAgg.BackColor = System.Drawing.Color.Transparent;
+            this.LabelModoEstadisticaAgg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelModoEstadisticaAgg.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelModoEstadisticaAgg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelModoEstadisticaAgg.Location = new System.Drawing.Point(0, 0);
+            this.LabelModoEstadisticaAgg.Name = "LabelModoEstadisticaAgg";
+            this.LabelModoEstadisticaAgg.Size = new System.Drawing.Size(148, 15);
+            this.LabelModoEstadisticaAgg.TabIndex = 2;
+            this.LabelModoEstadisticaAgg.Text = "Modos de Estadistica:";
+            this.LabelModoEstadisticaAgg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelAggOpcionTiposArt
+            // 
+            this.PanelAggOpcionTiposArt.Controls.Add(this.PanelConfirmTipoArticulo);
+            this.PanelAggOpcionTiposArt.Controls.Add(this.PanelCUDTipoArticulo);
+            this.PanelAggOpcionTiposArt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelAggOpcionTiposArt.Location = new System.Drawing.Point(311, 80);
+            this.PanelAggOpcionTiposArt.Name = "PanelAggOpcionTiposArt";
+            this.PanelAggOpcionTiposArt.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.PanelAggOpcionTiposArt.Size = new System.Drawing.Size(148, 71);
+            this.PanelAggOpcionTiposArt.TabIndex = 6;
+            // 
+            // PanelConfirmTipoArticulo
+            // 
+            this.PanelConfirmTipoArticulo.Controls.Add(this.BotonCancelTipoArticulo);
+            this.PanelConfirmTipoArticulo.Controls.Add(this.BotonConfirmarTipoArticulo);
+            this.PanelConfirmTipoArticulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelConfirmTipoArticulo.Location = new System.Drawing.Point(15, 47);
+            this.PanelConfirmTipoArticulo.Name = "PanelConfirmTipoArticulo";
+            this.PanelConfirmTipoArticulo.Size = new System.Drawing.Size(133, 32);
+            this.PanelConfirmTipoArticulo.TabIndex = 1;
+            this.PanelConfirmTipoArticulo.Visible = false;
+            // 
+            // PanelCUDTipoArticulo
+            // 
+            this.PanelCUDTipoArticulo.Controls.Add(this.BotonDeleteTipoArticulo);
+            this.PanelCUDTipoArticulo.Controls.Add(this.BotonUpdateTipoArticulo);
+            this.PanelCUDTipoArticulo.Controls.Add(this.BotonAddTipoArticulo);
+            this.PanelCUDTipoArticulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCUDTipoArticulo.Location = new System.Drawing.Point(15, 15);
+            this.PanelCUDTipoArticulo.Name = "PanelCUDTipoArticulo";
+            this.PanelCUDTipoArticulo.Size = new System.Drawing.Size(133, 32);
+            this.PanelCUDTipoArticulo.TabIndex = 0;
+            // 
+            // BotonDeleteTipoArticulo
+            // 
+            this.BotonDeleteTipoArticulo.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_menos;
+            this.BotonDeleteTipoArticulo.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonDeleteTipoArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonDeleteTipoArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonDeleteTipoArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonDeleteTipoArticulo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonDeleteTipoArticulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonDeleteTipoArticulo.FillColor = System.Drawing.Color.Transparent;
+            this.BotonDeleteTipoArticulo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonDeleteTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.BotonDeleteTipoArticulo.Location = new System.Drawing.Point(90, 0);
+            this.BotonDeleteTipoArticulo.Name = "BotonDeleteTipoArticulo";
+            this.BotonDeleteTipoArticulo.Size = new System.Drawing.Size(45, 32);
+            this.BotonDeleteTipoArticulo.TabIndex = 2;
+            // 
+            // BotonUpdateTipoArticulo
+            // 
+            this.BotonUpdateTipoArticulo.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.lapiz;
+            this.BotonUpdateTipoArticulo.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonUpdateTipoArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonUpdateTipoArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonUpdateTipoArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonUpdateTipoArticulo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonUpdateTipoArticulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonUpdateTipoArticulo.FillColor = System.Drawing.Color.Transparent;
+            this.BotonUpdateTipoArticulo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonUpdateTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.BotonUpdateTipoArticulo.Location = new System.Drawing.Point(45, 0);
+            this.BotonUpdateTipoArticulo.Name = "BotonUpdateTipoArticulo";
+            this.BotonUpdateTipoArticulo.Size = new System.Drawing.Size(45, 32);
+            this.BotonUpdateTipoArticulo.TabIndex = 1;
+            this.BotonUpdateTipoArticulo.Click += new System.EventHandler(this.BotonUpdateTipoArticulo_Click);
+            // 
+            // BotonAddTipoArticulo
+            // 
+            this.BotonAddTipoArticulo.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.agregar;
+            this.BotonAddTipoArticulo.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonAddTipoArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAddTipoArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAddTipoArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonAddTipoArticulo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonAddTipoArticulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonAddTipoArticulo.FillColor = System.Drawing.Color.Transparent;
+            this.BotonAddTipoArticulo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonAddTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.BotonAddTipoArticulo.Location = new System.Drawing.Point(0, 0);
+            this.BotonAddTipoArticulo.Name = "BotonAddTipoArticulo";
+            this.BotonAddTipoArticulo.Size = new System.Drawing.Size(45, 32);
+            this.BotonAddTipoArticulo.TabIndex = 0;
+            this.BotonAddTipoArticulo.Click += new System.EventHandler(this.BotonAddTipoArticulo_Click);
+            // 
+            // PanelAggOpcionTipoStats
+            // 
+            this.PanelAggOpcionTipoStats.Controls.Add(this.PanelConfirmTipoStats);
+            this.PanelAggOpcionTipoStats.Controls.Add(this.PanelCUDTipoStats);
+            this.PanelAggOpcionTipoStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelAggOpcionTipoStats.Location = new System.Drawing.Point(311, 157);
+            this.PanelAggOpcionTipoStats.Name = "PanelAggOpcionTipoStats";
+            this.PanelAggOpcionTipoStats.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.PanelAggOpcionTipoStats.Size = new System.Drawing.Size(148, 71);
+            this.PanelAggOpcionTipoStats.TabIndex = 7;
+            // 
+            // PanelConfirmTipoStats
+            // 
+            this.PanelConfirmTipoStats.Controls.Add(this.BotonCancelTipoStats);
+            this.PanelConfirmTipoStats.Controls.Add(this.BotonConfirmarTipoStats);
+            this.PanelConfirmTipoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelConfirmTipoStats.Location = new System.Drawing.Point(15, 47);
+            this.PanelConfirmTipoStats.Name = "PanelConfirmTipoStats";
+            this.PanelConfirmTipoStats.Size = new System.Drawing.Size(133, 32);
+            this.PanelConfirmTipoStats.TabIndex = 3;
+            // 
+            // PanelCUDTipoStats
+            // 
+            this.PanelCUDTipoStats.Controls.Add(this.BotonDeleteTipoStats);
+            this.PanelCUDTipoStats.Controls.Add(this.BotonUpdateTipoStats);
+            this.PanelCUDTipoStats.Controls.Add(this.BotonAddTipoStats);
+            this.PanelCUDTipoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCUDTipoStats.Location = new System.Drawing.Point(15, 15);
+            this.PanelCUDTipoStats.Name = "PanelCUDTipoStats";
+            this.PanelCUDTipoStats.Size = new System.Drawing.Size(133, 32);
+            this.PanelCUDTipoStats.TabIndex = 2;
+            // 
+            // BotonDeleteTipoStats
+            // 
+            this.BotonDeleteTipoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_menos;
+            this.BotonDeleteTipoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonDeleteTipoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonDeleteTipoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonDeleteTipoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonDeleteTipoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonDeleteTipoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonDeleteTipoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonDeleteTipoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonDeleteTipoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonDeleteTipoStats.Location = new System.Drawing.Point(90, 0);
+            this.BotonDeleteTipoStats.Name = "BotonDeleteTipoStats";
+            this.BotonDeleteTipoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonDeleteTipoStats.TabIndex = 3;
+            // 
+            // BotonUpdateTipoStats
+            // 
+            this.BotonUpdateTipoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.lapiz;
+            this.BotonUpdateTipoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonUpdateTipoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonUpdateTipoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonUpdateTipoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonUpdateTipoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonUpdateTipoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonUpdateTipoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonUpdateTipoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonUpdateTipoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonUpdateTipoStats.Location = new System.Drawing.Point(45, 0);
+            this.BotonUpdateTipoStats.Name = "BotonUpdateTipoStats";
+            this.BotonUpdateTipoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonUpdateTipoStats.TabIndex = 2;
+            this.BotonUpdateTipoStats.Click += new System.EventHandler(this.BotonUpdateTipoStats_Click);
+            // 
+            // BotonAddTipoStats
+            // 
+            this.BotonAddTipoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.agregar;
+            this.BotonAddTipoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonAddTipoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAddTipoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAddTipoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonAddTipoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonAddTipoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonAddTipoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonAddTipoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonAddTipoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonAddTipoStats.Location = new System.Drawing.Point(0, 0);
+            this.BotonAddTipoStats.Name = "BotonAddTipoStats";
+            this.BotonAddTipoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonAddTipoStats.TabIndex = 1;
+            this.BotonAddTipoStats.Click += new System.EventHandler(this.BotonAddTipoStats_Click);
+            // 
+            // PanelAggOpcionModoStats
+            // 
+            this.PanelAggOpcionModoStats.Controls.Add(this.PanelConfirmModoStats);
+            this.PanelAggOpcionModoStats.Controls.Add(this.PanelCUDModoStats);
+            this.PanelAggOpcionModoStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelAggOpcionModoStats.Location = new System.Drawing.Point(311, 234);
+            this.PanelAggOpcionModoStats.Name = "PanelAggOpcionModoStats";
+            this.PanelAggOpcionModoStats.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.PanelAggOpcionModoStats.Size = new System.Drawing.Size(148, 71);
+            this.PanelAggOpcionModoStats.TabIndex = 8;
+            // 
+            // PanelConfirmModoStats
+            // 
+            this.PanelConfirmModoStats.Controls.Add(this.BotonCancelModoStats);
+            this.PanelConfirmModoStats.Controls.Add(this.BotonConfirmarModoStats);
+            this.PanelConfirmModoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelConfirmModoStats.Location = new System.Drawing.Point(15, 47);
+            this.PanelConfirmModoStats.Name = "PanelConfirmModoStats";
+            this.PanelConfirmModoStats.Size = new System.Drawing.Size(133, 32);
+            this.PanelConfirmModoStats.TabIndex = 3;
+            // 
+            // PanelCUDModoStats
+            // 
+            this.PanelCUDModoStats.Controls.Add(this.BotonDeleteModoStats);
+            this.PanelCUDModoStats.Controls.Add(this.BotonUpdateModoStats);
+            this.PanelCUDModoStats.Controls.Add(this.BotonAddModoStats);
+            this.PanelCUDModoStats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCUDModoStats.Location = new System.Drawing.Point(15, 15);
+            this.PanelCUDModoStats.Name = "PanelCUDModoStats";
+            this.PanelCUDModoStats.Size = new System.Drawing.Size(133, 32);
+            this.PanelCUDModoStats.TabIndex = 2;
+            // 
+            // BotonDeleteModoStats
+            // 
+            this.BotonDeleteModoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_menos;
+            this.BotonDeleteModoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonDeleteModoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonDeleteModoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonDeleteModoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonDeleteModoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonDeleteModoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonDeleteModoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonDeleteModoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonDeleteModoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonDeleteModoStats.Location = new System.Drawing.Point(90, 0);
+            this.BotonDeleteModoStats.Name = "BotonDeleteModoStats";
+            this.BotonDeleteModoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonDeleteModoStats.TabIndex = 3;
+            // 
+            // BotonUpdateModoStats
+            // 
+            this.BotonUpdateModoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.lapiz;
+            this.BotonUpdateModoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonUpdateModoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonUpdateModoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonUpdateModoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonUpdateModoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonUpdateModoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonUpdateModoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonUpdateModoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonUpdateModoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonUpdateModoStats.Location = new System.Drawing.Point(45, 0);
+            this.BotonUpdateModoStats.Name = "BotonUpdateModoStats";
+            this.BotonUpdateModoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonUpdateModoStats.TabIndex = 2;
+            this.BotonUpdateModoStats.Click += new System.EventHandler(this.BotonUpdateModoStats_Click);
+            // 
+            // BotonAddModoStats
+            // 
+            this.BotonAddModoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.agregar;
+            this.BotonAddModoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonAddModoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAddModoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonAddModoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonAddModoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonAddModoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonAddModoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonAddModoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonAddModoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonAddModoStats.Location = new System.Drawing.Point(0, 0);
+            this.BotonAddModoStats.Name = "BotonAddModoStats";
+            this.BotonAddModoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonAddModoStats.TabIndex = 1;
+            this.BotonAddModoStats.Click += new System.EventHandler(this.BotonAddModoStats_Click);
+            // 
+            // TpOpciones
+            // 
+            this.TpOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
+            this.TpOpciones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TpOpciones.BackgroundImage")));
+            this.TpOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TpOpciones.Controls.Add(this.SwitchDescanso);
+            this.TpOpciones.Location = new System.Drawing.Point(4, 24);
+            this.TpOpciones.Name = "TpOpciones";
+            this.TpOpciones.Padding = new System.Windows.Forms.Padding(3);
+            this.TpOpciones.Size = new System.Drawing.Size(622, 392);
+            this.TpOpciones.TabIndex = 1;
+            this.TpOpciones.Text = "Opciones";
+            // 
+            // SwitchDescanso
+            // 
+            this.SwitchDescanso.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SwitchDescanso.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SwitchDescanso.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.SwitchDescanso.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.SwitchDescanso.Location = new System.Drawing.Point(95, 71);
+            this.SwitchDescanso.Name = "SwitchDescanso";
+            this.SwitchDescanso.Size = new System.Drawing.Size(50, 27);
+            this.SwitchDescanso.TabIndex = 0;
+            this.SwitchDescanso.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SwitchDescanso.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SwitchDescanso.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.SwitchDescanso.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.SwitchDescanso.Click += new System.EventHandler(this.SwitchDescanso_Click);
+            // 
+            // BordeForm
+            // 
+            this.BordeForm.AnimationInterval = 5;
+            this.BordeForm.BorderRadius = 10;
+            this.BordeForm.ContainerControl = this;
+            this.BordeForm.DockIndicatorColor = System.Drawing.Color.DarkRed;
+            this.BordeForm.DockIndicatorTransparencyValue = 1D;
+            this.BordeForm.DragStartTransparencyValue = 1D;
+            this.BordeForm.TransparentWhileDrag = true;
+            // 
+            // GunaMessageBox
+            // 
+            this.GunaMessageBox.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OKCancel;
+            this.GunaMessageBox.Caption = null;
+            this.GunaMessageBox.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.GunaMessageBox.Parent = this;
+            this.GunaMessageBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.GunaMessageBox.Text = null;
+            // 
+            // MoverBotones
+            // 
+            this.MoverBotones.Interval = 1;
+            this.MoverBotones.Tick += new System.EventHandler(this.MoverBotones_Tick);
+            // 
+            // GunaMessageBoxOK
+            // 
+            this.GunaMessageBoxOK.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.GunaMessageBoxOK.Caption = null;
+            this.GunaMessageBoxOK.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.GunaMessageBoxOK.Parent = this;
+            this.GunaMessageBoxOK.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.GunaMessageBoxOK.Text = null;
+            // 
+            // OpenFileArticulos
+            // 
+            this.OpenFileArticulos.Filter = "Imagenes PNG|*.png|Imagenes JPG|*.jpg|Imagenes JPEG|*.jpeg";
+            // 
+            // MoverBotonesArticulos
+            // 
+            this.MoverBotonesArticulos.Interval = 1;
+            this.MoverBotonesArticulos.Tick += new System.EventHandler(this.MoverBotonesArticulos_Tick);
+            // 
+            // CambiarColor
+            // 
+            this.CambiarColor.Enabled = true;
+            this.CambiarColor.Interval = 300;
+            this.CambiarColor.Tick += new System.EventHandler(this.CambiarColor_Tick);
+            // 
+            // BotonConfirmarTipoArticulo
+            // 
+            this.BotonConfirmarTipoArticulo.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.cheque;
+            this.BotonConfirmarTipoArticulo.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonConfirmarTipoArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonConfirmarTipoArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonConfirmarTipoArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonConfirmarTipoArticulo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonConfirmarTipoArticulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonConfirmarTipoArticulo.FillColor = System.Drawing.Color.Transparent;
+            this.BotonConfirmarTipoArticulo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonConfirmarTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.BotonConfirmarTipoArticulo.Location = new System.Drawing.Point(0, 0);
+            this.BotonConfirmarTipoArticulo.Name = "BotonConfirmarTipoArticulo";
+            this.BotonConfirmarTipoArticulo.Size = new System.Drawing.Size(45, 32);
+            this.BotonConfirmarTipoArticulo.TabIndex = 1;
+            this.BotonConfirmarTipoArticulo.Click += new System.EventHandler(this.BotonConfirmarTipoArticulo_Click);
+            // 
+            // BotonConfirmarTipoStats
+            // 
+            this.BotonConfirmarTipoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.cheque;
+            this.BotonConfirmarTipoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonConfirmarTipoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonConfirmarTipoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonConfirmarTipoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonConfirmarTipoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonConfirmarTipoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonConfirmarTipoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonConfirmarTipoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonConfirmarTipoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonConfirmarTipoStats.Location = new System.Drawing.Point(0, 0);
+            this.BotonConfirmarTipoStats.Name = "BotonConfirmarTipoStats";
+            this.BotonConfirmarTipoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonConfirmarTipoStats.TabIndex = 2;
+            this.BotonConfirmarTipoStats.Click += new System.EventHandler(this.BotonConfirmarTipoStats_Click);
+            // 
+            // BotonConfirmarModoStats
+            // 
+            this.BotonConfirmarModoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.cheque;
+            this.BotonConfirmarModoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonConfirmarModoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonConfirmarModoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonConfirmarModoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonConfirmarModoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonConfirmarModoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonConfirmarModoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonConfirmarModoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonConfirmarModoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonConfirmarModoStats.Location = new System.Drawing.Point(0, 0);
+            this.BotonConfirmarModoStats.Name = "BotonConfirmarModoStats";
+            this.BotonConfirmarModoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonConfirmarModoStats.TabIndex = 2;
+            this.BotonConfirmarModoStats.Click += new System.EventHandler(this.BotonConfirmarModoStats_Click);
+            // 
+            // BotonCancelTipoArticulo
+            // 
+            this.BotonCancelTipoArticulo.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_x;
+            this.BotonCancelTipoArticulo.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonCancelTipoArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonCancelTipoArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonCancelTipoArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonCancelTipoArticulo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonCancelTipoArticulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonCancelTipoArticulo.FillColor = System.Drawing.Color.Transparent;
+            this.BotonCancelTipoArticulo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonCancelTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.BotonCancelTipoArticulo.Location = new System.Drawing.Point(45, 0);
+            this.BotonCancelTipoArticulo.Name = "BotonCancelTipoArticulo";
+            this.BotonCancelTipoArticulo.Size = new System.Drawing.Size(45, 32);
+            this.BotonCancelTipoArticulo.TabIndex = 2;
+            this.BotonCancelTipoArticulo.Click += new System.EventHandler(this.BotonCancelTipoArticulo_Click);
+            // 
+            // BotonCancelTipoStats
+            // 
+            this.BotonCancelTipoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_x;
+            this.BotonCancelTipoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonCancelTipoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonCancelTipoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonCancelTipoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonCancelTipoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonCancelTipoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonCancelTipoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonCancelTipoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonCancelTipoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonCancelTipoStats.Location = new System.Drawing.Point(45, 0);
+            this.BotonCancelTipoStats.Name = "BotonCancelTipoStats";
+            this.BotonCancelTipoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonCancelTipoStats.TabIndex = 3;
+            this.BotonCancelTipoStats.Click += new System.EventHandler(this.BotonCancelTipoStats_Click);
+            // 
+            // BotonCancelModoStats
+            // 
+            this.BotonCancelModoStats.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_x;
+            this.BotonCancelModoStats.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.BotonCancelModoStats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BotonCancelModoStats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BotonCancelModoStats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BotonCancelModoStats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BotonCancelModoStats.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BotonCancelModoStats.FillColor = System.Drawing.Color.Transparent;
+            this.BotonCancelModoStats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BotonCancelModoStats.ForeColor = System.Drawing.Color.White;
+            this.BotonCancelModoStats.Location = new System.Drawing.Point(45, 0);
+            this.BotonCancelModoStats.Name = "BotonCancelModoStats";
+            this.BotonCancelModoStats.Size = new System.Drawing.Size(45, 32);
+            this.BotonCancelModoStats.TabIndex = 3;
+            this.BotonCancelModoStats.Click += new System.EventHandler(this.BotonCancelModoStats_Click);
+            // 
             // ModuloAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2710,7 +3506,7 @@ namespace AdventureVillageEstadisticas
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.TabControlAll);
-            this.Controls.Add(this.guna2VSeparator1);
+            this.Controls.Add(this.SeparadorMenuTab);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.PanelControl);
             this.DoubleBuffered = true;
@@ -2726,6 +3522,7 @@ namespace AdventureVillageEstadisticas
             this.PanelControl.ResumeLayout(false);
             this.PanelMenu.ResumeLayout(false);
             this.PanelOpciones.ResumeLayout(false);
+            this.PanelMenuDatos.ResumeLayout(false);
             this.PanelReportes.ResumeLayout(false);
             this.PanelArticulos.ResumeLayout(false);
             this.PanelUsuarios.ResumeLayout(false);
@@ -2757,13 +3554,27 @@ namespace AdventureVillageEstadisticas
             ((System.ComponentModel.ISupportInitialize)(this.DataGridArticulos)).EndInit();
             this.TpReportes.ResumeLayout(false);
             this.PanelAllReportes.ResumeLayout(false);
-            this.TpOpciones.ResumeLayout(false);
-            this.PanelTituloReporte.ResumeLayout(false);
             this.TablaPanelReportesGraficos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ChartIzq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDer)).EndInit();
             this.TablaFechasBusqueda.ResumeLayout(false);
             this.TablaPanelReportesTotales.ResumeLayout(false);
+            this.PanelTituloReporte.ResumeLayout(false);
+            this.TpAggNuevo.ResumeLayout(false);
+            this.TablaPanelAgregarTipos.ResumeLayout(false);
+            this.PanelAggTipoArticulo.ResumeLayout(false);
+            this.PanelAggTipoStats.ResumeLayout(false);
+            this.PanelAggModoStats.ResumeLayout(false);
+            this.PanelAggOpcionTiposArt.ResumeLayout(false);
+            this.PanelConfirmTipoArticulo.ResumeLayout(false);
+            this.PanelCUDTipoArticulo.ResumeLayout(false);
+            this.PanelAggOpcionTipoStats.ResumeLayout(false);
+            this.PanelConfirmTipoStats.ResumeLayout(false);
+            this.PanelCUDTipoStats.ResumeLayout(false);
+            this.PanelAggOpcionModoStats.ResumeLayout(false);
+            this.PanelConfirmModoStats.ResumeLayout(false);
+            this.PanelCUDModoStats.ResumeLayout(false);
+            this.TpOpciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2779,8 +3590,8 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2Separator SeparadorHome;
         private Guna.UI2.WinForms.Guna2Panel PanelInicio;
         private System.Windows.Forms.Timer AnimacionMenu;
-        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2VSeparator SeparadorMenuTab;
+        private Guna.UI2.WinForms.Guna2Separator SeparadorMenuSalir;
         private Guna.UI2.WinForms.Guna2Panel PanelSalida;
         private Guna.UI2.WinForms.Guna2TabControl TabControlAll;
         private System.Windows.Forms.TabPage TpHome;
@@ -2852,8 +3663,6 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2PictureBox ImagenLogoOpcionesArt;
         private Guna.UI2.WinForms.Guna2PictureBox ImagenLogoCArt;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridUsuarios;
-        private Guna.UI2.WinForms.Guna2Panel PanelOpciones;
-        private Guna.UI2.WinForms.Guna2GradientTileButton BotonOpciones;
         private Guna.UI2.WinForms.Guna2Panel PanelReportes;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonReportes;
         private System.Windows.Forms.TabPage TpReportes;
@@ -2874,14 +3683,14 @@ namespace AdventureVillageEstadisticas
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartDer;
         private System.Windows.Forms.TableLayoutPanel TablaFechasBusqueda;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelGraficIzqRango;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabLabelHastaGraficIzqel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelHastaGraficIzq;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelDeGraficIzq;
         private Guna.UI2.WinForms.Guna2DateTimePicker DatePickGrafDeIzq;
         private Guna.UI2.WinForms.Guna2DateTimePicker DatePickGrafHastaIzq;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxRangoIzq;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelGraficDerRango;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxOpcionDer;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private Guna.UI2.WinForms.Guna2Separator SeparadorReportes2;
         private System.Windows.Forms.TableLayoutPanel TablaPanelReportesTotales;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelCantTotalUsuarios;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelCantTotalArticulos;
@@ -2891,5 +3700,47 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2Separator SeparadorReportes;
         private Guna.UI2.WinForms.Guna2Panel PanelTituloReporte;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelTituloReportes;
+        private System.Windows.Forms.TabPage TpAggNuevo;
+        private System.Windows.Forms.TableLayoutPanel TablaPanelAgregarTipos;
+        private Guna.UI2.WinForms.Guna2Panel PanelAggTipoArticulo;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxTiposArticuloAgg;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelTiposArticuloAgg;
+        private Guna.UI2.WinForms.Guna2Panel PanelOpciones;
+        private Guna.UI2.WinForms.Guna2GradientTileButton BotonOpciones;
+        private Guna.UI2.WinForms.Guna2Panel PanelMenuDatos;
+        private Guna.UI2.WinForms.Guna2GradientTileButton BotonAggDatos;
+        private Guna.UI2.WinForms.Guna2Panel PanelAggTipoStats;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxTipoEstadisticaAgg;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelTipoEstadisticaAgg;
+        private Guna.UI2.WinForms.Guna2Panel PanelAggModoStats;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxAggModoStats;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelModoEstadisticaAgg;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxAggTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Panel PanelAggOpcionTiposArt;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxAggTipoStats;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxAggModoStats;
+        private Guna.UI2.WinForms.Guna2Panel PanelConfirmTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Panel PanelCUDTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Button BotonAddTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Panel PanelAggOpcionTipoStats;
+        private Guna.UI2.WinForms.Guna2Panel PanelConfirmTipoStats;
+        private Guna.UI2.WinForms.Guna2Panel PanelCUDTipoStats;
+        private Guna.UI2.WinForms.Guna2Panel PanelAggOpcionModoStats;
+        private Guna.UI2.WinForms.Guna2Panel PanelConfirmModoStats;
+        private Guna.UI2.WinForms.Guna2Panel PanelCUDModoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonDeleteTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Button BotonUpdateTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Button BotonDeleteTipoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonUpdateTipoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonAddTipoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonDeleteModoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonUpdateModoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonAddModoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonCancelTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Button BotonConfirmarTipoArticulo;
+        private Guna.UI2.WinForms.Guna2Button BotonCancelTipoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonConfirmarTipoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonCancelModoStats;
+        private Guna.UI2.WinForms.Guna2Button BotonConfirmarModoStats;
     }
 }

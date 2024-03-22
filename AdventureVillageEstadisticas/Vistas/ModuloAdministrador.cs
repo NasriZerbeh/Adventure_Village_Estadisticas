@@ -52,6 +52,13 @@ namespace AdventureVillageEstadisticas
             RellenarTotales();
             TabControlAll.SelectTab("TpReportes");
         }
+        private void BotonAggDatos_Click(object sender, EventArgs e)
+        {
+            if (MenuExtendido) MinimizarPanel();
+            RellenarItemsDatos();
+            DatosxDefecto();
+            TabControlAll.SelectTab("TpAggNuevo");
+        }
         private void BotonOpciones_Click(object sender, EventArgs e)
         {
             if (MenuExtendido) MinimizarPanel();
@@ -75,6 +82,7 @@ namespace AdventureVillageEstadisticas
             BotonUsuarios.Text = "";
             BotonArticulos.Text = "";
             BotonReportes.Text = "";
+            BotonAggDatos.Text = "";
             BotonOpciones.Text = "";
             BotonSalir.Text = "";
         }
@@ -89,6 +97,7 @@ namespace AdventureVillageEstadisticas
             BotonUsuarios.Text = BotonUsuarios.Tag.ToString();
             BotonArticulos.Text = BotonArticulos.Tag.ToString();
             BotonReportes.Text = BotonReportes.Tag.ToString();
+            BotonAggDatos.Text = BotonAggDatos.Tag.ToString();
             BotonOpciones.Text = BotonOpciones.Tag.ToString();
             BotonSalir.Text = BotonSalir.Tag.ToString();
         }
@@ -135,6 +144,8 @@ namespace AdventureVillageEstadisticas
         {
             PanelBotonesUser.Height = TabControlAll.Height;
             PanelFormUser.Height = TabControlAll.Height;
+            PanelOpcionesArticulos.Height = TabControlAll.Height;
+            PanelAjusteArticulos.Height = TabControlAll.Height;
         }
         private void PanelControl_MouseMove(object sender, MouseEventArgs e)
         {
@@ -812,7 +823,9 @@ namespace AdventureVillageEstadisticas
         }
 
         int r = 120, g = 120, b = 120;
+
         bool reversa = false;
+
         private void CambiarColor_Tick(object sender, EventArgs e)
         {
             if(!reversa)
@@ -868,13 +881,48 @@ namespace AdventureVillageEstadisticas
             ArrayList Rangos = new ArrayList();
             ArrayList Cantidad = new ArrayList();
 
-            RangoCantidad = Info.RangoUsuariosGraficoIzq(DatePickGrafDeIzq.Value.ToString("yyyy-MM-dd"), DatePickGrafHastaIzq.Value.ToString("yyyy-MM-dd"), ComboBoxRangoIzq.SelectedIndex);
+            RangoCantidad = Info.RangoUsuariosGraficoIzq(DatePickGrafDeIzq.Value.ToString("yyyy-MM-dd"), DatePickGrafHastaIzq.Value.ToString("yyyy-MM-dd"), ComboBoxRangoIzq.SelectedIndex, false);
             foreach (var Rang in RangoCantidad)
             {
                 Rangos.Add(Rang._Rango);
                 Cantidad.Add(Rang._Cantidad);
             }
             ChartIzq.Series[0].Points.DataBindXY(Rangos, Cantidad);
+
+            List<Modelos.ModeloRangoCantidad> RangoCantidad2 = new List<Modelos.ModeloRangoCantidad>();
+            ArrayList Rangos2 = new ArrayList();
+            ArrayList Cantidad2 = new ArrayList();
+
+            RangoCantidad2 = Info.RangoUsuariosGraficoIzq(DatePickGrafDeIzq.Value.ToString("yyyy-MM-dd"), DatePickGrafHastaIzq.Value.ToString("yyyy-MM-dd"), ComboBoxRangoIzq.SelectedIndex, true);
+            for(int i = 0; i < RangoCantidad.Count; i++)
+            {
+                string RangoCoincidido = "";
+                int CantidadCoincidida = 0;
+                bool Coincidio = false;
+
+                for (int j = 0; j < RangoCantidad2.Count; j++)
+                {
+                    if (RangoCantidad[i]._Rango == RangoCantidad2[j]._Rango)
+                    {
+                        RangoCoincidido = RangoCantidad2[j]._Rango;
+                        CantidadCoincidida = RangoCantidad2[j]._Cantidad;
+                        Coincidio = true;
+                        break;
+                    }
+                }
+                if (Coincidio)
+                {
+                    Rangos2.Add(RangoCoincidido);
+                    Cantidad2.Add(CantidadCoincidida);
+                }
+                else
+                {
+                    Rangos2.Add(RangoCantidad[i]._Rango);
+                    Cantidad2.Add(0);
+                }
+            }
+
+            ChartIzq.Series[1].Points.DataBindXY(Rangos2, Cantidad2);
         }
 
         private void RellenarGraficoDer()
@@ -900,7 +948,338 @@ namespace AdventureVillageEstadisticas
             LabelCantTotalArticulos.Text = Info.CantidadTotalDe(2).ToString();
         }
 
-        
+
+
+        #endregion
+
+        #endregion
+
+        #region Agregar, Modificar Datos
+
+        #region Botones
+
+        bool ModificarTipoArticulo = false;
+
+        private void BotonAddTipoArticulo_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoArticulo();
+            ModificarTipoArticulo = false;
+        }
+
+        private void BotonUpdateTipoArticulo_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoArticulo();
+            ModificarTipoArticulo = true;
+        }
+
+        private void BotonConfirmarTipoArticulo_Click(object sender, EventArgs e)
+        {
+            if(TextBoxAggTipoArticulo.Text.Length >= 3 && TextBoxAggTipoArticulo.Text.Length <= 10)
+            {
+                ModeloTipoArticulo NewTipo = new ModeloTipoArticulo();
+                ControladorAdmin Info = new ControladorAdmin();
+                if (!ModificarTipoArticulo)
+                {
+                    bool Coincidir = false;
+                    List<ModeloTipoArticulo> Comprobar = Info.TiposArticulo();
+                    
+                    NewTipo._idTipo_Articulo = "TIPO_" + TextBoxAggTipoArticulo.Text.ToUpper();
+                    NewTipo._Nombre_Tipo = TextBoxAggTipoArticulo.Text;
+                    foreach (var Coincidencia in Comprobar)
+                    {
+                        if (NewTipo._idTipo_Articulo == Coincidencia._idTipo_Articulo.ToUpper())
+                        {
+                            Coincidir = true;
+                            break;
+                        }
+                    }
+                    if (!Coincidir)
+                    {
+                        Info.AgregarModificarTipoArticulo(NewTipo, ModificarTipoArticulo);
+                        GunaMessageBoxOK.Show("Registrado exitosamente.", "Información");
+                        RellenarItemsDatos();
+                        CambioPanelTipoArticulo();
+                    }
+                    else
+                    {
+                        GunaMessageBoxOK.Show("Ya existe existe ese tipo.", "Información");
+                    }
+                }
+                else
+                {
+                    List<ModeloTipoArticulo> Comprobar = Info.TiposArticulo();
+                    foreach(var Coincidencia in Comprobar)
+                    {
+                        if(ComboBoxTiposArticuloAgg.Text == Coincidencia._Nombre_Tipo)
+                        {
+                            DialogResult Respuesta = GunaMessageBox.Show("¿Seguro quieres cambiar " + ComboBoxTiposArticuloAgg.Text + " por " + TextBoxAggTipoArticulo.Text + "?", "¡Alerta!");
+                            if(Respuesta == DialogResult.Yes)
+                            {
+                                NewTipo._idTipo_Articulo = Coincidencia._idTipo_Articulo;
+                                NewTipo._Nombre_Tipo = TextBoxAggTipoArticulo.Text;
+                                Info.AgregarModificarTipoArticulo(NewTipo, ModificarTipoArticulo);
+                                RellenarItemsDatos();
+                                CambioPanelTipoArticulo();
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void BotonCancelTipoArticulo_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoArticulo();
+        }
+
+        bool ModificarTipoStats = false;
+
+        private void BotonAddTipoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoStats();
+            ModificarTipoStats = false;
+        }
+
+        private void BotonUpdateTipoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoStats();
+            ModificarTipoStats = true;
+        }
+
+        private void BotonConfirmarTipoStats_Click(object sender, EventArgs e)
+        {
+            if (TextBoxAggTipoStats.Text.Length >= 2 && TextBoxAggTipoStats.Text.Length <= 5)
+            {
+                ModeloTipoStats NewTipo = new ModeloTipoStats();
+                ControladorAdmin Info = new ControladorAdmin();
+                if (!ModificarTipoStats)
+                {
+                    bool Coincidir = false;
+                    List<ModeloTipoStats> Comprobar = Info.TipoStats();
+
+                    NewTipo._idTipo_Stats = "TIPO_" + TextBoxAggTipoStats.Text.ToUpper();
+                    NewTipo._Nombre_TipoS = TextBoxAggTipoStats.Text;
+                    foreach (var Coincidencia in Comprobar)
+                    {
+                        if (NewTipo._idTipo_Stats == Coincidencia._idTipo_Stats.ToUpper())
+                        {
+                            Coincidir = true;
+                            break;
+                        }
+                    }
+                    if (!Coincidir)
+                    {
+                        Info.AgregarModificarTipoStats(NewTipo, ModificarTipoStats);
+                        GunaMessageBoxOK.Show("Registrado exitosamente.", "Información");
+                        RellenarItemsDatos();
+                        CambioPanelTipoStats();
+                    }
+                    else
+                    {
+                        GunaMessageBoxOK.Show("Ya existe existe ese tipo.", "Información");
+                    }
+                }
+                else
+                {
+                    List<ModeloTipoStats> Comprobar = Info.TipoStats();
+                    foreach (var Coincidencia in Comprobar)
+                    {
+                        if (ComboBoxTipoEstadisticaAgg.Text == Coincidencia._Nombre_TipoS)
+                        {
+                            DialogResult Respuesta = GunaMessageBox.Show("¿Seguro quieres cambiar " + ComboBoxTipoEstadisticaAgg.Text + " por " + TextBoxAggTipoStats.Text + "?", "¡Alerta!");
+                            if (Respuesta == DialogResult.Yes)
+                            {
+                                NewTipo._idTipo_Stats = Coincidencia._idTipo_Stats;
+                                NewTipo._Nombre_TipoS = TextBoxAggTipoStats.Text;
+                                Info.AgregarModificarTipoStats(NewTipo, ModificarTipoStats);
+                                RellenarItemsDatos();
+                                CambioPanelTipoStats();
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void BotonCancelTipoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoStats();
+        }
+
+        bool ModificarModoStats = false;
+
+        private void BotonAddModoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelModoStats();
+            ModificarModoStats = false;
+        }
+
+        private void BotonUpdateModoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelModoStats();
+            ModificarModoStats = true;
+        }
+
+        private void BotonConfirmarModoStats_Click(object sender, EventArgs e)
+        {
+            if (TextBoxAggModoStats.Text.Length >= 1 && TextBoxAggModoStats.Text.Length <= 4)
+            {
+                ModeloModoStats NewModo = new ModeloModoStats();
+                ControladorAdmin Info = new ControladorAdmin();
+                if (!ModificarModoStats)
+                {
+                    bool Coincidir = false;
+                    List<ModeloModoStats> Comprobar = Info.ModoStats();
+
+                    NewModo._idModo_Stats = "MODO_" + TextBoxAggModoStats.Text.ToUpper();
+                    NewModo._Modo_Stats = TextBoxAggModoStats.Text;
+                    foreach (var Coincidencia in Comprobar)
+                    {
+                        if (NewModo._idModo_Stats == Coincidencia._idModo_Stats.ToUpper())
+                        {
+                            Coincidir = true;
+                            break;
+                        }
+                    }
+                    if (!Coincidir)
+                    {
+                        Info.AgregarModificarModoStats(NewModo, ModificarModoStats);
+                        GunaMessageBoxOK.Show("Registrado exitosamente.", "Información");
+                        RellenarItemsDatos();
+                        CambioPanelModoStats();
+                    }
+                    else
+                    {
+                        GunaMessageBoxOK.Show("Ya existe existe ese Modo.", "Información");
+                    }
+                }
+                else
+                {
+                    List<ModeloModoStats> Comprobar = Info.ModoStats();
+                    foreach (var Coincidencia in Comprobar)
+                    {
+                        if (ComboBoxAggModoStats.Text == Coincidencia._Modo_Stats)
+                        {
+                            DialogResult Respuesta = GunaMessageBox.Show("¿Seguro quieres cambiar " + ComboBoxAggModoStats.Text + " por " + TextBoxAggModoStats.Text + "?", "¡Alerta!");
+                            if (Respuesta == DialogResult.Yes)
+                            {
+                                NewModo._idModo_Stats = Coincidencia._idModo_Stats;
+                                NewModo._Modo_Stats = TextBoxAggModoStats.Text;
+                                Info.AgregarModificarModoStats(NewModo, ModificarModoStats);
+                                RellenarItemsDatos();
+                                CambioPanelModoStats();
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void BotonCancelModoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelModoStats();
+        }
+
+        #endregion
+
+        #region Funciones
+
+        private void RellenarItemsDatos()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            List<ModeloTipoArticulo> TiposArticulo = Info.TiposArticulo();
+            List<ModeloTipoStats> TiposStats = Info.TipoStats();
+            List<ModeloModoStats> ModoStats = Info.ModoStats();
+            ComboBoxTiposArticuloAgg.Items.Clear();
+            ComboBoxTipoEstadisticaAgg.Items.Clear();
+            ComboBoxAggModoStats.Items.Clear();
+
+            foreach(var Agg in TiposArticulo)
+            {
+                ComboBoxTiposArticuloAgg.Items.Add(Agg._Nombre_Tipo);
+            }
+            foreach (var Agg in TiposStats)
+            {
+                ComboBoxTipoEstadisticaAgg.Items.Add(Agg._Nombre_TipoS);
+            }
+            foreach (var Agg in ModoStats)
+            {
+                ComboBoxAggModoStats.Items.Add(Agg._Modo_Stats);
+            }
+            ComboBoxTiposArticuloAgg.SelectedIndex = 0;
+            ComboBoxTipoEstadisticaAgg.SelectedIndex = 0;
+            ComboBoxAggModoStats.SelectedIndex = 0;
+        }
+
+        private void CambioPanelTipoArticulo()
+        {
+            if(ComboBoxTiposArticuloAgg.Visible == false)
+            {
+                ComboBoxTiposArticuloAgg.Visible = true;
+                PanelCUDTipoArticulo.Visible = true;
+                TextBoxAggTipoArticulo.Visible = false;
+                PanelConfirmTipoArticulo.Visible = false;
+            }
+            else
+            {
+                ComboBoxTiposArticuloAgg.Visible = false;
+                PanelCUDTipoArticulo.Visible = false;
+                TextBoxAggTipoArticulo.Text = string.Empty;
+                TextBoxAggTipoArticulo.Visible = true;
+                PanelConfirmTipoArticulo.Visible = true;
+            }
+        }
+
+        private void CambioPanelTipoStats()
+        {
+            if (ComboBoxTipoEstadisticaAgg.Visible == false)
+            {
+                ComboBoxTipoEstadisticaAgg.Visible = true;
+                PanelCUDTipoStats.Visible = true;
+                TextBoxAggTipoStats.Visible = false;
+                PanelConfirmTipoStats.Visible = false;
+            }
+            else
+            {
+                ComboBoxTipoEstadisticaAgg.Visible = false;
+                PanelCUDTipoStats.Visible = false;
+                TextBoxAggTipoStats.Text = string.Empty;
+                TextBoxAggTipoStats.Visible = true;
+                PanelConfirmTipoStats.Visible = true;
+            }
+        }
+
+        private void CambioPanelModoStats()
+        {
+            if (ComboBoxAggModoStats.Visible == false)
+            {
+                ComboBoxAggModoStats.Visible = true;
+                PanelCUDModoStats.Visible = true;
+                TextBoxAggModoStats.Visible = false;
+                PanelConfirmModoStats.Visible = false;
+            }
+            else
+            {
+                ComboBoxAggModoStats.Visible = false;
+                PanelCUDModoStats.Visible = false;
+                TextBoxAggModoStats.Text = string.Empty;
+                TextBoxAggModoStats.Visible = true;
+                PanelConfirmModoStats.Visible = true;
+            }
+        }
+
+        private void DatosxDefecto()
+        {
+            ComboBoxTiposArticuloAgg.Visible = false;
+            ComboBoxTipoEstadisticaAgg.Visible = false;
+            ComboBoxAggModoStats.Visible = false;
+            CambioPanelTipoArticulo();
+            CambioPanelTipoStats();
+            CambioPanelModoStats();
+        }
 
         #endregion
 

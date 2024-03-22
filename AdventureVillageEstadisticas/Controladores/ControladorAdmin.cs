@@ -175,7 +175,7 @@ namespace AdventureVillageEstadisticas
             return ListaArticulos;
         }
 
-        public List<Modelos.ModeloRangoCantidad> RangoUsuariosGraficoIzq(string Desde, string Hasta, int Rango)
+        public List<Modelos.ModeloRangoCantidad> RangoUsuariosGraficoIzq(string Desde, string Hasta, int Rango, bool Activos)
         {
             List<Modelos.ModeloRangoCantidad> Listado = new List<Modelos.ModeloRangoCantidad>();
 
@@ -184,20 +184,35 @@ namespace AdventureVillageEstadisticas
             try
             {
                 string query = string.Empty;
-                if (Rango == 0)
+                if (Rango == 0 && !Activos)
                 {
                     query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y-%m-%d') AS Fecha " +
                     "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta GROUP BY Fecha ORDER BY Fecha;";
                 }
-                if (Rango == 1)
+                if (Rango == 0 && Activos)
+                {
+                    query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y-%m-%d') AS Fecha " +
+                    "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta AND Activo = TRUE GROUP BY Fecha ORDER BY Fecha;";
+                }
+                if (Rango == 1 && !Activos)
                 {
                     query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y-%m') AS Fecha " +
                     "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta GROUP BY Fecha ORDER BY Fecha;";
                 }
-                if (Rango == 2)
+                if (Rango == 1 && Activos)
+                {
+                    query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y-%m') AS Fecha " +
+                    "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta AND Activo = TRUE GROUP BY Fecha ORDER BY Fecha;";
+                }
+                if (Rango == 2 && !Activos)
                 {
                     query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y') AS Fecha " +
                     "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta GROUP BY Fecha ORDER BY Fecha;";
+                }
+                if (Rango == 2 && Activos)
+                {
+                    query = "SELECT COUNT(idUsuario) AS Cantidad, DATE_FORMAT(Fecha_Registro, '%Y') AS Fecha " +
+                    "FROM Usuario WHERE Fecha_Registro BETWEEN @FechaDesde AND @FechaHasta AND Activo = TRUE GROUP BY Fecha ORDER BY Fecha;";
                 }
 
                 MySqlConnection Conectar = EstablecerConexion();
@@ -284,6 +299,108 @@ namespace AdventureVillageEstadisticas
         #endregion
 
         #region Funciones
+
+        public void AgregarModificarTipoArticulo(ModeloTipoArticulo NewTipo, bool Modificar)
+        {
+            try
+            {
+                MySqlConnection Conectar = EstablecerConexion();
+                string Query;
+
+                if (!Modificar)
+                {
+                    Query = "INSERT INTO tipo_articulo (idTipo, Nombre_Tipo) " +
+                            "VALUES(@idTipo, @Tipo);";
+                    ConfirmarQueryTipoArticulo(Query, Conectar, NewTipo);
+                }
+                else
+                {
+                    Query = "UPDATE tipo_articulo SET Nombre_Tipo = @Tipo " +
+                        "WHERE idTipo = @idTipo";
+                    ConfirmarQueryTipoArticulo(Query, Conectar, NewTipo);
+                }
+            }
+            catch { }
+        }
+
+        private void ConfirmarQueryTipoArticulo(string Query, MySqlConnection Conectar, ModeloTipoArticulo NewTipo)
+        {
+            using (MySqlCommand cmds = new MySqlCommand(Query, Conectar))
+            {
+                cmds.Parameters.AddWithValue("@idTipo", NewTipo._idTipo_Articulo);
+                cmds.Parameters.AddWithValue("@Tipo", NewTipo._Nombre_Tipo);
+                cmds.ExecuteNonQuery();
+                Conectar.Close();
+            }
+        }
+
+        public void AgregarModificarTipoStats(ModeloTipoStats NewTipo, bool Modificar)
+        {
+            try
+            {
+                MySqlConnection Conectar = EstablecerConexion();
+                string Query;
+
+                if (!Modificar)
+                {
+                    Query = "INSERT INTO tipo_stats (idTipo_Stats, NombreStat) " +
+                            "VALUES(@idTipo, @Tipo);";
+                    ConfirmarQueryTipoStats(Query, Conectar, NewTipo);
+                }
+                else
+                {
+                    Query = "UPDATE tipo_stats SET NombreStat = @Tipo " +
+                        "WHERE idTipo_Stats = @idTipo";
+                    ConfirmarQueryTipoStats(Query, Conectar, NewTipo);
+                }
+            }
+            catch { }
+        }
+
+        private void ConfirmarQueryTipoStats(string Query, MySqlConnection Conectar, ModeloTipoStats NewTipo)
+        {
+            using (MySqlCommand cmds = new MySqlCommand(Query, Conectar))
+            {
+                cmds.Parameters.AddWithValue("@idTipo", NewTipo._idTipo_Stats);
+                cmds.Parameters.AddWithValue("@Tipo", NewTipo._Nombre_TipoS);
+                cmds.ExecuteNonQuery();
+                Conectar.Close();
+            }
+        }
+
+        public void AgregarModificarModoStats(ModeloModoStats NewModo, bool Modificar)
+        {
+            try
+            {
+                MySqlConnection Conectar = EstablecerConexion();
+                string Query;
+
+                if (!Modificar)
+                {
+                    Query = "INSERT INTO modo_stats (idModo_Stats, ModoStats) " +
+                            "VALUES(@idModo, @Modo);";
+                    ConfirmarQueryModoStats(Query, Conectar, NewModo);
+                }
+                else
+                {
+                    Query = "UPDATE modo_stats SET ModoStats = @Modo " +
+                        "WHERE idModo_Stats = @idModo";
+                    ConfirmarQueryModoStats(Query, Conectar, NewModo);
+                }
+            }
+            catch { }
+        }
+
+        private void ConfirmarQueryModoStats(string Query, MySqlConnection Conectar, ModeloModoStats NewModo)
+        {
+            using (MySqlCommand cmds = new MySqlCommand(Query, Conectar))
+            {
+                cmds.Parameters.AddWithValue("@idModo", NewModo._idModo_Stats);
+                cmds.Parameters.AddWithValue("@Modo", NewModo._Modo_Stats);
+                cmds.ExecuteNonQuery();
+                Conectar.Close();
+            }
+        }
 
         public void AgregarModificarUsuario(ModeloUsuario NewUser, bool Nuevo)
         {
