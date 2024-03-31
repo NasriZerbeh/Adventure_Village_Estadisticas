@@ -65,7 +65,7 @@ namespace AdventureVillageEstadisticas.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _3d__1_ {
             get {
-                object obj = ResourceManager.GetObject("_3d__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("_3d_(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +163,26 @@ namespace AdventureVillageEstadisticas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editar {
+            get {
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap error {
+            get {
+                object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap galeria_de_imagenes {
             get {
                 object obj = ResourceManager.GetObject("galeria_de_imagenes", resourceCulture);
@@ -251,6 +271,47 @@ namespace AdventureVillageEstadisticas.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo_modified {
+            get {
+                object obj = ResourceManager.GetObject("ojo_modified", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///
+        ///&lt;html lang=&quot;es&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///    &lt;title&gt;Reporte Articulos&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        * {
+        ///            font-family: Cambria, Cochin, Georgia, Times, &apos;Times New Roman&apos;, serif;
+        ///        }
+        ///
+        ///        table {
+        ///            text-align: center;
+        ///        }
+        ///
+        ///        .articulos td {
+        ///            border: 1px solid black;
+        ///            height: 5%;
+        ///        }
+        ///
+        ///        .articulos th {
+        ///            border: 1px solid black;
+        ///            [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string ReporteArticulo {
+            get {
+                return ResourceManager.GetString("ReporteArticulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///
         ///&lt;html lang=&quot;es&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
@@ -278,6 +339,16 @@ namespace AdventureVillageEstadisticas.Properties {
         internal static string ReportesPagina {
             get {
                 return ResourceManager.GetString("ReportesPagina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario {
+            get {
+                object obj = ResourceManager.GetObject("usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

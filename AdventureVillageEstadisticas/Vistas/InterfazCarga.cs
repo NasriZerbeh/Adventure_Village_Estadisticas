@@ -33,6 +33,7 @@ namespace AdventureVillageEstadisticas
             LabelBienvenida.Text = "Bienvenido/a";
             LabelRol.Text = rol;
             LabelNombre.Text = user;
+            Usuario = user;
             LabelWait.Text = "Por favor espere un momento...";
             IconoPlay.Visible = false;
             if (rol == "Administrador") Permisos = true;
@@ -54,12 +55,15 @@ namespace AdventureVillageEstadisticas
         #region Eventos Adicionales
 
         private bool Permisos = false;
+        private string Usuario = "";
 
         private void TerminarCarga_Tick(object sender, EventArgs e)
         {
-            if(Permisos)
+            if (Permisos)
             {
                 ModuloAdministrador Admin = new ModuloAdministrador();
+                Admin.NombreUsuario = Usuario;
+                Admin.BotonPerfil.Text = Usuario;
                 Admin.Show();
                 this.Close();
             }

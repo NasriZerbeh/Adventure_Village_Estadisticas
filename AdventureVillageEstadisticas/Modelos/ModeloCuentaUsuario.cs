@@ -45,6 +45,20 @@ namespace AdventureVillageEstadisticas
             TiempoJugado_Mins = 0;
         }
 
+        public ModeloCuentaUsuario(string Nuevo)
+        {
+            idUsuario = Nuevo;
+            EspacioInv = 30;
+            Ataque = 10;
+            Defensa = 12;
+            Vida = 140;
+            VidaMax = 140;
+            Monedas = 100;
+            Experiencia = 0;
+            Energia = 100;
+            TiempoJugado_Mins = 0;
+        }
+
         public ModeloCuentaUsuario(string idUsuario_, int EspInv, int ATK, int DEF, int HP, int HPMax, int Money, int EXP, int Energy, int Play)
         {
             idUsuario = idUsuario_;

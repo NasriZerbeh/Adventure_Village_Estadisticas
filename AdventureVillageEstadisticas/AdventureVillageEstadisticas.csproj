@@ -129,13 +129,15 @@
     <Compile Include="Conexiones\ConexionBD.cs" />
     <Compile Include="Controladores\ControladorAdmin.cs" />
     <Compile Include="Controladores\ControladorUser.cs" />
-    <Compile Include="Controladores\Reportes.cs" />
+    <Compile Include="Modelos\ModeloRegistroActividad.cs" />
+    <Compile Include="Reportes y Validaciones\Reportes.cs" />
     <Compile Include="Modelos\ModeloArticulos.cs" />
     <Compile Include="Modelos\ModeloCuentaUsuario.cs" />
     <Compile Include="Modelos\ModeloModoStats.cs" />
     <Compile Include="Modelos\ModeloRangoCantidad.cs" />
     <Compile Include="Modelos\ModeloTipoStats.cs" />
     <Compile Include="Modelos\ModeloTipoArticulo.cs" />
+    <Compile Include="Reportes y Validaciones\Validaciones.cs" />
     <Compile Include="Vistas\ModuloUusario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,7 +209,24 @@
     <Folder Include="ImagenesOpenFile\Articulos\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PlantillasHTMLReportes\ReporteArticulo.html" />
     <Content Include="PlantillasHTMLReportes\ReportesPagina.html" />
+    <None Include="Resources\editar-modified.png" />
+    <None Include="Resources\lupa-modified.png" />
+    <None Include="Resources\deshacer-modified.png" />
+    <None Include="Resources\limpieza-de-datos-modified.png" />
+    <None Include="Resources\disquete-modified.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\ojo-modified.png" />
+    <None Include="Resources\menu-modified.png" />
+    <None Include="Resources\ajustes-de-engranajes-modified.png" />
+    <None Include="Resources\3d %281%29-modified.png" />
+    <None Include="Resources\boton-mas-modified.png" />
+    <None Include="Resources\hogar-modified.png" />
+    <None Include="Resources\informe-de-ganancias-modified.png" />
+    <None Include="Resources\usuario-de-perfil-modified.png" />
+    <None Include="Resources\cerrar-sesion-modified.png" />
+    <None Include="Resources\usuario-modified.png" />
     <None Include="Resources\agregar.png" />
     <None Include="Resources\lapiz.png" />
     <None Include="Resources\boton-menos.png" />
