@@ -90,7 +90,7 @@ namespace AdventureVillageEstadisticas
             BotonRegistro.BorderThickness = 3;
             if (MenuExtendido) MinimizarPanel();
             ControladorAdmin Info = new ControladorAdmin();
-            RellenarRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ""));
+            RellenarRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroMovimientos.SelectedIndex, ComboBoxFiltroOrdenRegistro.Text));
             TabControlAll.SelectTab("TpRegistroActividad");
         }
         private void BotonOpciones_Click(object sender, EventArgs e)
@@ -104,6 +104,8 @@ namespace AdventureVillageEstadisticas
         {
             QuitarBordes();
             BotonPerfil.BorderThickness = 3;
+            if (MenuExtendido) MinimizarPanel();
+            TabControlAll.SelectTab("TpPerfil");
         }
         private void BotonSalir_Click(object sender, EventArgs e)
         {
@@ -1578,7 +1580,7 @@ namespace AdventureVillageEstadisticas
         private void BotonBuscarFiltroRegistro_Click(object sender, EventArgs e)
         {
             ControladorAdmin Info = new ControladorAdmin();
-            RellenarRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ""));
+            RellenarRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroMovimientos.SelectedIndex, ComboBoxFiltroOrdenRegistro.Text));
         }
 
         private void LimpiarFiltrosRegistros()
@@ -1587,6 +1589,7 @@ namespace AdventureVillageEstadisticas
             TextBoxFiltroUsuarioRegistro.Text = "";
             DatePickFiltroDesdeRegistro.Value = Convert.ToDateTime("2024-01-01");
             DatePickFiltroHastaRegistro.Value = DateTime.Now;
+            ComboBoxFiltroMovimientos.SelectedIndex = 0;
         }
 
         private void RellenarRegistros(List<Modelos.ModeloRegistroActividad> Filtro)
@@ -1596,6 +1599,28 @@ namespace AdventureVillageEstadisticas
             {
                 DataGridRegistrosActividad.Rows.Add(Registros._idRegistro, Registros._idUsuario, Registros._Descripcion, Registros._FechaRegistro.ToString());
             }
+        }
+
+        private void GenerarReporteRegistros(List<Modelos.ModeloRegistroActividad> ListaRegistros, string Filtro)
+        {
+            SaveFileDialog Guardar = new SaveFileDialog();
+            Guardar.FileName = "ReporteRegistros_" + DateTime.Now.ToString("dd-MM-yyyy") + ".pdf";
+            Guardar.Filter = "Documento PDF|*.pdf";
+            if (Guardar.ShowDialog() == DialogResult.OK)
+            {
+                Controladores.Reportes Reporte = new Controladores.Reportes();
+                Reporte.ReporteRegistros(Guardar.FileName, ListaRegistros, Filtro);
+                Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(NombreUsuario, "Ha Exportado el reporte de Registros");
+                ControladorAdmin GuardarInfo = new ControladorAdmin();
+                GuardarInfo.AñadirBitacora(Bitacora);
+                GunaMessageBoxOK.Show("Reporte exportado exitosamente.", "Información.");
+            }
+        }
+
+        private void BotonReporteFiltroRegistro_Click(object sender, EventArgs e)
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            GenerarReporteRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroMovimientos.SelectedIndex, ComboBoxFiltroOrdenRegistro.Text), ComboBoxFiltroOrdenRegistro.Text);
         }
 
         #endregion

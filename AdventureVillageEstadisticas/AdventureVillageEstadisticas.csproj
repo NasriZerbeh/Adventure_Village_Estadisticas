@@ -128,6 +128,7 @@
     <Compile Include="Controladores\ControladorLogin.cs" />
     <Compile Include="Conexiones\ConexionBD.cs" />
     <Compile Include="Controladores\ControladorAdmin.cs" />
+    <Compile Include="Controladores\ControladorRegistro.cs" />
     <Compile Include="Controladores\ControladorUser.cs" />
     <Compile Include="Modelos\ModeloRegistroActividad.cs" />
     <Compile Include="Reportes y Validaciones\Reportes.cs" />
@@ -138,6 +139,12 @@
     <Compile Include="Modelos\ModeloTipoStats.cs" />
     <Compile Include="Modelos\ModeloTipoArticulo.cs" />
     <Compile Include="Reportes y Validaciones\Validaciones.cs" />
+    <Compile Include="Vistas\Registrarse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Registrarse.Designer.cs">
+      <DependentUpon>Registrarse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ModuloUusario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +173,9 @@
     <Compile Include="Modelos\ModeloUsuario.cs" />
     <Compile Include="Conexiones\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\Registrarse.resx">
+      <DependentUpon>Registrarse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ModuloUusario.resx">
       <DependentUpon>ModuloUusario.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,8 +219,31 @@
     <Folder Include="ImagenesOpenFile\Articulos\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PlantillasHTMLReportes\ReporteRegistros.html" />
     <Content Include="PlantillasHTMLReportes\ReporteArticulo.html" />
     <Content Include="PlantillasHTMLReportes\ReportesPagina.html" />
+    <None Include="Resources\juego.png" />
+    <None Include="Resources\proteger.png" />
+    <None Include="Resources\cajas.png" />
+    <None Include="Resources\reloj.png" />
+    <None Include="Resources\dolar.png" />
+    <None Include="Resources\encendiendo.png" />
+    <None Include="Resources\Character_Down.png" />
+    <None Include="Resources\fondo-textura-grunge-oscuro-aranazos-manchas.jpg" />
+    <None Include="Resources\dark-grey-background-texture-241613736548.jpg" />
+    <None Include="Resources\video-games-night-pixel-art-retro-games-16-bit-Christmas-8-bit-christmas-lights-Shovel-Knight-midnight-darkness-screenshot-christmas-decoration-62088.png" />
+    <None Include="Resources\pokemon-video-games-pixel-art-pixels-1361971-wallhere.com.jpg" />
+    <None Include="Resources\0c967c4af27aa805391e3be495936acd.jpg" />
+    <None Include="Resources\a4516e46608888899b95c609d4c44035.jpg" />
+    <None Include="Resources\ac99126905531d943b10fcb6b16060f1.jpg" />
+    <None Include="Resources\4025e135470ade059a7c4de3dd2a40c7.jpg" />
+    <None Include="Resources\d196ed18b3cf583a34cce1c81defa253.jpg" />
+    <None Include="Resources\Fondo_Hojas_Negras.jpeg" />
+    <None Include="Resources\correo-modified.png" />
+    <None Include="Resources\iniciar-sesion.png" />
+    <None Include="Resources\acceso.png" />
+    <None Include="Resources\candado-abierto %281%29-modified.png" />
+    <None Include="Resources\galeria-de-imagenes-modified.png" />
     <None Include="Resources\editar-modified.png" />
     <None Include="Resources\lupa-modified.png" />
     <None Include="Resources\deshacer-modified.png" />

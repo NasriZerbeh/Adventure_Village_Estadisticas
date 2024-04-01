@@ -60,6 +60,9 @@ namespace AdventureVillageEstadisticas
                 {
                     UsuarioIngresado[0] = Lectura["Rol"].ToString();
                     UsuarioIngresado[1] = Lectura["idUsuario"].ToString();
+                    Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(UsuarioIngresado[1], "Ha iniciado sesión.");
+                    ControladorAdmin GuardarBitacora = new ControladorAdmin();
+                    GuardarBitacora.AñadirBitacora(Bitacora);
                 }
                 return UsuarioIngresado;
             }

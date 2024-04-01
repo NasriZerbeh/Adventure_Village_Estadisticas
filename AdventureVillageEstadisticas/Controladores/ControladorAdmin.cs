@@ -213,7 +213,7 @@ namespace AdventureVillageEstadisticas
             return ListaUsuarios;
         }
 
-        public List<Modelos.ModeloRegistroActividad> FiltroRegistros(string idRegistro, string idUsuario, string Desde, string Hasta, string Orden)
+        public List<Modelos.ModeloRegistroActividad> FiltroRegistros(string idRegistro, string idUsuario, string Desde, string Hasta, int Cantidad, string Orden)
         {
             List<Modelos.ModeloRegistroActividad> ListaRegistros = new List<Modelos.ModeloRegistroActividad>();
 
@@ -223,10 +223,11 @@ namespace AdventureVillageEstadisticas
                 idUsuario += "%";
                 Desde += " 00:00:00";
                 Hasta += " 23:59:59";
+                Orden = "id" + Orden;
 
-                string query = "SELECT * FROM registro_actividad WHERE " +
+                string query = "SELECT LPAD(idRegistro, 6, '0') AS idRegistro, idUsuario, Descripcion, Fecha_Actividad FROM registro_actividad WHERE " +
                                 "idRegistro LIKE @idRegistro AND idUsuario LIKE @idUsuario AND " +
-                                "Fecha_Actividad BETWEEN @Desde AND @Hasta;";
+                                "Fecha_Actividad BETWEEN @Desde AND @Hasta ORDER BY " + Orden;
 
                 MySqlConnection Conectar = EstablecerConexion();
                 MySqlCommand ComandoSQL = new MySqlCommand(query, Conectar);
@@ -250,7 +251,41 @@ namespace AdventureVillageEstadisticas
                 Conectar.Close();
             }
             catch { }
-            return ListaRegistros;
+
+            int CantidadDevuelta = 0;
+            List<Modelos.ModeloRegistroActividad> ListaRegistrosDef = new List<Modelos.ModeloRegistroActividad>();
+
+            switch (Cantidad)
+            {
+                case 0:
+                    CantidadDevuelta = ListaRegistros.Count;
+                    break;
+                case 1:
+                    if (ListaRegistros.Count >= 10) CantidadDevuelta = 10;
+                    else CantidadDevuelta = ListaRegistros.Count;
+                    break;
+                case 2:
+                    if (ListaRegistros.Count >= 25) CantidadDevuelta = 25;
+                    else CantidadDevuelta = ListaRegistros.Count;
+                    break;
+                case 3:
+                    if (ListaRegistros.Count >= 50) CantidadDevuelta = 50;
+                    else CantidadDevuelta = ListaRegistros.Count;
+                    break;
+                case 4:
+                    if (ListaRegistros.Count >= 75) CantidadDevuelta = 75;
+                    else CantidadDevuelta = ListaRegistros.Count;
+                    break;
+                case 5:
+                    if (ListaRegistros.Count >= 100) CantidadDevuelta = 100;
+                    else CantidadDevuelta = ListaRegistros.Count;
+                    break;
+            }
+            for (int x = ListaRegistros.Count - CantidadDevuelta; x < ListaRegistros.Count; x++)
+            {
+                ListaRegistrosDef.Add(ListaRegistros[x]);
+            }
+            return ListaRegistrosDef;
         }
 
         public List<ModeloArticulos> Articulos()
@@ -535,11 +570,11 @@ namespace AdventureVillageEstadisticas
             query = "INSERT INTO registro_actividad(idRegistro, idUsuario, Descripcion, Fecha_Actividad) " +
                     "VALUES(@idRegistro, @idUsuario, @Descripcion, @Fecha_Actividad);";
             MySqlCommand ComandoSQL2 = new MySqlCommand(query, Conectar2);
-            ComandoSQL.Parameters.AddWithValue("@idRegistro", Bitacora._idRegistro);
-            ComandoSQL.Parameters.AddWithValue("@idUsuario", Bitacora._idUsuario);
-            ComandoSQL.Parameters.AddWithValue("@Descripcion", Bitacora._Descripcion);
-            ComandoSQL.Parameters.AddWithValue("@Fecha_Actividad", Bitacora._FechaRegistro);
-            ComandoSQL.ExecuteNonQuery();
+            ComandoSQL2.Parameters.AddWithValue("@idRegistro", Bitacora._idRegistro);
+            ComandoSQL2.Parameters.AddWithValue("@idUsuario", Bitacora._idUsuario);
+            ComandoSQL2.Parameters.AddWithValue("@Descripcion", Bitacora._Descripcion);
+            ComandoSQL2.Parameters.AddWithValue("@Fecha_Actividad", Bitacora._FechaRegistro);
+            ComandoSQL2.ExecuteNonQuery();
             Conectar.Close();
         }
 

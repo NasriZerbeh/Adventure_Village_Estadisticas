@@ -36,6 +36,14 @@ namespace AdventureVillageEstadisticas
             }
         }
 
+        private void BotonRegistrarse_Click(object sender, EventArgs e)
+        {
+            Registrarse Abrir = new Registrarse();
+            this.Hide();
+            Abrir.ShowDialog();
+            this.Show();
+        }
+
         private void ControlCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();

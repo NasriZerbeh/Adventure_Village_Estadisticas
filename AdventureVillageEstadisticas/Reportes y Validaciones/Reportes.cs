@@ -81,5 +81,26 @@ namespace AdventureVillageEstadisticas.Controladores
             Contenido = Contenido.Replace("@Filas", filas);
             GuardarReporte(Ruta, Contenido);
         }
+
+        public void ReporteRegistros(string Ruta, List<Modelos.ModeloRegistroActividad> Registros, string Filtro)
+        {
+            string Contenido = Properties.Resources.ReporteRegistros.ToString();
+            Contenido = Contenido.Replace("@Fecha", DateTime.Now.ToString("d"));
+            Contenido = Contenido.Replace("@Hora", DateTime.Now.ToString("T"));
+            Contenido = Contenido.Replace("@Cantidad", Registros.Count.ToString());
+            Contenido = Contenido.Replace("@Filtro", Filtro);
+            string filas = string.Empty;
+            foreach (var Items in Registros)
+            {
+                filas += "<tr>";
+                filas += "<td style=\"width: 15 %;\">" + Items._idRegistro + "</td>";
+                filas += "<td style=\"width: 20 %;\">" + Items._idUsuario + "</td>";
+                filas += "<td style=\"width: 50 %;\">" + Items._Descripcion + "</td>";
+                filas += "<td style=\"width: 15 %;\">" + Items._FechaRegistro + "</td>";
+                filas += "</tr>";
+            }
+            Contenido = Contenido.Replace("@Filas", filas);
+            GuardarReporte(Ruta, Contenido);
+        }
     }
 }
