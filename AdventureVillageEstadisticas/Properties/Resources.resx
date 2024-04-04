@@ -211,6 +211,9 @@
   <data name="LogoJuego" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoJuego.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LogoJuegoIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoJuego.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LogoNegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoNegro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

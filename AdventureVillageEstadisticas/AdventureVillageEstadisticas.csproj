@@ -222,6 +222,7 @@
     <Content Include="PlantillasHTMLReportes\ReporteRegistros.html" />
     <Content Include="PlantillasHTMLReportes\ReporteArticulo.html" />
     <Content Include="PlantillasHTMLReportes\ReportesPagina.html" />
+    <None Include="Resources\LogoJuego.ico" />
     <None Include="Resources\juego.png" />
     <None Include="Resources\proteger.png" />
     <None Include="Resources\cajas.png" />

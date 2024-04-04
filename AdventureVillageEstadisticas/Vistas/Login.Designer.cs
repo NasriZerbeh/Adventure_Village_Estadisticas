@@ -40,6 +40,7 @@
             this.ContraseñaTextBoxLogin = new Guna.UI2.WinForms.Guna2TextBox();
             this.LogoJuegoUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelControlLogin = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelBarra = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ControlCerrar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.LabelLogin = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GunaMessageBoxLogin = new Guna.UI2.WinForms.Guna2MessageDialog();
@@ -261,6 +262,7 @@
             // 
             // PanelControlLogin
             // 
+            this.PanelControlLogin.Controls.Add(this.LabelBarra);
             this.PanelControlLogin.Controls.Add(this.ControlCerrar);
             this.PanelControlLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelControlLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
@@ -269,6 +271,18 @@
             this.PanelControlLogin.Size = new System.Drawing.Size(250, 20);
             this.PanelControlLogin.TabIndex = 9;
             this.PanelControlLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelControlLogin_MouseMove);
+            // 
+            // LabelBarra
+            // 
+            this.LabelBarra.BackColor = System.Drawing.Color.Transparent;
+            this.LabelBarra.Font = new System.Drawing.Font("Colonna MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBarra.ForeColor = System.Drawing.Color.White;
+            this.LabelBarra.Location = new System.Drawing.Point(20, 0);
+            this.LabelBarra.Name = "LabelBarra";
+            this.LabelBarra.Size = new System.Drawing.Size(167, 23);
+            this.LabelBarra.TabIndex = 10;
+            this.LabelBarra.Text = "Adventure [Login]";
+            this.LabelBarra.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ControlCerrar
             // 
@@ -320,6 +334,7 @@
             this.Controls.Add(this.LogoJuegoUser);
             this.Controls.Add(this.PanelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(250, 350);
@@ -331,6 +346,7 @@
             this.PanelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoJuegoUser)).EndInit();
             this.PanelControlLogin.ResumeLayout(false);
+            this.PanelControlLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +366,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelOlvidarClave;
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonRegistrarse;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelBarra;
     }
 }

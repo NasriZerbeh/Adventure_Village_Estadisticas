@@ -8,20 +8,24 @@ namespace AdventureVillageEstadisticas.Modelos
 {
     class ModeloRangoCantidad
     {
+        private string Stat;
         private string Rango;
         private int Cantidad;
 
+        public string _Stat { get { return Stat; } set { Stat = value; } }
         public string _Rango { get { return Rango; } set { Rango = value; } }
         public int _Cantidad { get { return Cantidad; } set { Cantidad = value; } }
 
         public ModeloRangoCantidad()
         {
+            Stat = "";
             Rango = "";
             Cantidad = 0;
         }
 
-        public ModeloRangoCantidad(string Rango_, int Cantidad_)
+        public ModeloRangoCantidad(string Stat_, string Rango_, int Cantidad_)
         {
+            Stat = Stat_;
             Rango = Rango_;
             Cantidad = Cantidad_;
         }

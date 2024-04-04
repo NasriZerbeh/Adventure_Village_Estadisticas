@@ -401,6 +401,16 @@ namespace AdventureVillageEstadisticas.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon LogoJuegoIcono {
+            get {
+                object obj = ResourceManager.GetObject("LogoJuegoIcono", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap LogoNegro {

@@ -18,7 +18,11 @@ namespace AdventureVillageEstadisticas.Controladores
             ComandoSQL.Parameters.AddWithValue("@Usuario", Registro._idUsuario);
             ComandoSQL.ExecuteNonQuery();
             MySqlDataReader Lectura = ComandoSQL.ExecuteReader();
-            if (Lectura.Read()) return false;
+            if (Lectura.Read())
+            {
+                Conectar.Close();
+                return false;
+            }
             else
             {
                 Conectar.Close();
@@ -36,9 +40,11 @@ namespace AdventureVillageEstadisticas.Controladores
                 NewComandoSQL.Parameters.AddWithValue("@Activo", Registro._Activo);
                 NewComandoSQL.ExecuteNonQuery();
                 NewConectar.Close();
+                ControladorAdmin Perfil = new ControladorAdmin();
+                Perfil.CrearPerfilNuevo(Registro);
                 Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(Registro._idUsuario, "Se ha registrado por la interfaz de Login exitosamente.");
                 ControladorAdmin GuardarBitacora = new ControladorAdmin();
-                GuardarBitacora.AñadirBitacora(Bitacora);                
+                GuardarBitacora.AñadirBitacora(Bitacora);
                 return true;
             }
 

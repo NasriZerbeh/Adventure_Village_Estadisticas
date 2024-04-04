@@ -45,6 +45,7 @@
             this.CorreoTextBoxRegistrarse = new Guna.UI2.WinForms.Guna2TextBox();
             this.LogoJuegoUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelControlRegistrarse = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelBarra = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ControlCerrar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.LabelSignUp = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GunaMessageBoxLogin = new Guna.UI2.WinForms.Guna2MessageDialog();
@@ -362,6 +363,7 @@
             // 
             // PanelControlRegistrarse
             // 
+            this.PanelControlRegistrarse.Controls.Add(this.LabelBarra);
             this.PanelControlRegistrarse.Controls.Add(this.ControlCerrar);
             this.PanelControlRegistrarse.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelControlRegistrarse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
@@ -370,6 +372,18 @@
             this.PanelControlRegistrarse.Size = new System.Drawing.Size(250, 20);
             this.PanelControlRegistrarse.TabIndex = 9;
             this.PanelControlRegistrarse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelControlRegistrarse_MouseMove);
+            // 
+            // LabelBarra
+            // 
+            this.LabelBarra.BackColor = System.Drawing.Color.Transparent;
+            this.LabelBarra.Font = new System.Drawing.Font("Colonna MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBarra.ForeColor = System.Drawing.Color.White;
+            this.LabelBarra.Location = new System.Drawing.Point(7, 0);
+            this.LabelBarra.Name = "LabelBarra";
+            this.LabelBarra.Size = new System.Drawing.Size(186, 23);
+            this.LabelBarra.TabIndex = 10;
+            this.LabelBarra.Text = "Adventure [Sign Up]";
+            this.LabelBarra.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ControlCerrar
             // 
@@ -420,13 +434,14 @@
             this.Controls.Add(this.LogoJuegoUser);
             this.Controls.Add(this.PanelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(250, 350);
             this.Name = "Registrarse";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login Adventure Village";
+            this.Text = "SignUp Adventure Village";
             this.PanelLogin.ResumeLayout(false);
             this.PanelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorImagenConfirmar)).EndInit();
@@ -435,6 +450,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ErrorImagenUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoJuegoUser)).EndInit();
             this.PanelControlRegistrarse.ResumeLayout(false);
+            this.PanelControlRegistrarse.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +475,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox ErrorImagenContraseña;
         private Guna.UI2.WinForms.Guna2PictureBox ErrorImagenCorreo;
         private Guna.UI2.WinForms.Guna2PictureBox ErrorImagenUsuario;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelBarra;
     }
 }

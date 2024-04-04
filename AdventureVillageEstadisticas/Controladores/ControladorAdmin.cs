@@ -429,6 +429,37 @@ namespace AdventureVillageEstadisticas
             return ListaArticulos;
         }
 
+        public ModeloCuentaUsuario MostrarPerfil(string Usuario)
+        {
+            string query = "SELECT u.idUsuario, iu.Espacio_Almacen, eb.Ataque, eb.Defensa, eb.Vida, eb.VidaMax, cu.Monedas, " +
+                            "cu.Experiencia, cu.Energia, cu.Tiempo_Juego_Mins FROM cuenta_usuario cu " +
+                            "INNER JOIN usuario u ON cu.idUsuario = u.idUsuario " +
+                            "INNER JOIN estadisticas_base eb ON cu.idEstadisticas_Base = eb.idEstadisticas_Base " +
+                            "INNER JOIN inventario_usuario iu ON cu.idInventario = iu.idInventario_Usuario " +
+                            "WHERE u.idUsuario = @Usuario;";
+
+            MySqlConnection Conectar = EstablecerConexion();
+            MySqlCommand ComandoSQL = new MySqlCommand(query, Conectar);
+            ComandoSQL.Parameters.AddWithValue("@Usuario", Usuario);
+            ComandoSQL.ExecuteNonQuery();
+            MySqlDataReader Lectura = ComandoSQL.ExecuteReader();
+            ModeloCuentaUsuario Cuenta = new ModeloCuentaUsuario();
+            if (Lectura.Read())
+            {
+                Cuenta._idUsuario = Lectura["idUsuario"].ToString();
+                Cuenta._EspacioInv = Convert.ToInt32(Lectura["Espacio_Almacen"]);
+                Cuenta._Ataque = Convert.ToInt32(Lectura["Ataque"]);
+                Cuenta._Defensa = Convert.ToInt32(Lectura["Defensa"]);
+                Cuenta._Vida = Convert.ToInt32(Lectura["Vida"]);
+                Cuenta._VidaMax = Convert.ToInt32(Lectura["VidaMax"]);
+                Cuenta._Monedas = Convert.ToInt32(Lectura["Monedas"]);
+                Cuenta._Experiencia = Convert.ToInt32(Lectura["Experiencia"]);
+                Cuenta._Energia = Convert.ToInt32(Lectura["Energia"]);
+                Cuenta._TiempoJugado_Mins = Convert.ToInt32(Lectura["Tiempo_Juego_Mins"]);
+            }
+            return Cuenta;
+        }
+
         public List<Modelos.ModeloRangoCantidad> RangoUsuariosGraficoIzq(string Desde, string Hasta, int Rango, bool Activos)
         {
             List<Modelos.ModeloRangoCantidad> Listado = new List<Modelos.ModeloRangoCantidad>();
@@ -490,16 +521,20 @@ namespace AdventureVillageEstadisticas
             return Listado;
         }
 
-        public List<Modelos.ModeloRangoCantidad> RangoArticulosGraficoDer(int Opcion)
+        public List<Modelos.ModeloRangoCantidad> RangoCantidadDe(int Opcion)
         {
             List<Modelos.ModeloRangoCantidad> Listado = new List<Modelos.ModeloRangoCantidad>();
             try
             {
                 string query = string.Empty;
 
-                if (Opcion == 0) query = "SELECT COUNT(idArticulo) AS Cantidad, Nombre_Tipo AS Busqueda FROM Articulo a INNER JOIN Tipo_Articulo t ON a.idTipo = t.idTipo GROUP BY Nombre_Tipo;";
-                if (Opcion == 1) query = "SELECT COUNT(idArticulo) AS Cantidad, NombreStat AS Busqueda FROM Articulo a INNER JOIN Tipo_Stats t ON a.idTipo_Stats = t.idTipo_Stats GROUP BY NombreStat;";
-                if (Opcion == 2) query = "SELECT COUNT(idArticulo) AS Cantidad, ModoStats AS Busqueda FROM Articulo a INNER JOIN Modo_Stats m ON a.idModo_Stats = m.idModo_Stats GROUP BY ModoStats;";
+                if (Opcion == 0) query = "SELECT '' AS Stat, COUNT(idArticulo) AS Cantidad, Nombre_Tipo AS Busqueda FROM Articulo a INNER JOIN Tipo_Articulo t ON a.idTipo = t.idTipo GROUP BY Nombre_Tipo;";
+                if (Opcion == 1) query = "SELECT '' AS Stat, COUNT(idArticulo) AS Cantidad, NombreStat AS Busqueda FROM Articulo a INNER JOIN Tipo_Stats t ON a.idTipo_Stats = t.idTipo_Stats GROUP BY NombreStat;";
+                if (Opcion == 2) query = "SELECT '' AS Stat, COUNT(idArticulo) AS Cantidad, ModoStats AS Busqueda FROM Articulo a INNER JOIN Modo_Stats m ON a.idModo_Stats = m.idModo_Stats GROUP BY ModoStats;";
+                if (Opcion == -1) query = "SELECT 'Ataque' AS Stat, Ataque AS Busqueda, COUNT(idEstadisticas_Base) AS Cantidad FROM estadisticas_base GROUP BY Busqueda UNION " +
+                                          "SELECT 'Defensa' AS Stat, Defensa AS Busqueda, COUNT(idEstadisticas_Base) AS Cantidad FROM estadisticas_base GROUP BY Busqueda UNION " +
+                                          "SELECT 'VidaMax' AS Stat, VidaMax AS Busqueda, COUNT(idEstadisticas_Base) AS Cantidad FROM estadisticas_base GROUP BY Busqueda UNION " +
+                                          "SELECT 'Monedas' AS Stat, Monedas AS Busqueda, COUNT(idUsuario) AS Cantidad FROM cuenta_usuario GROUP BY Busqueda ORDER BY Busqueda; ";
 
                 MySqlConnection Conectar = EstablecerConexion();
                 MySqlCommand ComandoSQL = new MySqlCommand(query, Conectar);
@@ -508,6 +543,7 @@ namespace AdventureVillageEstadisticas
                 while (Lectura.Read())
                 {
                     Modelos.ModeloRangoCantidad RangoC = new Modelos.ModeloRangoCantidad();
+                    RangoC._Stat = Lectura["Stat"].ToString();
                     RangoC._Cantidad = Convert.ToInt32(Lectura["Cantidad"]);
                     RangoC._Rango = Lectura["Busqueda"].ToString();
                     Listado.Add(RangoC);
@@ -754,6 +790,7 @@ namespace AdventureVillageEstadisticas
                     Query = "INSERT INTO Usuario (idUsuario, idRol, Contraseña, Correo, Fecha_Registro, Activo) VALUES" +
                         "(@idUsuario, @idRol, @Contraseña, @Correo, @FechaRegistro, @Activo);";
                     ConfirmarQueryUsuario(Query, Conectar, NewUser);
+                    CrearPerfilNuevo(NewUser);
                 }
                 else
                 {

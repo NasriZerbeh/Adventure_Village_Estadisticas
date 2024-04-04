@@ -14,10 +14,19 @@ namespace AdventureVillageEstadisticas
 {
     public partial class ModuloAdministrador : Form
     {
-        public string NombreUsuario = "";
+        public string NombreUsuario = ""; 
         public ModuloAdministrador()
         {
             InitializeComponent();
+            IniciarApp();
+        }
+
+        #region Formulario
+
+        #region Funciones del Formulario
+
+        private void IniciarApp() 
+        {
             MinimizarPanel();
             QuitarBordes();
             BotonMenu.BorderThickness = 3;
@@ -25,24 +34,57 @@ namespace AdventureVillageEstadisticas
             TabControlAll.TabMenuVisible = false;
             DatePickFiltroHastaUsuarios.Value = DateTime.Now;
             DatePickFiltroHastaRegistro.Value = DateTime.Now;
+            DatePickGrafHastaIzq.Value = DateTime.Now;
         }
 
-        #region Funciones fuera del tappages
+        #endregion
 
-        #region Botones
+        #region Eventos del Formulario
 
-        private void BotonMenu_Click(object sender, EventArgs e)
+        private int MoveX, MoveY;
+
+        private void PanelControl_MouseMove(object sender, MouseEventArgs e) 
         {
-            if (MenuExtendido)
+            if (e.Button != MouseButtons.Left)
             {
-                MinimizarPanel();
-                BotonMenu.BorderThickness = 0;
+                MoveX = e.X;
+                MoveY = e.Y;
             }
             else
             {
-                MaximizarPanel();
-                BotonMenu.BorderThickness = 3;
+                Left = Left + (e.X - MoveX);
+                Top = Top + (e.Y - MoveY);
             }
+        }
+        private void Inicio_SizeChanged(object sender, EventArgs e)
+        {
+            PanelBotonesUser.Height = TabControlAll.Height;
+            PanelFormUser.Height = TabControlAll.Height;
+            PanelOpcionesArticulos.Height = TabControlAll.Height;
+            PanelAjusteArticulos.Height = TabControlAll.Height;
+        }
+        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult Cerrar = GunaMessageBox.Show("Seguro deseas salir?", "¡Alerta!");
+                if (Cerrar == DialogResult.Yes) Application.Exit();
+                else e.Cancel = true;
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Menu
+
+        #region Botones del Menu
+
+        private void BotonMenu_Click(object sender, EventArgs e)
+        {
+            if (MenuExtendido) { MinimizarPanel(); BotonMenu.BorderThickness = 0; }
+            else { MaximizarPanel(); BotonMenu.BorderThickness = 3; }
         }
         private void BotonHome_Click(object sender, EventArgs e)
         {
@@ -72,6 +114,8 @@ namespace AdventureVillageEstadisticas
             if (MenuExtendido) MinimizarPanel();
             RellenarGraficoIzq();
             RellenarGraficoDer();
+            RellenarSegundoGrafIzq();
+            RellenarGraficosEstaticos();
             RellenarTotales();
             TabControlAll.SelectTab("TpReportes");
         }
@@ -104,6 +148,8 @@ namespace AdventureVillageEstadisticas
         {
             QuitarBordes();
             BotonPerfil.BorderThickness = 3;
+            ControladorAdmin Perfil = new ControladorAdmin();
+            RellenarPerfil(Perfil.MostrarPerfil(NombreUsuario));
             if (MenuExtendido) MinimizarPanel();
             TabControlAll.SelectTab("TpPerfil");
         }
@@ -115,8 +161,17 @@ namespace AdventureVillageEstadisticas
 
         #endregion
 
-        #region Funciones
+        #region Funciones del Menu
 
+        private void MinimizarPanel()
+        {
+            AnimacionMenu.Start();
+            QuitarNombres();
+        }
+        private void MaximizarPanel()
+        {
+            AnimacionMenu.Start();
+        }
         private void QuitarBordes()
         {
             BotonMenu.BorderThickness = 0;
@@ -130,9 +185,8 @@ namespace AdventureVillageEstadisticas
             BotonPerfil.BorderThickness = 0;
             BotonSalir.BorderThickness = 0;
         }
-        private void MinimizarPanel()
+        private void QuitarNombres()
         {
-            AnimacionMenu.Start();
             BotonMenu.Text = "";
             BotonHome.Text = "";
             BotonUsuarios.Text = "";
@@ -143,10 +197,6 @@ namespace AdventureVillageEstadisticas
             BotonOpciones.Text = "";
             BotonPerfil.Text = "";
             BotonSalir.Text = "";
-        }
-        private void MaximizarPanel()
-        {
-            AnimacionMenu.Start();
         }
         private void MostrarNombres()
         {
@@ -164,9 +214,8 @@ namespace AdventureVillageEstadisticas
 
         #endregion
 
-        #region Eventos adicionales
+        #region Eventos del Menu
 
-        private int MoveX, MoveY;
         private bool MenuExtendido;
 
         private void AnimacionTiempo_Tick(object sender, EventArgs e)
@@ -191,125 +240,33 @@ namespace AdventureVillageEstadisticas
                 }
             }
         }
-        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult Cerrar = GunaMessageBox.Show("Seguro deseas salir?", "¡Alerta!");
-                if (Cerrar == DialogResult.Yes) Application.Exit();
-                else e.Cancel = true;
-            }
-        }
-        private void Inicio_SizeChanged(object sender, EventArgs e)
-        {
-            PanelBotonesUser.Height = TabControlAll.Height;
-            PanelFormUser.Height = TabControlAll.Height;
-            PanelOpcionesArticulos.Height = TabControlAll.Height;
-            PanelAjusteArticulos.Height = TabControlAll.Height;
-        }
-        private void PanelControl_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left)
-            {
-                MoveX = e.X;
-                MoveY = e.Y;
-            }
-            else
-            {
-                Left = Left + (e.X - MoveX);
-                Top = Top + (e.Y - MoveY);
-            }
-        }
 
         #endregion
 
         #endregion
 
-        #region Tappage Home
-
-
+        #region Home
 
         #endregion
 
-        #region Tappage Usuario, Crear y Tabla
+        #region Usuarios
 
-
-        #region Seleccionar Opciones
-
-        #region Botones
+        #region Botones Usuario
 
         private void BotonCrearUsuario_Click(object sender, EventArgs e)
         {
             RellenarComboRol();
             LimpiarTextos();
+            LabelCrearUsuario.Text = "Crear Usuario";
             TabControlAll.SelectTab("TpCrearUser");
         }
 
         private void BotonVerUsuarios_Click(object sender, EventArgs e)
         {
-            ControladorAdmin Info = new ControladorAdmin();
-            List<ModeloUsuario> Users = Info.Usuarios();
             RellenarComboRolFiltro();
-            RellenarTablaUsuarios(Users);
+            BuscarFiltro();
             TabControlAll.SelectTab("TpVerUser");
         }
-
-        #endregion
-
-        #region Funciones
-
-        private void RellenarComboRol()
-        {
-            ComboBoxRoles.Items.Clear();
-            ComboBoxRoles.Items.Add("Selecciona Rol");
-            ComboBoxRoles.StartIndex = 0;
-            ControladorAdmin Info = new ControladorAdmin();
-            List<ModeloRoles> Roles = Info.Roles();
-            foreach (var Rol in Roles)
-            {
-                ComboBoxRoles.Items.Add(Rol._Rol);
-            }
-        }
-
-        private void RellenarComboRolFiltro()
-        {
-            ComboBoxFiltroRol.Items.Clear();
-            ComboBoxFiltroRol.Items.Add("Todos");
-            ComboBoxFiltroRol.StartIndex = 0;
-            ControladorAdmin Info = new ControladorAdmin();
-            List<ModeloRoles> Roles = Info.Roles();
-            foreach (var Rol in Roles)
-            {
-                ComboBoxFiltroRol.Items.Add(Rol._Rol);
-            }
-        }
-
-        private void RellenarTablaUsuarios(List<ModeloUsuario> Users)
-        {
-            DataGridUsuarios.Rows.Clear();
-            foreach (var Usuario in Users)
-            {
-                if (Usuario._Activo)
-                {
-                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Correo,
-                        Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Bloquear");
-                }
-                else
-                {
-                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Correo,
-                        Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Desbloquear");
-                }
-            }
-        }
-
-        #endregion
-
-        #endregion
-
-        #region Crear Usuarios
-
-        #region Botones
-
         private void BotonRegresoUser_MouseEnter(object sender, EventArgs e)
         {
             btnregreso = true;
@@ -352,11 +309,84 @@ namespace AdventureVillageEstadisticas
         {
             VerificarYCrearUsuario();
         }
+        private void BotonGenerarReporteA_Click(object sender, EventArgs e)
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            GenerarReporteUsuarios(Info.FiltroUsuarios(TexBoxFiltroUsuario.Text, ComboBoxFiltroRol.Text, TexBoxFiltroCorreo.Text, DatePickFiltroDesdeUsuario.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaUsuarios.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroActivo.SelectedIndex, ComboBoxOrdenarUsuarios.Text), ComboBoxOrdenarUsuarios.Text);
+        }
+
+        private void BotonFiltroLimpiarUser_Click(object sender, EventArgs e)
+        {
+            LimpiarFiltroUser();
+        }
+
+        private void BotonFiltroBuscar_Click(object sender, EventArgs e)
+        {
+            BuscarFiltro();
+        }
 
         #endregion
 
-        #region Funciones
-        
+        #region Funciones Usuario
+
+        private void RellenarComboRol()
+        {
+            ComboBoxRoles.Items.Clear();
+            ComboBoxRoles.Items.Add("Selecciona Rol");
+            ComboBoxRoles.StartIndex = 0;
+            ControladorAdmin Info = new ControladorAdmin();
+            List<ModeloRoles> Roles = Info.Roles();
+            foreach (var Rol in Roles)
+            {
+                ComboBoxRoles.Items.Add(Rol._Rol);
+            }
+        }
+        private void RellenarComboRolFiltro()
+        {
+            ComboBoxFiltroRol.Items.Clear();
+            ComboBoxFiltroRol.Items.Add("Todos");
+            ComboBoxFiltroRol.StartIndex = 0;
+            ControladorAdmin Info = new ControladorAdmin();
+            List<ModeloRoles> Roles = Info.Roles();
+            foreach (var Rol in Roles)
+            {
+                ComboBoxFiltroRol.Items.Add(Rol._Rol);
+            }
+        }
+        private void RellenarTablaUsuarios(List<ModeloUsuario> Users)
+        {
+            DataGridUsuarios.Rows.Clear();
+            foreach (var Usuario in Users)
+            {
+                if (Usuario._Activo)
+                {
+                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Correo,
+                        Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Bloquear", "Ver Perfil");
+                }
+                else
+                {
+                    DataGridUsuarios.Rows.Add(Usuario._idUsuario, Usuario._idRol, Usuario._Correo,
+                        Usuario._Fecha_Registro.ToString(), Usuario._Activo, "Modificar", "Desbloquear", "Ver Perfil");
+                }
+            }
+        }
+        private void QuitarErroresUsuario()
+        {
+            ErrorRol.Visible = false;
+            ErrorUsuario.Visible = false;
+            ErrorCorreo.Visible = false;
+            ErrorContraseña.Visible = false;
+            ErrorConfirmacion.Visible = false;
+        }
+        private void LimpiarTextos()
+        {
+            ComboBoxRoles.SelectedIndex = 0;
+            UsuarioTextBox.Text = "";
+            ContraseñaTextBox.Text = "";
+            TexBoxCorreoUser.Text = "";
+            ConfirmTextBox.Text = "";
+            LabelContraseñasNo.Visible = false;
+        }
         private void VerificarYCrearUsuario()
         {
             Reportes_y_Validaciones.Validaciones Validar = new Reportes_y_Validaciones.Validaciones();
@@ -367,22 +397,22 @@ namespace AdventureVillageEstadisticas
                 Validado = false;
                 ErrorRol.Visible = true;
             }
-            if(!Validar.NoCamposVacios(UsuarioTextBox.Text) || !Validar.RangoCaracteres(UsuarioTextBox.Text, 3, 20) || !Validar.StringNumber(UsuarioTextBox.Text))
+            if (!Validar.NoCamposVacios(UsuarioTextBox.Text) || !Validar.RangoCaracteres(UsuarioTextBox.Text, 3, 20) || !Validar.StringNumber(UsuarioTextBox.Text))
             {
                 Validado = false;
                 ErrorUsuario.Visible = true;
             }
-            if(!Validar.CorreoEmail(TexBoxCorreoUser.Text))
+            if (!Validar.CorreoEmail(TexBoxCorreoUser.Text))
             {
                 Validado = false;
                 ErrorCorreo.Visible = true;
             }
-            if(!Validar.Contraseña(ContraseñaTextBox.Text))
+            if (!Validar.Contraseña(ContraseñaTextBox.Text))
             {
                 Validado = false;
                 ErrorContraseña.Visible = true;
             }
-            if(!Validar.ConfirmarContraseñas(ContraseñaTextBox.Text, ConfirmTextBox.Text))
+            if (!Validar.ConfirmarContraseñas(ContraseñaTextBox.Text, ConfirmTextBox.Text))
             {
                 Validado = false;
                 ErrorConfirmacion.Visible = true;
@@ -416,7 +446,6 @@ namespace AdventureVillageEstadisticas
                 if (!Coincidencia)
                 {
                     Control.AgregarModificarUsuario(NewUser, true);
-                    Control.CrearPerfilNuevo(NewUser);
                     Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(NombreUsuario, "Ha Agregado al usuario " + NewUser._idUsuario);
                     Control.AñadirBitacora(Bitacora);
                     GunaMessageBoxOK.Show("Usuario agregado exitosamente", "¡Exito!");
@@ -424,28 +453,41 @@ namespace AdventureVillageEstadisticas
                 }
             }
         }
-        private void QuitarErroresUsuario()
+        private void LimpiarFiltroUser()
         {
-            ErrorRol.Visible = false;
-            ErrorUsuario.Visible = false;
-            ErrorCorreo.Visible = false;
-            ErrorContraseña.Visible = false;
-            ErrorConfirmacion.Visible = false;
+            TexBoxFiltroUsuario.Text = "";
+            ComboBoxFiltroRol.SelectedIndex = 0;
+            TexBoxFiltroCorreo.Text = "";
+            DatePickFiltroDesdeUsuario.Value = new DateTime(2024, 01, 01);
+            DatePickFiltroHastaUsuarios.Value = DateTime.Now;
+            ComboBoxFiltroActivo.SelectedIndex = 0;
+            ComboBoxOrdenarUsuarios.SelectedIndex = 0;
         }
-
-        private void LimpiarTextos()
+        private void BuscarFiltro()
         {
-            ComboBoxRoles.SelectedIndex = 0;
-            UsuarioTextBox.Text = "";
-            ContraseñaTextBox.Text = "";
-            TexBoxCorreoUser.Text = "";
-            ConfirmTextBox.Text = "";
-            LabelContraseñasNo.Visible = false;
+            ControladorAdmin Info = new ControladorAdmin();
+            List<ModeloUsuario> Filtro = Info.FiltroUsuarios(TexBoxFiltroUsuario.Text, ComboBoxFiltroRol.Text, TexBoxFiltroCorreo.Text, DatePickFiltroDesdeUsuario.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaUsuarios.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroActivo.SelectedIndex, ComboBoxOrdenarUsuarios.Text);
+            RellenarTablaUsuarios(Filtro);
+        }
+        private void GenerarReporteUsuarios(List<ModeloUsuario> ListaUsuario, string Filtro)
+        {
+            SaveFileDialog Guardar = new SaveFileDialog();
+            Guardar.FileName = "ReporteUsuario_" + DateTime.Now.ToString("dd-MM-yyyy") + ".pdf";
+            Guardar.Filter = "Documento PDF|*.pdf";
+            if (Guardar.ShowDialog() == DialogResult.OK)
+            {
+                Controladores.Reportes Reporte = new Controladores.Reportes();
+                Reporte.ReporteUsuarios(Guardar.FileName, ListaUsuario, Filtro);
+                Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(NombreUsuario, "Ha Exportado el registro de Usuarios");
+                ControladorAdmin GuardarInfo = new ControladorAdmin();
+                GuardarInfo.AñadirBitacora(Bitacora);
+                GunaMessageBoxOK.Show("Reporte exportado exitosamente.", "Información.");
+            }
         }
 
         #endregion
 
-        #region Eventos Adicionales
+        #region Eventos Usuario
 
         bool btnregreso, btnlimpiar, btnguardar;
 
@@ -493,69 +535,7 @@ namespace AdventureVillageEstadisticas
 
         #endregion
 
-        #endregion
-
-        #region Tabla
-
-        #region Botones
-
-        private void BotonGenerarReporteA_Click(object sender, EventArgs e)
-        {
-            ControladorAdmin Info = new ControladorAdmin();
-            GenerarReporteUsuarios(Info.FiltroUsuarios(TexBoxFiltroUsuario.Text, ComboBoxFiltroRol.Text, TexBoxFiltroCorreo.Text, DatePickFiltroDesdeUsuario.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaUsuarios.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroActivo.SelectedIndex, ComboBoxOrdenarUsuarios.Text), ComboBoxOrdenarUsuarios.Text);
-        }
-
-        private void BotonFiltroLimpiarUser_Click(object sender, EventArgs e)
-        {
-            LimpiarFiltroUser();
-        }
-
-        private void BotonFiltroBuscar_Click(object sender, EventArgs e)
-        {
-            BuscarFiltro();
-        }
-
-        #endregion
-
-        #region Funciones
-
-        private void LimpiarFiltroUser()
-        {
-            TexBoxFiltroUsuario.Text = "";
-            ComboBoxFiltroRol.SelectedIndex = 0;
-            TexBoxFiltroCorreo.Text = "";
-            DatePickFiltroDesdeUsuario.Value = new DateTime(2024, 01, 01);
-            DatePickFiltroHastaUsuarios.Value = DateTime.Now;
-            ComboBoxFiltroActivo.SelectedIndex = 0;
-            ComboBoxOrdenarUsuarios.SelectedIndex = 0;
-        }
-
-        private void BuscarFiltro()
-        {
-            ControladorAdmin Info = new ControladorAdmin();
-            List<ModeloUsuario> Filtro = Info.FiltroUsuarios(TexBoxFiltroUsuario.Text, ComboBoxFiltroRol.Text, TexBoxFiltroCorreo.Text, DatePickFiltroDesdeUsuario.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaUsuarios.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroActivo.SelectedIndex, ComboBoxOrdenarUsuarios.Text);
-            RellenarTablaUsuarios(Filtro);
-        }
-
-        private void GenerarReporteUsuarios(List<ModeloUsuario> ListaUsuario, string Filtro)
-        {
-            SaveFileDialog Guardar = new SaveFileDialog();
-            Guardar.FileName = "ReporteUsuario_" + DateTime.Now.ToString("dd-MM-yyyy") + ".pdf";
-            Guardar.Filter = "Documento PDF|*.pdf";
-            if (Guardar.ShowDialog() == DialogResult.OK)
-            {
-                Controladores.Reportes Reporte = new Controladores.Reportes();
-                Reporte.ReporteUsuarios(Guardar.FileName, ListaUsuario, Filtro);
-                Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(NombreUsuario, "Ha Exportado el registro de Usuarios");
-                ControladorAdmin GuardarInfo = new ControladorAdmin();
-                GuardarInfo.AñadirBitacora(Bitacora);
-                GunaMessageBoxOK.Show("Reporte exportado exitosamente.", "Información.");
-            }
-        }
-
-        #endregion
-
-        #region Eventos Adicionales
+        #region Tabla Usuario
 
         private void DataGridUsuarios_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -586,6 +566,7 @@ namespace AdventureVillageEstadisticas
                             ConfirmTextBox.Text = User._Contraseña;
                         }
                     }
+                    LabelCrearUsuario.Text = "Modificar Usuario";
                     TabControlAll.SelectTab("TpCrearUser");
                 }
             }
@@ -598,132 +579,39 @@ namespace AdventureVillageEstadisticas
                     RellenarTablaUsuarios(Usuario);
                 }
             }
+
+            if (e.ColumnIndex == DataGridUsuarios.Columns.IndexOf(VerPerfil))
+            {
+                if (e.RowIndex != -1)
+                {
+                    RellenarPerfil(Control.MostrarPerfil(DataGridUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString()));
+                    TabControlAll.SelectTab("TpPerfil");
+                }
+            }
         }
 
-        #endregion
+        #endregion 
 
         #endregion
 
-        #endregion
+        #region Articulos
 
-        #region Articulos, Crear y Tabla
-
-        #region Seleccionar Opciones
-
-        #region Botones
+        #region Botones Articulos
 
         private void BotonCrearArticulo_Click(object sender, EventArgs e)
         {
             RellenarCombosBoxesArticulos();
             LimpiarTextosArticulos();
+            LabelCrearArticulo.Text = "Crear Articulo";
             TabControlAll.SelectTab("TpCrearArticulos");
         }
 
         private void BotonVerArticulos_Click(object sender, EventArgs e)
         {
-            ControladorAdmin Info = new ControladorAdmin();
             RellenarCombosBoxesFiltrosArticulos();
-            RellenarTablaArticulos(Info.Articulos());
+            BuscarFiltroArticulos();
             TabControlAll.SelectTab("TpVerArticulos");
         }
-
-        #endregion
-
-        #region Funciones
-
-        private void RellenarCombosBoxesArticulos()
-        {
-            ControladorAdmin Info = new ControladorAdmin();
-
-            ComboBoxTipoArticulo.Items.Clear();
-            ComboBoxTipoArticulo.Items.Add("Selecciona un tipo.");
-            ComboBoxTipoArticulo.StartIndex = 0;
-            List<ModeloTipoArticulo> T_Articulo = Info.TiposArticulo();
-            foreach (var Tipo in T_Articulo)
-            {
-                ComboBoxTipoArticulo.Items.Add(Tipo._Nombre_Tipo);
-            }
-
-            ComboBoxStat.Items.Clear();
-            ComboBoxStat.Items.Add("");
-            ComboBoxStat.StartIndex = 0;
-            List<ModeloTipoStats> T_Stats = Info.TipoStats();
-            foreach (var Tipo in T_Stats)
-            {
-                ComboBoxStat.Items.Add(Tipo._Nombre_TipoS);
-            }
-
-            ComboBoxPTS.Items.Clear();
-            ComboBoxPTS.Items.Add("");
-            ComboBoxPTS.StartIndex = 0;
-            List<ModeloModoStats> M_Stats = Info.ModoStats();
-            foreach (var Modo in M_Stats)
-            {
-                ComboBoxPTS.Items.Add(Modo._Modo_Stats);
-            }
-
-        }
-
-        private void RellenarCombosBoxesFiltrosArticulos()
-        {
-            ControladorAdmin Info = new ControladorAdmin();
-
-            ComboBoxFiltroTipoArt.Items.Clear();
-            ComboBoxFiltroTipoArt.Items.Add("Todos");
-            ComboBoxFiltroTipoArt.StartIndex = 0;
-            List<ModeloTipoArticulo> T_Articulo = Info.TiposArticulo();
-            foreach (var Tipo in T_Articulo)
-            {
-                ComboBoxFiltroTipoArt.Items.Add(Tipo._Nombre_Tipo);
-            }
-
-            ComboBoxFiltroTipoStats.Items.Clear();
-            ComboBoxFiltroTipoStats.Items.Add("Todos");
-            ComboBoxFiltroTipoStats.StartIndex = 0;
-            List<ModeloTipoStats> T_Stats = Info.TipoStats();
-            foreach (var Tipo in T_Stats)
-            {
-                ComboBoxFiltroTipoStats.Items.Add(Tipo._Nombre_TipoS);
-            }
-
-            ComboBoxFiltroModoStatsArt.Items.Clear();
-            ComboBoxFiltroModoStatsArt.Items.Add("Todos");
-            ComboBoxFiltroModoStatsArt.StartIndex = 0;
-            List<ModeloModoStats> M_Stats = Info.ModoStats();
-            foreach (var Modo in M_Stats)
-            {
-                ComboBoxFiltroModoStatsArt.Items.Add(Modo._Modo_Stats);
-            }
-
-        }
-
-        private void RellenarTablaArticulos(List<ModeloArticulos> Articulo)
-        {
-            DataGridArticulos.Rows.Clear();
-            foreach (var Articulos in Articulo)
-            {
-                if (Articulos._Activo)
-                {
-                    DataGridArticulos.Rows.Add(Articulos._idArticulo, Articulos._NombreArticulo, Articulos._Tipo,
-                        Articulos._Nombre_Stat + ": + " + Articulos._Cantidad_Stats.ToString() + Articulos._Modo_Stats, Articulos._Activo, "Modificar", "Ocultar");
-                }
-                else
-                {
-                    DataGridArticulos.Rows.Add(Articulos._idArticulo, Articulos._NombreArticulo, Articulos._Tipo,
-                        Articulos._Nombre_Stat + ": + " + Articulos._Cantidad_Stats.ToString() + Articulos._Modo_Stats, Articulos._Activo, "Modificar", "Mostrar");
-                }
-            }
-        }
-
-
-        #endregion
-
-        #endregion
-
-        #region Crear Articulos
-
-        #region Botones
-
         private void BotonSalirArticulo_MouseEnter(object sender, EventArgs e)
         {
             btnregresoArticulo = true;
@@ -769,7 +657,6 @@ namespace AdventureVillageEstadisticas
         {
             LimpiarTextosArticulos();
         }
-
         private void BotonGuardarArticulo_Click(object sender, EventArgs e)
         {
             GuardarArticulo();
@@ -801,10 +688,94 @@ namespace AdventureVillageEstadisticas
             GenerarReporteArticulos(Info.FiltroArticulos(TextBoxFiltroIDArticulo.Text, TextBoxFiltroNombreArticulo.Text, ComboBoxFiltroTipoArt.Text, ComboBoxFiltroTipoStats.Text, Convert.ToInt32(NumericFiltroDEArticulo.Value), Convert.ToInt32(NumericFiltroHastaArticulo.Value), ComboBoxFiltroModoStatsArt.Text, ComboBoxFiltroActivoArticulo.SelectedIndex, ComboBoxFiltroOrdenArticulos.SelectedIndex), ComboBoxFiltroOrdenArticulos.Text);
         }
 
+
         #endregion
 
-        #region Funciones
+        #region Funciones Articulos
 
+        string URLArticulo;
+
+        private void RellenarCombosBoxesArticulos()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+
+            ComboBoxTipoArticulo.Items.Clear();
+            ComboBoxTipoArticulo.Items.Add("Selecciona un tipo.");
+            ComboBoxTipoArticulo.StartIndex = 0;
+            List<ModeloTipoArticulo> T_Articulo = Info.TiposArticulo();
+            foreach (var Tipo in T_Articulo)
+            {
+                ComboBoxTipoArticulo.Items.Add(Tipo._Nombre_Tipo);
+            }
+
+            ComboBoxStat.Items.Clear();
+            ComboBoxStat.Items.Add("");
+            ComboBoxStat.StartIndex = 0;
+            List<ModeloTipoStats> T_Stats = Info.TipoStats();
+            foreach (var Tipo in T_Stats)
+            {
+                ComboBoxStat.Items.Add(Tipo._Nombre_TipoS);
+            }
+
+            ComboBoxPTS.Items.Clear();
+            ComboBoxPTS.Items.Add("");
+            ComboBoxPTS.StartIndex = 0;
+            List<ModeloModoStats> M_Stats = Info.ModoStats();
+            foreach (var Modo in M_Stats)
+            {
+                ComboBoxPTS.Items.Add(Modo._Modo_Stats);
+            }
+
+        }
+        private void RellenarCombosBoxesFiltrosArticulos()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+
+            ComboBoxFiltroTipoArt.Items.Clear();
+            ComboBoxFiltroTipoArt.Items.Add("Todos");
+            ComboBoxFiltroTipoArt.StartIndex = 0;
+            List<ModeloTipoArticulo> T_Articulo = Info.TiposArticulo();
+            foreach (var Tipo in T_Articulo)
+            {
+                ComboBoxFiltroTipoArt.Items.Add(Tipo._Nombre_Tipo);
+            }
+
+            ComboBoxFiltroTipoStats.Items.Clear();
+            ComboBoxFiltroTipoStats.Items.Add("Todos");
+            ComboBoxFiltroTipoStats.StartIndex = 0;
+            List<ModeloTipoStats> T_Stats = Info.TipoStats();
+            foreach (var Tipo in T_Stats)
+            {
+                ComboBoxFiltroTipoStats.Items.Add(Tipo._Nombre_TipoS);
+            }
+
+            ComboBoxFiltroModoStatsArt.Items.Clear();
+            ComboBoxFiltroModoStatsArt.Items.Add("Todos");
+            ComboBoxFiltroModoStatsArt.StartIndex = 0;
+            List<ModeloModoStats> M_Stats = Info.ModoStats();
+            foreach (var Modo in M_Stats)
+            {
+                ComboBoxFiltroModoStatsArt.Items.Add(Modo._Modo_Stats);
+            }
+
+        }
+        private void RellenarTablaArticulos(List<ModeloArticulos> Articulo)
+        {
+            DataGridArticulos.Rows.Clear();
+            foreach (var Articulos in Articulo)
+            {
+                if (Articulos._Activo)
+                {
+                    DataGridArticulos.Rows.Add(Articulos._idArticulo, Articulos._NombreArticulo, Articulos._Tipo,
+                        Articulos._Nombre_Stat + ": + " + Articulos._Cantidad_Stats.ToString() + Articulos._Modo_Stats, Articulos._Activo, "Modificar", "Ocultar");
+                }
+                else
+                {
+                    DataGridArticulos.Rows.Add(Articulos._idArticulo, Articulos._NombreArticulo, Articulos._Tipo,
+                        Articulos._Nombre_Stat + ": + " + Articulos._Cantidad_Stats.ToString() + Articulos._Modo_Stats, Articulos._Activo, "Modificar", "Mostrar");
+                }
+            }
+        }
         private void LimpiarTextosArticulos()
         {
             ImagenArticulo.ImageLocation = "";
@@ -816,9 +787,6 @@ namespace AdventureVillageEstadisticas
             ComboBoxPTS.SelectedIndex = 0;
             LabelErrorArticulo.Visible = false;
         }
-
-        string URLArticulo;
-
         private string GuardarImagen(string carpeta, string archivo)
         {
             string DestinoURLArticulo = Path.GetFullPath(@"..\..\ImagenesOpenFile\" + carpeta + "\\");
@@ -826,7 +794,6 @@ namespace AdventureVillageEstadisticas
 
             return DireccionCompletaPNGArticulo;
         }
-
         private void CopiarImagenLocal(string URLCopy, string DireccionCompletaPNGArticulo)
         {
             try
@@ -836,7 +803,6 @@ namespace AdventureVillageEstadisticas
             catch { }
             URLArticulo = "";
         }
-
         private void GuardarArticulo()
         {
             Reportes_y_Validaciones.Validaciones Validar = new Reportes_y_Validaciones.Validaciones();
@@ -846,37 +812,37 @@ namespace AdventureVillageEstadisticas
             if (!Validar.NoCamposVacios(IDArticuloTextBox.Text) || !Validar.RangoCaracteres(IDArticuloTextBox.Text, 3, 20) || !Validar.StringNumber(IDArticuloTextBox.Text))
             {
                 ErrorIDArticulo.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
             if (!Validar.NoCamposVacios(NombreArticuloTextBox.Text) || !Validar.RangoCaracteres(NombreArticuloTextBox.Text, 3, 20) || !Validar.StringNumber(NombreArticuloTextBox.Text))
             {
                 ErrorNombreArticulo.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
             if (!Validar.NoCamposVacios(URLArticulo))
             {
                 ErrorImagenArticulo.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
-            if (ComboBoxTipoArticulo.SelectedIndex == 0) 
+            if (ComboBoxTipoArticulo.SelectedIndex == 0)
             {
                 ErrorTipoArticulo.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
-            if (ComboBoxStat.SelectedIndex == 0) 
+            if (ComboBoxStat.SelectedIndex == 0)
             {
                 ErrorTipoStats.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
-            if (StatArticulo.Value > 100 && ComboBoxPTS.SelectedIndex == 1) 
+            if (StatArticulo.Value > 100 && ComboBoxPTS.SelectedIndex == 1)
             {
                 ErrorCantStats.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
-            if (ComboBoxPTS.SelectedIndex == 0) 
+            if (ComboBoxPTS.SelectedIndex == 0)
             {
                 ErrorModoStats.Visible = true;
-                Validado = false; 
+                Validado = false;
             }
 
             if (Validado)
@@ -915,7 +881,6 @@ namespace AdventureVillageEstadisticas
                 CopiarImagenLocal(URLArticulo, Guardar);
             }
         }
-
         private void GenerarReporteArticulos(List<ModeloArticulos> ListaArticulos, string Filtro)
         {
             SaveFileDialog Guardar = new SaveFileDialog();
@@ -931,13 +896,11 @@ namespace AdventureVillageEstadisticas
                 GunaMessageBoxOK.Show("Reporte exportado exitosamente.", "Información.");
             }
         }
-
         private void BuscarFiltroArticulos()
         {
             ControladorAdmin Info = new ControladorAdmin();
             RellenarTablaArticulos(Info.FiltroArticulos(TextBoxFiltroIDArticulo.Text, TextBoxFiltroNombreArticulo.Text, ComboBoxFiltroTipoArt.Text, ComboBoxFiltroTipoStats.Text, Convert.ToInt32(NumericFiltroDEArticulo.Value), Convert.ToInt32(NumericFiltroHastaArticulo.Value), ComboBoxFiltroModoStatsArt.Text, ComboBoxFiltroActivoArticulo.SelectedIndex, ComboBoxFiltroOrdenArticulos.SelectedIndex));
         }
-
         private void LimpiarFiltrosArticulos()
         {
             TextBoxFiltroIDArticulo.Text = "";
@@ -950,7 +913,6 @@ namespace AdventureVillageEstadisticas
             ComboBoxFiltroActivoArticulo.SelectedIndex = 0;
             ComboBoxFiltroOrdenArticulos.SelectedIndex = 0;
         }
-
         private void QuitarErroresArticulos()
         {
             ErrorImagenArticulo.Visible = false;
@@ -964,25 +926,9 @@ namespace AdventureVillageEstadisticas
 
         #endregion
 
-        #region Eventos Adicionales
+        #region Eventos Articulos
 
         bool btnregresoArticulo, btnlimpiarArticulo, btnguardarArticulo;
-
-        private void DatePickGrafDeIzq_ValueChanged(object sender, EventArgs e)
-        {
-            RellenarGraficoIzq();
-
-        }
-
-        private void DatePickGrafHastaIzq_ValueChanged(object sender, EventArgs e)
-        {
-            RellenarGraficoIzq();
-        }
-
-        private void ComboBoxRangoIzq_SelectedValueChanged(object sender, EventArgs e)
-        {
-            RellenarGraficoIzq();
-        }
 
         private void MoverBotonesArticulos_Tick(object sender, EventArgs e)
         {
@@ -1025,13 +971,6 @@ namespace AdventureVillageEstadisticas
 
             if (cerrar1 && cerrar2 && cerrar3) MoverBotonesArticulos.Stop();
         }
-
-        private void ComboBoxOpcionDer_SelectedValueChanged(object sender, EventArgs e)
-        {
-            RellenarGraficoDer();
-        }
-
-        #endregion
 
         #endregion
 
@@ -1080,6 +1019,7 @@ namespace AdventureVillageEstadisticas
                             }
                         }
                     }
+                    LabelCrearArticulo.Text = "Modificar Articulo";
                     TabControlAll.SelectTab("TpCrearArticulos");
 
                 }
@@ -1095,45 +1035,13 @@ namespace AdventureVillageEstadisticas
             }
         }
 
-        int r = 120, g = 120, b = 120;
-
-        bool reversa = false;
-
-        private void CambiarColor_Tick(object sender, EventArgs e)
-        {
-            if(!reversa)
-            {
-                LabelTotalUsuariosTittle.ForeColor = Color.FromArgb(r, g, b);
-                LabelTotalArticulosTittle.ForeColor = Color.FromArgb(r, g, b);
-                LabelCantTotalUsuarios.ForeColor = Color.FromArgb(r, g, b);
-                LabelCantTotalArticulos.ForeColor = Color.FromArgb(r, g, b);
-                r += 10; g += 30; b += 10;
-                if (g >= 240) reversa = true;
-            }
-            else
-            {
-                LabelTotalUsuariosTittle.ForeColor = Color.FromArgb(r, g, b);
-                LabelTotalArticulosTittle.ForeColor = Color.FromArgb(r, g, b);
-                LabelCantTotalUsuarios.ForeColor = Color.FromArgb(r, g, b);
-                LabelCantTotalArticulos.ForeColor = Color.FromArgb(r, g, b);
-                r -= 10; g -= 30; b -= 10;
-                if (g <= 120) reversa = false;
-            }
-        }
-
         #endregion
 
         #endregion
 
         #region Reportes
 
-        #region Botones
-
-        
-
-        #endregion
-
-        #region Funciones
+        #region Funciones Reportes
 
         private void RellenarGraficoIzq()
         {
@@ -1157,7 +1065,7 @@ namespace AdventureVillageEstadisticas
             ArrayList Cantidad3 = new ArrayList();
 
             RangoCantidad2 = Info.RangoUsuariosGraficoIzq(DatePickGrafDeIzq.Value.ToString("yyyy-MM-dd"), DatePickGrafHastaIzq.Value.ToString("yyyy-MM-dd"), ComboBoxRangoIzq.SelectedIndex, true);
-            for(int i = 0; i < RangoCantidad.Count; i++)
+            for (int i = 0; i < RangoCantidad.Count; i++)
             {
                 string RangoCoincidido = "";
                 int CantidadCoincidida = 0;
@@ -1194,7 +1102,72 @@ namespace AdventureVillageEstadisticas
 
             ChartIzq.Series[1].Points.DataBindXY(Rangos2, Cantidad2);
             ChartIzq.Series[2].Points.DataBindXY(Rangos3, Cantidad3);
+        }
 
+        private void RellenarSegundoGrafIzq()
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            List<Modelos.ModeloRangoCantidad> RangoCantidad = Info.RangoCantidadDe(-1);
+            ArrayList RangoATQ = new ArrayList();
+            ArrayList CantidadATQ = new ArrayList();
+            ArrayList RangoDEF = new ArrayList();
+            ArrayList CantidadDEF = new ArrayList();
+            ArrayList RangoHPMax = new ArrayList();
+            ArrayList CantidadHPMax = new ArrayList();
+            ArrayList RangoMoney = new ArrayList();
+            ArrayList CantidadMoney = new ArrayList();
+
+            foreach (var Desglosar in RangoCantidad)
+            {
+                switch (Desglosar._Stat)
+                {
+                    case "Ataque":
+                        RangoATQ.Add(Desglosar._Rango);
+                        CantidadATQ.Add(Desglosar._Cantidad);
+                        RangoDEF.Add(Desglosar._Rango);
+                        CantidadDEF.Add(null);
+                        RangoHPMax.Add(Desglosar._Rango);
+                        CantidadHPMax.Add(null);
+                        RangoMoney.Add(Desglosar._Rango);
+                        CantidadMoney.Add(null);
+                        break;
+                    case "Defensa":
+                        RangoATQ.Add(Desglosar._Rango);
+                        CantidadATQ.Add(null);
+                        RangoDEF.Add(Desglosar._Rango);
+                        CantidadDEF.Add(Desglosar._Cantidad);
+                        RangoHPMax.Add(Desglosar._Rango);
+                        CantidadHPMax.Add(null);
+                        RangoMoney.Add(Desglosar._Rango);
+                        CantidadMoney.Add(null);
+                        break;
+                    case "VidaMax":
+                        RangoATQ.Add(Desglosar._Rango);
+                        CantidadATQ.Add(null);
+                        RangoDEF.Add(Desglosar._Rango);
+                        CantidadDEF.Add(null);
+                        RangoHPMax.Add(Desglosar._Rango);
+                        CantidadHPMax.Add(Desglosar._Cantidad);
+                        RangoMoney.Add(Desglosar._Rango);
+                        CantidadMoney.Add(null);
+                        break;
+                    case "Monedas":
+                        RangoATQ.Add(Desglosar._Rango);
+                        CantidadATQ.Add(null);
+                        RangoDEF.Add(Desglosar._Rango);
+                        CantidadDEF.Add(null);
+                        RangoHPMax.Add(Desglosar._Rango);
+                        CantidadHPMax.Add(null);
+                        RangoMoney.Add(Desglosar._Rango);
+                        CantidadMoney.Add(Desglosar._Cantidad);
+                        break;
+                }
+            }
+
+            ChartIzq2.Series[0].Points.DataBindXY(RangoATQ, CantidadATQ);
+            ChartIzq2.Series[1].Points.DataBindXY(RangoDEF, CantidadDEF);
+            ChartIzq2.Series[2].Points.DataBindXY(RangoHPMax, CantidadHPMax);
+            ChartIzq2.Series[3].Points.DataBindXY(RangoMoney, CantidadMoney);
 
         }
 
@@ -1205,13 +1178,50 @@ namespace AdventureVillageEstadisticas
             ArrayList Rangos = new ArrayList();
             ArrayList Cantidad = new ArrayList();
 
-            RangoCantidad = Info.RangoArticulosGraficoDer(ComboBoxOpcionDer.SelectedIndex);
+            RangoCantidad = Info.RangoCantidadDe(ComboBoxOpcionDer.SelectedIndex);
             foreach (var Rang in RangoCantidad)
             {
                 Rangos.Add(Rang._Rango);
                 Cantidad.Add(Rang._Cantidad);
             }
             ChartDer.Series[0].Points.DataBindXY(Rangos, Cantidad);
+        }
+
+        private void RellenarGraficosEstaticos()
+        {
+            ArrayList Rangos = new ArrayList() {"Manzano", "Peral", "Duraznero", "Naranjo"};
+            ArrayList Cantidad = new ArrayList() {2, 6, 3, 8};
+            ChartDer2.Series[0].Points.DataBindXY(Rangos, Cantidad);
+
+            Rangos.Clear();
+            Cantidad.Clear();
+            Rangos = new ArrayList() { "Excelente", "Bueno", "Decente", "Regular", "Malo", "Pesimo" };
+            Cantidad = new ArrayList() { 3, 8, 2, 1, 2, 0 };
+            ChartIzq3.Series[0].Points.DataBindXY(Rangos, Cantidad);
+
+            Rangos.Clear();
+            Cantidad.Clear();
+            Rangos = new ArrayList() { "Excelente", "Bueno", "Decente", "Regular", "Malo", "Pesimo" };
+            Cantidad = new ArrayList() { 5, 6, 2, 2, 0, 1 };
+            ChartIzq3.Series[1].Points.DataBindXY(Rangos, Cantidad);
+
+            Rangos.Clear();
+            Cantidad.Clear();
+            Rangos = new ArrayList() { "Excelente", "Bueno", "Decente", "Regular", "Malo", "Pesimo" };
+            Cantidad = new ArrayList() { 8, 4, 1, 2, 0, 1 };
+            ChartIzq3.Series[2].Points.DataBindXY(Rangos, Cantidad);
+
+            Rangos.Clear();
+            Cantidad.Clear();
+            Rangos = new ArrayList() { "Excelente", "Bueno", "Decente", "Regular", "Malo", "Pesimo" };
+            Cantidad = new ArrayList() { 2, 4, 6, 1, 3, 0 };
+            ChartIzq3.Series[3].Points.DataBindXY(Rangos, Cantidad);
+
+            Rangos.Clear();
+            Cantidad.Clear();
+            Rangos = new ArrayList() { "AdnCrazy", "Magda", "ImKaos", "MikeSloval", "AswagerKgzk" };
+            Cantidad = new ArrayList() { 7, 20, 31, 33, 40 };
+            ChartDer3.Series[0].Points.DataBindXY(Rangos, Cantidad);
         }
 
         private void RellenarTotales()
@@ -1221,17 +1231,67 @@ namespace AdventureVillageEstadisticas
             LabelCantTotalArticulos.Text = Info.CantidadTotalDe(2).ToString();
         }
 
+        #endregion
 
+        #region Eventos Reportes
+
+        private void DatePickGrafDeIzq_ValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoIzq();
+
+        }
+
+        private void DatePickGrafHastaIzq_ValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoIzq();
+        }
+
+        private void ComboBoxRangoIzq_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoIzq();
+        }
+
+        private void ComboBoxOpcionDer_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RellenarGraficoDer();
+        }
+
+        int r = 120, g = 120, b = 120;
+        bool reversa = false;
+
+        private void CambiarColor_Tick(object sender, EventArgs e)
+        {
+            if (!reversa)
+            {
+                LabelTotalUsuariosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelTotalArticulosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalUsuarios.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalArticulos.ForeColor = Color.FromArgb(r, g, b);
+                r += 10; g += 30; b += 10;
+                if (g >= 240) reversa = true;
+            }
+            else
+            {
+                LabelTotalUsuariosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelTotalArticulosTittle.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalUsuarios.ForeColor = Color.FromArgb(r, g, b);
+                LabelCantTotalArticulos.ForeColor = Color.FromArgb(r, g, b);
+                r -= 10; g -= 30; b -= 10;
+                if (g <= 120) reversa = false;
+            }
+        }
 
         #endregion
 
         #endregion
 
-        #region Agregar, Modificar Datos
+        #region Actualizaciones
 
-        #region Botones
+        #region Botnones Actualizaciones
 
         bool ModificarTipoArticulo = false;
+        bool ModificarTipoStats = false;
+        bool ModificarModoStats = false;
 
         private void BotonAddTipoArticulo_Click(object sender, EventArgs e)
         {
@@ -1247,7 +1307,64 @@ namespace AdventureVillageEstadisticas
 
         private void BotonConfirmarTipoArticulo_Click(object sender, EventArgs e)
         {
-            if(TextBoxAggTipoArticulo.Text.Length >= 3 && TextBoxAggTipoArticulo.Text.Length <= 10)
+            ConfirmarTipoArticulo();
+        }
+
+        private void BotonAddTipoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoStats();
+            ModificarTipoStats = false;
+        }
+
+        private void BotonUpdateTipoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoStats();
+            ModificarTipoStats = true;
+        }
+
+        private void BotonCancelTipoArticulo_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoArticulo();
+        }
+
+        private void BotonConfirmarTipoStats_Click(object sender, EventArgs e)
+        {
+            ConfirmarTipoStats();
+        }
+        private void BotonCancelTipoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelTipoStats();
+        }
+
+        private void BotonAddModoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelModoStats();
+            ModificarModoStats = false;
+        }
+
+        private void BotonUpdateModoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelModoStats();
+            ModificarModoStats = true;
+        }
+
+        private void BotonConfirmarModoStats_Click(object sender, EventArgs e)
+        {
+            ConfirmarModoStats();
+        }
+
+        private void BotonCancelModoStats_Click(object sender, EventArgs e)
+        {
+            CambioPanelModoStats();
+        }
+
+        #endregion
+
+        #region Funciones Actualizacion
+
+        private void ConfirmarTipoArticulo()
+        {
+            if (TextBoxAggTipoArticulo.Text.Length >= 3 && TextBoxAggTipoArticulo.Text.Length <= 10)
             {
                 ModeloTipoArticulo NewTipo = new ModeloTipoArticulo();
                 ControladorAdmin Info = new ControladorAdmin();
@@ -1255,7 +1372,7 @@ namespace AdventureVillageEstadisticas
                 {
                     bool Coincidir = false;
                     List<ModeloTipoArticulo> Comprobar = Info.TiposArticulo();
-                    
+
                     NewTipo._idTipo_Articulo = "TIPO_" + TextBoxAggTipoArticulo.Text.ToUpper();
                     NewTipo._Nombre_Tipo = TextBoxAggTipoArticulo.Text;
                     foreach (var Coincidencia in Comprobar)
@@ -1271,6 +1388,7 @@ namespace AdventureVillageEstadisticas
                         Info.AgregarModificarTipoArticulo(NewTipo, ModificarTipoArticulo);
                         GunaMessageBoxOK.Show("Registrado exitosamente.", "Información");
                         Modelos.ModeloRegistroActividad Bitacora = new Modelos.ModeloRegistroActividad(NombreUsuario, "Ha Creado el tipos de Articulo " + NewTipo._Nombre_Tipo);
+                        Info.AñadirBitacora(Bitacora);
                         RellenarItemsDatos();
                         CambioPanelTipoArticulo();
                     }
@@ -1282,12 +1400,12 @@ namespace AdventureVillageEstadisticas
                 else
                 {
                     List<ModeloTipoArticulo> Comprobar = Info.TiposArticulo();
-                    foreach(var Coincidencia in Comprobar)
+                    foreach (var Coincidencia in Comprobar)
                     {
-                        if(ComboBoxTiposArticuloAgg.Text == Coincidencia._Nombre_Tipo)
+                        if (ComboBoxTiposArticuloAgg.Text == Coincidencia._Nombre_Tipo)
                         {
                             DialogResult Respuesta = GunaMessageBox.Show("¿Seguro quieres cambiar " + ComboBoxTiposArticuloAgg.Text + " por " + TextBoxAggTipoArticulo.Text + "?", "¡Alerta!");
-                            if(Respuesta == DialogResult.Yes)
+                            if (Respuesta == DialogResult.Yes)
                             {
                                 NewTipo._idTipo_Articulo = Coincidencia._idTipo_Articulo;
                                 NewTipo._Nombre_Tipo = TextBoxAggTipoArticulo.Text;
@@ -1302,28 +1420,10 @@ namespace AdventureVillageEstadisticas
                     }
                 }
             }
+
         }
 
-        private void BotonCancelTipoArticulo_Click(object sender, EventArgs e)
-        {
-            CambioPanelTipoArticulo();
-        }
-
-        bool ModificarTipoStats = false;
-
-        private void BotonAddTipoStats_Click(object sender, EventArgs e)
-        {
-            CambioPanelTipoStats();
-            ModificarTipoStats = false;
-        }
-
-        private void BotonUpdateTipoStats_Click(object sender, EventArgs e)
-        {
-            CambioPanelTipoStats();
-            ModificarTipoStats = true;
-        }
-
-        private void BotonConfirmarTipoStats_Click(object sender, EventArgs e)
+        private void ConfirmarTipoStats()
         {
             if (TextBoxAggTipoStats.Text.Length >= 2 && TextBoxAggTipoStats.Text.Length <= 5)
             {
@@ -1383,26 +1483,7 @@ namespace AdventureVillageEstadisticas
             }
         }
 
-        private void BotonCancelTipoStats_Click(object sender, EventArgs e)
-        {
-            CambioPanelTipoStats();
-        }
-
-        bool ModificarModoStats = false;
-
-        private void BotonAddModoStats_Click(object sender, EventArgs e)
-        {
-            CambioPanelModoStats();
-            ModificarModoStats = false;
-        }
-
-        private void BotonUpdateModoStats_Click(object sender, EventArgs e)
-        {
-            CambioPanelModoStats();
-            ModificarModoStats = true;
-        }
-
-        private void BotonConfirmarModoStats_Click(object sender, EventArgs e)
+        private void ConfirmarModoStats()
         {
             if (TextBoxAggModoStats.Text.Length >= 1 && TextBoxAggModoStats.Text.Length <= 4)
             {
@@ -1462,16 +1543,6 @@ namespace AdventureVillageEstadisticas
             }
         }
 
-        private void BotonCancelModoStats_Click(object sender, EventArgs e)
-        {
-            CambioPanelModoStats();
-        }
-
-
-        #endregion
-
-        #region Funciones
-
         private void RellenarItemsDatos()
         {
             ControladorAdmin Info = new ControladorAdmin();
@@ -1482,7 +1553,7 @@ namespace AdventureVillageEstadisticas
             ComboBoxTipoEstadisticaAgg.Items.Clear();
             ComboBoxAggModoStats.Items.Clear();
 
-            foreach(var Agg in TiposArticulo)
+            foreach (var Agg in TiposArticulo)
             {
                 ComboBoxTiposArticuloAgg.Items.Add(Agg._Nombre_Tipo);
             }
@@ -1501,7 +1572,7 @@ namespace AdventureVillageEstadisticas
 
         private void CambioPanelTipoArticulo()
         {
-            if(ComboBoxTiposArticuloAgg.Visible == false)
+            if (ComboBoxTiposArticuloAgg.Visible == false)
             {
                 ComboBoxTiposArticuloAgg.Visible = true;
                 PanelCUDTipoArticulo.Visible = true;
@@ -1570,7 +1641,9 @@ namespace AdventureVillageEstadisticas
 
         #endregion
 
-        #region Registros de Actividad
+        #region Registros
+
+        #region Botones Registro
 
         private void BotonLimpiarFiltroRegistro_Click(object sender, EventArgs e)
         {
@@ -1582,6 +1655,15 @@ namespace AdventureVillageEstadisticas
             ControladorAdmin Info = new ControladorAdmin();
             RellenarRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroMovimientos.SelectedIndex, ComboBoxFiltroOrdenRegistro.Text));
         }
+        private void BotonReporteFiltroRegistro_Click(object sender, EventArgs e)
+        {
+            ControladorAdmin Info = new ControladorAdmin();
+            GenerarReporteRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroMovimientos.SelectedIndex, ComboBoxFiltroOrdenRegistro.Text), ComboBoxFiltroOrdenRegistro.Text);
+        }
+
+        #endregion
+
+        #region Funciones Registro
 
         private void LimpiarFiltrosRegistros()
         {
@@ -1595,7 +1677,7 @@ namespace AdventureVillageEstadisticas
         private void RellenarRegistros(List<Modelos.ModeloRegistroActividad> Filtro)
         {
             DataGridRegistrosActividad.Rows.Clear();
-            foreach(var Registros in Filtro)
+            foreach (var Registros in Filtro)
             {
                 DataGridRegistrosActividad.Rows.Add(Registros._idRegistro, Registros._idUsuario, Registros._Descripcion, Registros._FechaRegistro.ToString());
             }
@@ -1617,15 +1699,13 @@ namespace AdventureVillageEstadisticas
             }
         }
 
-        private void BotonReporteFiltroRegistro_Click(object sender, EventArgs e)
-        {
-            ControladorAdmin Info = new ControladorAdmin();
-            GenerarReporteRegistros(Info.FiltroRegistros(TextBoxFiltroIDRegistro.Text, TextBoxFiltroUsuarioRegistro.Text, DatePickFiltroDesdeRegistro.Value.ToString("yyyy-MM-dd"), DatePickFiltroHastaRegistro.Value.ToString("yyyy-MM-dd"), ComboBoxFiltroMovimientos.SelectedIndex, ComboBoxFiltroOrdenRegistro.Text), ComboBoxFiltroOrdenRegistro.Text);
-        }
+        #endregion
 
         #endregion
 
-        #region Opciones
+        #region Configuracion
+
+        #region Botones Configuracion
 
         private void SwitchDescanso_Click(object sender, EventArgs e)
         {
@@ -1638,5 +1718,106 @@ namespace AdventureVillageEstadisticas
         }
 
         #endregion
+
+        #endregion
+
+        #region Perfil
+
+        #region Funciones Perfil
+
+        private void RellenarPerfil(ModeloCuentaUsuario Cuenta)
+        {
+            LabelUsuarioPerfil.Text = Cuenta._idUsuario;
+            BarraProgresoVidaPerfil.Maximum = Cuenta._VidaMax;
+            BarraProgresoVidaPerfil.Value = Cuenta._Vida;
+            BarraProgresoVidaPerfil.Text = Cuenta._Vida + " / " + Cuenta._VidaMax;
+            BarraProgresoEXPPerfil.Value = Cuenta._Experiencia;
+            BarraProgresoEXPPerfil.Text = Cuenta._Experiencia + " / " + "100";
+            LabelMonedasPerfil.Text = Cuenta._Monedas.ToString();
+            LabelEnergiaPerfil.Text = Cuenta._Energia.ToString(); ;
+            LabelPTSAtaquePerfil.Text = Cuenta._Ataque.ToString();
+            LabelPTSDefensaPerfil.Text = Cuenta._Defensa.ToString();
+            LabelPTSEspacioPerfil.Text = Cuenta._EspacioInv.ToString();
+            LabelPTSTiempoPerfil.Text = Cuenta._TiempoJugado_Mins.ToString();
+        }
+
+        #endregion
+
+        #endregion
     }
 }
+
+#region Comentarios
+
+/*--------------------------------------------------------------------------------------------------------
+
+[ Linea 24 - Linea 78 = Region del Formulario. Se ubica los evento para: ]
+
+    Linea 28 - Linea 38 = (Iniciar App) Inicia el modulo, hace unos ajustes para actualizarlos al dia.
+    Linea 46 - Linea 58 = Mover formulario.
+    Linea 59 - Linea 65 = Cambio de tamaño.
+    Linea 66 - Linea 74 = Pregunta de seguridad para salir.
+
+----------------------------------------------------------------------------------------------------------
+
+[ Linea 80 - Linea 245 =  Region del Menu. Se ubican las funciones: ]
+
+    Linea 82 - Linea 160 = Todos los botones para cambiar de modulo, quitar bordes, habilitar el borde del
+                           modulo y rellenar campos de los modulos correspondientes.
+    Linea 164 - Linea 168 = (Minimizar Panel) Activa el evento de tiempo para reducir el tamaño del menú.
+    Linea 169 - Linea 172 = (Maximizar Panel) Vuelve a activar el evento de tiempo pero para reducir el 
+                            tamaño del menú.
+    Linea 173 - Linea 185 = (Quitar bordes) Quita los bordes de los botones para que no se visualice
+                            al cambiar de tappages en el menú.
+    Linea 186 - Linea 198 = (Quitar nombres) Quita los nombres de los botones para que no se visualice
+                            al minimizar el panel del menú.
+    Linea 199 - Linea 211 = (Mostrar Nombres) Coloca los nombres de los TAG's de los botones para que
+                            se visualicen al extender el panel del menú.
+    Linea 219 - Linea 240 = Evento de tiempo para realizar la animación de extender y reducir el tamaño
+                            del panel del menú para visualizar mejor los nombres de cada modulo.
+
+----------------------------------------------------------------------------------------------------------
+
+[ Linea 246 - Linea 248 = Region del Home. Nada por ahora, solo esta apartado para alguna modificación ]
+
+----------------------------------------------------------------------------------------------------------
+
+[ Linea 250 - Linea 597 = Region de los Usuarios. Se ubican las funciones: ]
+
+    Linea 252 - Linea 326 = Todos los botones para cambiar a otro modulo, modificar, guardar o limpiar
+                            alguna propiedad del diseño.
+    Linea 330 - Linea 341 = (Rellenar Combo Rol) Funcion para rellenar el combobox de los roles.
+    Linea 342 - Linea 353 = (Rellenar Combo Rol Filtro) Rellena el del fintro de la tabla de busqueda. 
+    Linea 354 - Linea 370 = (Rellenar Tabla Usuarios) Recibe de parametro una lista de usuarios para
+                            rellenar en la tabla con todos sus campos excepto la contraseña.
+    Linea 371 - Linea 378 = (Quitar errores usuario) Desvisualiza las imagenes de error del formulario
+                            donde se crea o modifica el usuario.
+    Linea 379 - Linea 387 = (Limpiar textos) Quita los valores escritos del formulario.
+    Linea 388 - Linea 453 = (Verificar y crear usuario) Aplica validaciones y verifica si esta todo
+                            correcto o revisa si hay algun usuario ya existente para crear o modificar
+                            al controlador.
+    Linea 454 - Linea 463 = (Limpiar filtro user) Quita los valores escritos del filtro de la tabla. 
+    Linea 464 - Linea 469 = (Buscar Filtro) Agarra los valores del filtro para realizar una busqueda a
+                            través del controlador a la base de datos.
+    Linea 470 - Linea 484 = (Generar Reporte Usuarios) Recibe de parametro la lista de objetos filtrada
+                            de la tabla y el filtro de orden que se aplicó para generar un reporte.
+    Linea 492 - Linea 532 = Evento para mover los botones del formulario para que se visualice el
+                            significado del icono.
+    Linea 538 - Linea 589 = Evento de click en celda de la tabla de usuarios en el que revisa si la celda
+                            seleccionada sea de una columna especifica para generar una funcion sea de 
+                            modificar, bloquear o ver perfil.
+
+----------------------------------------------------------------------------------------------------------
+
+Linea - Linea = 
+Linea - Linea = 
+Linea - Linea = 
+Linea - Linea = 
+Linea - Linea = 
+Linea - Linea = 
+Linea - Linea = 
+Linea - Linea = 
+
+*/
+
+#endregion

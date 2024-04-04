@@ -47,11 +47,33 @@ namespace AdventureVillageEstadisticas
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,6 +83,7 @@ namespace AdventureVillageEstadisticas
             this.ControlMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlMaximizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelControl = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelBarra = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PanelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.PanelOpciones = new Guna.UI2.WinForms.Guna2Panel();
             this.BotonOpciones = new Guna.UI2.WinForms.Guna2GradientTileButton();
@@ -89,6 +112,8 @@ namespace AdventureVillageEstadisticas
             this.SeparadorMenuTab = new Guna.UI2.WinForms.Guna2VSeparator();
             this.TabControlAll = new Guna.UI2.WinForms.Guna2TabControl();
             this.TpHome = new System.Windows.Forms.TabPage();
+            this.LabelHome2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelHome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.TpUsuarios = new System.Windows.Forms.TabPage();
             this.LogoJuegoOpcUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelBotonesUser = new Guna.UI2.WinForms.Guna2Panel();
@@ -98,6 +123,7 @@ namespace AdventureVillageEstadisticas
             this.TpCrearUser = new System.Windows.Forms.TabPage();
             this.LogoJuegoUser = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelFormUser = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelCrearUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PanelCenterFormUser = new Guna.UI2.WinForms.Guna2Panel();
             this.ErrorConfirmacion = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ErrorContraseña = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -124,6 +150,7 @@ namespace AdventureVillageEstadisticas
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Bloquear = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.VerPerfil = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Relleno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TablaPanelFiltroUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.BotonGenerarReporteA = new Guna.UI2.WinForms.Guna2GradientTileButton();
@@ -153,6 +180,7 @@ namespace AdventureVillageEstadisticas
             this.TpCrearArticulos = new System.Windows.Forms.TabPage();
             this.ImagenLogoCArt = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelAjusteArticulos = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelCrearArticulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PanelFormularioArticulo = new Guna.UI2.WinForms.Guna2Panel();
             this.ErrorCantStats = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -211,9 +239,12 @@ namespace AdventureVillageEstadisticas
             this.PanelTituloVerArticulos = new Guna.UI2.WinForms.Guna2Panel();
             this.LabelTituloVerArticulos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.TpReportes = new System.Windows.Forms.TabPage();
-            this.ScrollBarReportes = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.PanelAllReportes = new Guna.UI2.WinForms.Guna2Panel();
             this.TablaPanelReportesGraficos = new System.Windows.Forms.TableLayoutPanel();
+            this.ChartIzq3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartDer3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartDer2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartIzq2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartIzq = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartDer = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TablaFechasBusqueda = new System.Windows.Forms.TableLayoutPanel();
@@ -304,18 +335,22 @@ namespace AdventureVillageEstadisticas
             this.TablaPanelStatsPerfil = new System.Windows.Forms.TableLayoutPanel();
             this.Panel4StatsPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelPTSTiempoPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ImagenTiempoPerfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LabelTiempoJPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Panel3StatsPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelPTSEspacioPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ImagenEspacioPerfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LabelEspacioInvPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Panel2StatsPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelPTSDefensaPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ImagenDefensaPerfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LabelDefensaPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Panel1StatsPerfil = new Guna.UI2.WinForms.Guna2Panel();
             this.PanelAtaquePerfil = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelPTSAtaquePerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ImagenAtaquePerfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LabelAtaquePerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PanelTopPerfil = new Guna.UI2.WinForms.Guna2Panel();
@@ -340,10 +375,6 @@ namespace AdventureVillageEstadisticas
             this.OpenFileArticulos = new System.Windows.Forms.OpenFileDialog();
             this.MoverBotonesArticulos = new System.Windows.Forms.Timer(this.components);
             this.CambiarColor = new System.Windows.Forms.Timer(this.components);
-            this.LabelPTSAtaquePerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelPTSDefensaPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelPTSEspacioPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.LabelPTSTiempoPerfil = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PanelControl.SuspendLayout();
             this.PanelMenu.SuspendLayout();
             this.PanelOpciones.SuspendLayout();
@@ -357,6 +388,7 @@ namespace AdventureVillageEstadisticas
             this.PanelSalida.SuspendLayout();
             this.PanelInicio.SuspendLayout();
             this.TabControlAll.SuspendLayout();
+            this.TpHome.SuspendLayout();
             this.TpUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoJuegoOpcUser)).BeginInit();
             this.PanelBotonesUser.SuspendLayout();
@@ -402,6 +434,10 @@ namespace AdventureVillageEstadisticas
             this.TpReportes.SuspendLayout();
             this.PanelAllReportes.SuspendLayout();
             this.TablaPanelReportesGraficos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartIzq3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartDer3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartDer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartIzq2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDer)).BeginInit();
             this.TablaFechasBusqueda.SuspendLayout();
@@ -503,6 +539,7 @@ namespace AdventureVillageEstadisticas
             // 
             // PanelControl
             // 
+            this.PanelControl.Controls.Add(this.LabelBarra);
             this.PanelControl.Controls.Add(this.ControlMaximizar);
             this.PanelControl.Controls.Add(this.ControlCerrar);
             this.PanelControl.Controls.Add(this.ControlMinimizar);
@@ -513,6 +550,18 @@ namespace AdventureVillageEstadisticas
             this.PanelControl.Size = new System.Drawing.Size(900, 30);
             this.PanelControl.TabIndex = 4;
             this.PanelControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelControl_MouseMove);
+            // 
+            // LabelBarra
+            // 
+            this.LabelBarra.BackColor = System.Drawing.Color.Transparent;
+            this.LabelBarra.Font = new System.Drawing.Font("Colonna MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBarra.ForeColor = System.Drawing.Color.White;
+            this.LabelBarra.Location = new System.Drawing.Point(30, 4);
+            this.LabelBarra.Name = "LabelBarra";
+            this.LabelBarra.Size = new System.Drawing.Size(421, 23);
+            this.LabelBarra.TabIndex = 9;
+            this.LabelBarra.Text = "Adventure Village Estadisticas [Administrador]";
+            this.LabelBarra.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PanelMenu
             // 
@@ -653,7 +702,7 @@ namespace AdventureVillageEstadisticas
             this.BotonAggDatos.BorderThickness = 2;
             this.BotonAggDatos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonAggDatos.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonAggDatos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.BotonAggDatos.CustomImages.Image = global::AdventureVillageEstadisticas.Properties.Resources.boton_mas;
             this.BotonAggDatos.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonAggDatos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonAggDatos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -701,7 +750,7 @@ namespace AdventureVillageEstadisticas
             this.BotonReportes.BorderThickness = 2;
             this.BotonReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonReportes.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonReportes.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.BotonReportes.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.BotonReportes.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonReportes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonReportes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -749,7 +798,7 @@ namespace AdventureVillageEstadisticas
             this.BotonArticulos.BorderThickness = 2;
             this.BotonArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonArticulos.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonArticulos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.BotonArticulos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.BotonArticulos.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonArticulos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonArticulos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -797,7 +846,7 @@ namespace AdventureVillageEstadisticas
             this.BotonUsuarios.BorderThickness = 2;
             this.BotonUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonUsuarios.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonUsuarios.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.BotonUsuarios.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.BotonUsuarios.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonUsuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonUsuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -845,7 +894,7 @@ namespace AdventureVillageEstadisticas
             this.BotonHome.BorderThickness = 3;
             this.BotonHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonHome.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.BotonHome.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.BotonHome.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.BotonHome.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -956,7 +1005,7 @@ namespace AdventureVillageEstadisticas
             this.BotonSalir.BorderThickness = 2;
             this.BotonSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonSalir.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonSalir.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.BotonSalir.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.BotonSalir.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonSalir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonSalir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1012,7 +1061,7 @@ namespace AdventureVillageEstadisticas
             this.BotonMenu.BorderThickness = 2;
             this.BotonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonMenu.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonMenu.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.BotonMenu.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.BotonMenu.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1103,12 +1152,40 @@ namespace AdventureVillageEstadisticas
             this.TpHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
             this.TpHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TpHome.BackgroundImage")));
             this.TpHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TpHome.Controls.Add(this.LabelHome2);
+            this.TpHome.Controls.Add(this.LabelHome);
             this.TpHome.Location = new System.Drawing.Point(4, 24);
             this.TpHome.Name = "TpHome";
             this.TpHome.Padding = new System.Windows.Forms.Padding(3);
             this.TpHome.Size = new System.Drawing.Size(722, 502);
             this.TpHome.TabIndex = 0;
             this.TpHome.Text = "Home";
+            // 
+            // LabelHome2
+            // 
+            this.LabelHome2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelHome2.BackColor = System.Drawing.Color.Transparent;
+            this.LabelHome2.Font = new System.Drawing.Font("Algerian", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHome2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.LabelHome2.Location = new System.Drawing.Point(168, 213);
+            this.LabelHome2.Name = "LabelHome2";
+            this.LabelHome2.Size = new System.Drawing.Size(272, 73);
+            this.LabelHome2.TabIndex = 8;
+            this.LabelHome2.Text = "VILLAGE";
+            this.LabelHome2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelHome
+            // 
+            this.LabelHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelHome.BackColor = System.Drawing.Color.Transparent;
+            this.LabelHome.Font = new System.Drawing.Font("Algerian", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.LabelHome.Location = new System.Drawing.Point(269, 147);
+            this.LabelHome.Name = "LabelHome";
+            this.LabelHome.Size = new System.Drawing.Size(374, 73);
+            this.LabelHome.TabIndex = 7;
+            this.LabelHome.Text = "ADVENTURE";
+            this.LabelHome.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TpUsuarios
             // 
@@ -1259,6 +1336,7 @@ namespace AdventureVillageEstadisticas
             // 
             this.PanelFormUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelFormUser.BackColor = System.Drawing.Color.Transparent;
+            this.PanelFormUser.Controls.Add(this.LabelCrearUsuario);
             this.PanelFormUser.Controls.Add(this.PanelCenterFormUser);
             this.PanelFormUser.Controls.Add(this.LabelContraseñasNo);
             this.PanelFormUser.Controls.Add(this.BotonRegresoUser);
@@ -1268,6 +1346,20 @@ namespace AdventureVillageEstadisticas
             this.PanelFormUser.Name = "PanelFormUser";
             this.PanelFormUser.Size = new System.Drawing.Size(405, 525);
             this.PanelFormUser.TabIndex = 1;
+            // 
+            // LabelCrearUsuario
+            // 
+            this.LabelCrearUsuario.AutoSize = false;
+            this.LabelCrearUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.LabelCrearUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelCrearUsuario.Font = new System.Drawing.Font("Agency FB", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCrearUsuario.ForeColor = System.Drawing.Color.White;
+            this.LabelCrearUsuario.Location = new System.Drawing.Point(0, 0);
+            this.LabelCrearUsuario.Name = "LabelCrearUsuario";
+            this.LabelCrearUsuario.Size = new System.Drawing.Size(405, 80);
+            this.LabelCrearUsuario.TabIndex = 19;
+            this.LabelCrearUsuario.Text = "Crear Usuario";
+            this.LabelCrearUsuario.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // PanelCenterFormUser
             // 
@@ -1563,7 +1655,7 @@ namespace AdventureVillageEstadisticas
             this.BotonRegresoUser.BorderRadius = 8;
             this.BotonRegresoUser.BorderThickness = 2;
             this.BotonRegresoUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonRegresoUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.BotonRegresoUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.BotonRegresoUser.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonRegresoUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonRegresoUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1602,7 +1694,7 @@ namespace AdventureVillageEstadisticas
             this.BotonGuardarUser.BorderRadius = 8;
             this.BotonGuardarUser.BorderThickness = 2;
             this.BotonGuardarUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonGuardarUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.BotonGuardarUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.BotonGuardarUser.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonGuardarUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonGuardarUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1641,7 +1733,7 @@ namespace AdventureVillageEstadisticas
             this.BotonLimpiarUser.BorderRadius = 8;
             this.BotonLimpiarUser.BorderThickness = 2;
             this.BotonLimpiarUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonLimpiarUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.BotonLimpiarUser.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.BotonLimpiarUser.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonLimpiarUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonLimpiarUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1778,6 +1870,7 @@ namespace AdventureVillageEstadisticas
             this.Activo,
             this.Modificar,
             this.Bloquear,
+            this.VerPerfil,
             this.Relleno});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
@@ -1881,6 +1974,13 @@ namespace AdventureVillageEstadisticas
             this.Bloquear.Name = "Bloquear";
             this.Bloquear.ReadOnly = true;
             this.Bloquear.Width = 5;
+            // 
+            // VerPerfil
+            // 
+            this.VerPerfil.HeaderText = "";
+            this.VerPerfil.Name = "VerPerfil";
+            this.VerPerfil.ReadOnly = true;
+            this.VerPerfil.Width = 5;
             // 
             // Relleno
             // 
@@ -2288,7 +2388,7 @@ namespace AdventureVillageEstadisticas
             this.BotonFiltroBuscar.BorderRadius = 8;
             this.BotonFiltroBuscar.BorderThickness = 2;
             this.BotonFiltroBuscar.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonFiltroBuscar.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.BotonFiltroBuscar.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.BotonFiltroBuscar.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BotonFiltroBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonFiltroBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -2490,6 +2590,7 @@ namespace AdventureVillageEstadisticas
             // 
             this.PanelAjusteArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelAjusteArticulos.BackColor = System.Drawing.Color.Transparent;
+            this.PanelAjusteArticulos.Controls.Add(this.LabelCrearArticulo);
             this.PanelAjusteArticulos.Controls.Add(this.PanelFormularioArticulo);
             this.PanelAjusteArticulos.Controls.Add(this.LabelErrorArticulo);
             this.PanelAjusteArticulos.Controls.Add(this.BotonSalirArticulo);
@@ -2499,6 +2600,20 @@ namespace AdventureVillageEstadisticas
             this.PanelAjusteArticulos.Name = "PanelAjusteArticulos";
             this.PanelAjusteArticulos.Size = new System.Drawing.Size(476, 526);
             this.PanelAjusteArticulos.TabIndex = 20;
+            // 
+            // LabelCrearArticulo
+            // 
+            this.LabelCrearArticulo.AutoSize = false;
+            this.LabelCrearArticulo.BackColor = System.Drawing.Color.Transparent;
+            this.LabelCrearArticulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelCrearArticulo.Font = new System.Drawing.Font("Agency FB", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCrearArticulo.ForeColor = System.Drawing.Color.White;
+            this.LabelCrearArticulo.Location = new System.Drawing.Point(0, 0);
+            this.LabelCrearArticulo.Name = "LabelCrearArticulo";
+            this.LabelCrearArticulo.Size = new System.Drawing.Size(476, 70);
+            this.LabelCrearArticulo.TabIndex = 24;
+            this.LabelCrearArticulo.Text = "Crear Articulo";
+            this.LabelCrearArticulo.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // PanelFormularioArticulo
             // 
@@ -2907,7 +3022,7 @@ namespace AdventureVillageEstadisticas
             this.BotonBuscarArticulo.BorderThickness = 2;
             this.BotonBuscarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BotonBuscarArticulo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonBuscarArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
+            this.BotonBuscarArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.BotonBuscarArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonBuscarArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BotonBuscarArticulo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -2956,7 +3071,7 @@ namespace AdventureVillageEstadisticas
             this.BotonSalirArticulo.BorderRadius = 8;
             this.BotonSalirArticulo.BorderThickness = 2;
             this.BotonSalirArticulo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonSalirArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
+            this.BotonSalirArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             this.BotonSalirArticulo.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonSalirArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonSalirArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -2995,7 +3110,7 @@ namespace AdventureVillageEstadisticas
             this.BotonGuardarArticulo.BorderRadius = 8;
             this.BotonGuardarArticulo.BorderThickness = 2;
             this.BotonGuardarArticulo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonGuardarArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
+            this.BotonGuardarArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
             this.BotonGuardarArticulo.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonGuardarArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonGuardarArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -3034,7 +3149,7 @@ namespace AdventureVillageEstadisticas
             this.BotonLimpiarArticulo.BorderRadius = 8;
             this.BotonLimpiarArticulo.BorderThickness = 2;
             this.BotonLimpiarArticulo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonLimpiarArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
+            this.BotonLimpiarArticulo.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
             this.BotonLimpiarArticulo.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BotonLimpiarArticulo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonLimpiarArticulo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -3864,7 +3979,7 @@ namespace AdventureVillageEstadisticas
             this.BotonFiltroBuscarArticulos.BorderRadius = 8;
             this.BotonFiltroBuscarArticulos.BorderThickness = 2;
             this.BotonFiltroBuscarArticulos.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonFiltroBuscarArticulos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
+            this.BotonFiltroBuscarArticulos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
             this.BotonFiltroBuscarArticulos.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BotonFiltroBuscarArticulos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonFiltroBuscarArticulos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -3921,7 +4036,6 @@ namespace AdventureVillageEstadisticas
             this.TpReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.TpReportes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TpReportes.BackgroundImage")));
             this.TpReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TpReportes.Controls.Add(this.ScrollBarReportes);
             this.TpReportes.Controls.Add(this.PanelAllReportes);
             this.TpReportes.Location = new System.Drawing.Point(4, 24);
             this.TpReportes.Name = "TpReportes";
@@ -3929,22 +4043,6 @@ namespace AdventureVillageEstadisticas
             this.TpReportes.Size = new System.Drawing.Size(722, 502);
             this.TpReportes.TabIndex = 8;
             this.TpReportes.Text = "Reportes";
-            // 
-            // ScrollBarReportes
-            // 
-            this.ScrollBarReportes.BindingContainer = this.PanelAllReportes;
-            this.ScrollBarReportes.BorderColor = System.Drawing.Color.White;
-            this.ScrollBarReportes.BorderRadius = 2;
-            this.ScrollBarReportes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ScrollBarReportes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ScrollBarReportes.InUpdate = false;
-            this.ScrollBarReportes.LargeChange = 10;
-            this.ScrollBarReportes.Location = new System.Drawing.Point(701, 3);
-            this.ScrollBarReportes.Name = "ScrollBarReportes";
-            this.ScrollBarReportes.ScrollbarSize = 18;
-            this.ScrollBarReportes.Size = new System.Drawing.Size(18, 496);
-            this.ScrollBarReportes.TabIndex = 27;
-            this.ScrollBarReportes.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
             // PanelAllReportes
             // 
@@ -3969,27 +4067,33 @@ namespace AdventureVillageEstadisticas
             this.TablaPanelReportesGraficos.ColumnCount = 2;
             this.TablaPanelReportesGraficos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TablaPanelReportesGraficos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TablaPanelReportesGraficos.Controls.Add(this.ChartIzq3, 0, 2);
+            this.TablaPanelReportesGraficos.Controls.Add(this.ChartDer3, 0, 2);
+            this.TablaPanelReportesGraficos.Controls.Add(this.ChartDer2, 0, 1);
+            this.TablaPanelReportesGraficos.Controls.Add(this.ChartIzq2, 0, 1);
             this.TablaPanelReportesGraficos.Controls.Add(this.ChartIzq, 0, 0);
             this.TablaPanelReportesGraficos.Controls.Add(this.ChartDer, 1, 0);
             this.TablaPanelReportesGraficos.Dock = System.Windows.Forms.DockStyle.Top;
             this.TablaPanelReportesGraficos.Location = new System.Drawing.Point(10, 190);
             this.TablaPanelReportesGraficos.Name = "TablaPanelReportesGraficos";
-            this.TablaPanelReportesGraficos.RowCount = 1;
-            this.TablaPanelReportesGraficos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TablaPanelReportesGraficos.Size = new System.Drawing.Size(696, 258);
+            this.TablaPanelReportesGraficos.RowCount = 3;
+            this.TablaPanelReportesGraficos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TablaPanelReportesGraficos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TablaPanelReportesGraficos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.TablaPanelReportesGraficos.Size = new System.Drawing.Size(679, 750);
             this.TablaPanelReportesGraficos.TabIndex = 38;
             // 
-            // ChartIzq
+            // ChartIzq3
             // 
-            this.ChartIzq.BackColor = System.Drawing.Color.Transparent;
-            this.ChartIzq.BorderlineWidth = 2;
+            this.ChartIzq3.BackColor = System.Drawing.Color.Transparent;
+            this.ChartIzq3.BorderlineWidth = 2;
             chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
             chartArea1.AxisX.LineColor = System.Drawing.Color.White;
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.Title = "Fecha";
+            chartArea1.AxisX.Title = "Escala";
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
             chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
@@ -3998,14 +4102,14 @@ namespace AdventureVillageEstadisticas
             chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
             chartArea1.AxisY.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea1.AxisY.Title = "Cantidad";
+            chartArea1.AxisY.Title = "Votos";
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisY.TitleForeColor = System.Drawing.Color.White;
             chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
-            this.ChartIzq.ChartAreas.Add(chartArea1);
-            this.ChartIzq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChartIzq3.ChartAreas.Add(chartArea1);
+            this.ChartIzq3.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.BackColor = System.Drawing.Color.Transparent;
             legend1.BorderColor = System.Drawing.Color.White;
             legend1.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
@@ -4016,51 +4120,351 @@ namespace AdventureVillageEstadisticas
             legend1.Name = "Legend1";
             legend1.TitleForeColor = System.Drawing.Color.White;
             legend1.TitleSeparatorColor = System.Drawing.Color.White;
-            this.ChartIzq.Legends.Add(legend1);
-            this.ChartIzq.Location = new System.Drawing.Point(3, 3);
-            this.ChartIzq.Name = "ChartIzq";
+            this.ChartIzq3.Legends.Add(legend1);
+            this.ChartIzq3.Location = new System.Drawing.Point(3, 501);
+            this.ChartIzq3.Name = "ChartIzq3";
+            this.ChartIzq3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.BorderWidth = 6;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.DodgerBlue;
             series1.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.IsValueShownAsLabel = true;
+            series1.IsXValueIndexed = true;
             series1.LabelBackColor = System.Drawing.Color.Transparent;
             series1.LabelBorderColor = System.Drawing.Color.Transparent;
             series1.LabelBorderWidth = 2;
             series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
-            series1.LegendText = "Usuarios";
-            series1.Name = "Usuarios";
+            series1.Name = "Exp de juego";
             series2.BorderWidth = 4;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             series2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series2.IsValueShownAsLabel = true;
+            series2.IsXValueIndexed = true;
             series2.LabelBorderWidth = 2;
             series2.LabelForeColor = System.Drawing.Color.White;
             series2.Legend = "Legend1";
-            series2.Name = "Activos";
+            series2.Name = "Items";
             series3.BorderWidth = 2;
             series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Color = System.Drawing.Color.Red;
             series3.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series3.IsValueShownAsLabel = true;
+            series3.IsXValueIndexed = true;
             series3.LabelForeColor = System.Drawing.Color.White;
             series3.Legend = "Legend1";
-            series3.Name = "Inactivos";
-            this.ChartIzq.Series.Add(series1);
-            this.ChartIzq.Series.Add(series2);
-            this.ChartIzq.Series.Add(series3);
-            this.ChartIzq.Size = new System.Drawing.Size(342, 252);
-            this.ChartIzq.TabIndex = 0;
+            series3.Name = "Biomas";
+            series4.ChartArea = "ChartArea1";
+            series4.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.IsValueShownAsLabel = true;
+            series4.IsXValueIndexed = true;
+            series4.LabelForeColor = System.Drawing.Color.White;
+            series4.Legend = "Legend1";
+            series4.Name = "Enemigos";
+            this.ChartIzq3.Series.Add(series1);
+            this.ChartIzq3.Series.Add(series2);
+            this.ChartIzq3.Series.Add(series3);
+            this.ChartIzq3.Series.Add(series4);
+            this.ChartIzq3.Size = new System.Drawing.Size(333, 246);
+            this.ChartIzq3.TabIndex = 5;
             title1.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
             title1.ForeColor = System.Drawing.Color.White;
             title1.Name = "TituloCartIzq";
-            title1.Text = "Cantidad de Usuarios Ingresados";
-            this.ChartIzq.Titles.Add(title1);
+            title1.Text = "Entrevista Calidad Juego";
+            this.ChartIzq3.Titles.Add(title1);
+            // 
+            // ChartDer3
+            // 
+            this.ChartDer3.BackColor = System.Drawing.Color.Transparent;
+            this.ChartDer3.BorderlineWidth = 2;
+            chartArea2.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea2.AxisX.IsLabelAutoFit = false;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea2.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisX.Title = "Usuario";
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea2.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisY.IsLabelAutoFit = false;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea2.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea2.AxisY.Title = "Minutos";
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.BorderColor = System.Drawing.Color.White;
+            chartArea2.Name = "ChartArea1";
+            this.ChartDer3.ChartAreas.Add(chartArea2);
+            this.ChartDer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.BorderColor = System.Drawing.Color.White;
+            legend2.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend2.IsTextAutoFit = false;
+            legend2.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend2.Name = "Legend1";
+            legend2.TitleForeColor = System.Drawing.Color.White;
+            legend2.TitleSeparatorColor = System.Drawing.Color.White;
+            this.ChartDer3.Legends.Add(legend2);
+            this.ChartDer3.Location = new System.Drawing.Point(342, 501);
+            this.ChartDer3.Name = "ChartDer3";
+            this.ChartDer3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series5.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.IsValueShownAsLabel = true;
+            series5.IsXValueIndexed = true;
+            series5.LabelForeColor = System.Drawing.Color.White;
+            series5.Legend = "Legend1";
+            series5.Name = "Mins Jugando";
+            this.ChartDer3.Series.Add(series5);
+            this.ChartDer3.Size = new System.Drawing.Size(334, 246);
+            this.ChartDer3.TabIndex = 4;
+            title2.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
+            title2.ForeColor = System.Drawing.Color.White;
+            title2.Name = "TituloCartIzq";
+            title2.Text = "Top usuarios";
+            this.ChartDer3.Titles.Add(title2);
+            // 
+            // ChartDer2
+            // 
+            this.ChartDer2.BackColor = System.Drawing.Color.Transparent;
+            this.ChartDer2.BorderlineWidth = 2;
+            chartArea3.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea3.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisX.Title = "Fecha";
+            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea3.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea3.AxisY.IsLabelAutoFit = false;
+            chartArea3.AxisY.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea3.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisY.Title = "Cantidad";
+            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.BorderColor = System.Drawing.Color.White;
+            chartArea3.Name = "ChartArea1";
+            this.ChartDer2.ChartAreas.Add(chartArea3);
+            this.ChartDer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.BorderColor = System.Drawing.Color.White;
+            legend3.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend3.IsTextAutoFit = false;
+            legend3.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend3.Name = "Legend1";
+            legend3.TitleForeColor = System.Drawing.Color.White;
+            legend3.TitleSeparatorColor = System.Drawing.Color.White;
+            this.ChartDer2.Legends.Add(legend3);
+            this.ChartDer2.Location = new System.Drawing.Point(342, 252);
+            this.ChartDer2.Name = "ChartDer2";
+            this.ChartDer2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series6.IsValueShownAsLabel = true;
+            series6.IsXValueIndexed = true;
+            series6.LabelForeColor = System.Drawing.Color.White;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.ChartDer2.Series.Add(series6);
+            this.ChartDer2.Size = new System.Drawing.Size(334, 243);
+            this.ChartDer2.TabIndex = 3;
+            title3.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
+            title3.ForeColor = System.Drawing.Color.White;
+            title3.Name = "TituloCartIzq";
+            title3.Text = "Cantidad de Plantas";
+            this.ChartDer2.Titles.Add(title3);
+            // 
+            // ChartIzq2
+            // 
+            this.ChartIzq2.BackColor = System.Drawing.Color.Transparent;
+            this.ChartIzq2.BorderlineWidth = 2;
+            chartArea4.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea4.AxisX.IsLabelAutoFit = false;
+            chartArea4.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea4.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea4.AxisX.Title = "Cantidad Atributo";
+            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea4.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea4.AxisY.IsLabelAutoFit = false;
+            chartArea4.AxisY.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea4.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea4.AxisY.Title = "Cantidad Usuarios";
+            chartArea4.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea4.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea4.BackColor = System.Drawing.Color.Transparent;
+            chartArea4.BorderColor = System.Drawing.Color.White;
+            chartArea4.Name = "ChartArea1";
+            this.ChartIzq2.ChartAreas.Add(chartArea4);
+            this.ChartIzq2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.BackColor = System.Drawing.Color.Transparent;
+            legend4.BorderColor = System.Drawing.Color.White;
+            legend4.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
+            legend4.ForeColor = System.Drawing.Color.White;
+            legend4.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend4.IsTextAutoFit = false;
+            legend4.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend4.Name = "Legend1";
+            legend4.TitleForeColor = System.Drawing.Color.White;
+            legend4.TitleSeparatorColor = System.Drawing.Color.White;
+            this.ChartIzq2.Legends.Add(legend4);
+            this.ChartIzq2.Location = new System.Drawing.Point(3, 252);
+            this.ChartIzq2.Name = "ChartIzq2";
+            this.ChartIzq2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series7.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series7.IsValueShownAsLabel = true;
+            series7.LabelForeColor = System.Drawing.Color.White;
+            series7.Legend = "Legend1";
+            series7.MarkerSize = 10;
+            series7.Name = "Ataque";
+            series8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series8.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series8.IsValueShownAsLabel = true;
+            series8.LabelForeColor = System.Drawing.Color.White;
+            series8.Legend = "Legend1";
+            series8.MarkerSize = 10;
+            series8.Name = "Defensa";
+            series8.YValuesPerPoint = 2;
+            series9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series9.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series9.IsValueShownAsLabel = true;
+            series9.LabelForeColor = System.Drawing.Color.White;
+            series9.Legend = "Legend1";
+            series9.MarkerSize = 10;
+            series9.Name = "VidaMax";
+            series9.YValuesPerPoint = 2;
+            series10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series10.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series10.IsValueShownAsLabel = true;
+            series10.LabelForeColor = System.Drawing.Color.White;
+            series10.Legend = "Legend1";
+            series10.MarkerSize = 10;
+            series10.Name = "Monedas";
+            series10.YValuesPerPoint = 2;
+            this.ChartIzq2.Series.Add(series7);
+            this.ChartIzq2.Series.Add(series8);
+            this.ChartIzq2.Series.Add(series9);
+            this.ChartIzq2.Series.Add(series10);
+            this.ChartIzq2.Size = new System.Drawing.Size(333, 243);
+            this.ChartIzq2.TabIndex = 2;
+            title4.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
+            title4.ForeColor = System.Drawing.Color.White;
+            title4.Name = "TituloCartIzq";
+            title4.Text = "Gestion de Estadisticas";
+            this.ChartIzq2.Titles.Add(title4);
+            // 
+            // ChartIzq
+            // 
+            this.ChartIzq.BackColor = System.Drawing.Color.Transparent;
+            this.ChartIzq.BorderlineWidth = 2;
+            chartArea5.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea5.AxisX.IsLabelAutoFit = false;
+            chartArea5.AxisX.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea5.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea5.AxisX.Title = "Fecha";
+            chartArea5.AxisX.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea5.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea5.AxisY.IsLabelAutoFit = false;
+            chartArea5.AxisY.LabelStyle.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea5.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea5.AxisY.Title = "Cantidad";
+            chartArea5.AxisY.TitleFont = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea5.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea5.BackColor = System.Drawing.Color.Transparent;
+            chartArea5.BorderColor = System.Drawing.Color.White;
+            chartArea5.Name = "ChartArea1";
+            this.ChartIzq.ChartAreas.Add(chartArea5);
+            this.ChartIzq.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend5.BackColor = System.Drawing.Color.Transparent;
+            legend5.BorderColor = System.Drawing.Color.White;
+            legend5.Font = new System.Drawing.Font("Agency FB", 10F, System.Drawing.FontStyle.Bold);
+            legend5.ForeColor = System.Drawing.Color.White;
+            legend5.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend5.IsTextAutoFit = false;
+            legend5.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend5.Name = "Legend1";
+            legend5.TitleForeColor = System.Drawing.Color.White;
+            legend5.TitleSeparatorColor = System.Drawing.Color.White;
+            this.ChartIzq.Legends.Add(legend5);
+            this.ChartIzq.Location = new System.Drawing.Point(3, 3);
+            this.ChartIzq.Name = "ChartIzq";
+            this.ChartIzq.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series11.BorderWidth = 3;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Color = System.Drawing.Color.DodgerBlue;
+            series11.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series11.IsValueShownAsLabel = true;
+            series11.LabelBackColor = System.Drawing.Color.Transparent;
+            series11.LabelBorderColor = System.Drawing.Color.Transparent;
+            series11.LabelBorderWidth = 2;
+            series11.LabelForeColor = System.Drawing.Color.White;
+            series11.Legend = "Legend1";
+            series11.LegendText = "Usuarios";
+            series11.Name = "Usuarios";
+            series12.BorderWidth = 3;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series12.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series12.IsValueShownAsLabel = true;
+            series12.LabelBorderWidth = 2;
+            series12.LabelForeColor = System.Drawing.Color.White;
+            series12.Legend = "Legend1";
+            series12.Name = "Activos";
+            series13.BorderWidth = 3;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series13.Color = System.Drawing.Color.Red;
+            series13.Font = new System.Drawing.Font("Agency FB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series13.IsValueShownAsLabel = true;
+            series13.LabelForeColor = System.Drawing.Color.White;
+            series13.Legend = "Legend1";
+            series13.Name = "Inactivos";
+            this.ChartIzq.Series.Add(series11);
+            this.ChartIzq.Series.Add(series12);
+            this.ChartIzq.Series.Add(series13);
+            this.ChartIzq.Size = new System.Drawing.Size(333, 243);
+            this.ChartIzq.TabIndex = 0;
+            title5.Font = new System.Drawing.Font("Agency FB", 11.75F, System.Drawing.FontStyle.Bold);
+            title5.ForeColor = System.Drawing.Color.White;
+            title5.Name = "TituloCartIzq";
+            title5.Text = "Cantidad de Usuarios Registrados";
+            this.ChartIzq.Titles.Add(title5);
             // 
             // ChartDer
             // 
@@ -4068,21 +4472,21 @@ namespace AdventureVillageEstadisticas
             this.ChartDer.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.ChartDer.BorderlineColor = System.Drawing.Color.Transparent;
             this.ChartDer.BorderlineWidth = 10;
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.BorderColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            chartArea2.ShadowColor = System.Drawing.Color.White;
-            this.ChartDer.ChartAreas.Add(chartArea2);
+            chartArea6.BackColor = System.Drawing.Color.Transparent;
+            chartArea6.BorderColor = System.Drawing.Color.Transparent;
+            chartArea6.Name = "ChartArea1";
+            chartArea6.ShadowColor = System.Drawing.Color.White;
+            this.ChartDer.ChartAreas.Add(chartArea6);
             this.ChartDer.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.BackColor = System.Drawing.Color.Transparent;
-            legend2.BorderColor = System.Drawing.Color.White;
-            legend2.BorderWidth = 2;
-            legend2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend2.ForeColor = System.Drawing.Color.White;
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            this.ChartDer.Legends.Add(legend2);
-            this.ChartDer.Location = new System.Drawing.Point(351, 3);
+            legend6.BackColor = System.Drawing.Color.Transparent;
+            legend6.BorderColor = System.Drawing.Color.White;
+            legend6.BorderWidth = 2;
+            legend6.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend6.ForeColor = System.Drawing.Color.White;
+            legend6.IsTextAutoFit = false;
+            legend6.Name = "Legend1";
+            this.ChartDer.Legends.Add(legend6);
+            this.ChartDer.Location = new System.Drawing.Point(342, 3);
             this.ChartDer.Name = "ChartDer";
             this.ChartDer.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             this.ChartDer.PaletteCustomColors = new System.Drawing.Color[] {
@@ -4095,25 +4499,25 @@ namespace AdventureVillageEstadisticas
         System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(101)))), ((int)(((byte)(34))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(187)))), ((int)(((byte)(23))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(104)))))};
-            series4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series4.BorderWidth = 2;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.IsValueShownAsLabel = true;
-            series4.LabelForeColor = System.Drawing.Color.White;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.ShadowColor = System.Drawing.Color.Transparent;
-            series4.YValuesPerPoint = 2;
-            this.ChartDer.Series.Add(series4);
-            this.ChartDer.Size = new System.Drawing.Size(342, 252);
+            series14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series14.BorderWidth = 2;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series14.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series14.IsValueShownAsLabel = true;
+            series14.LabelForeColor = System.Drawing.Color.White;
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            series14.ShadowColor = System.Drawing.Color.Transparent;
+            series14.YValuesPerPoint = 2;
+            this.ChartDer.Series.Add(series14);
+            this.ChartDer.Size = new System.Drawing.Size(334, 243);
             this.ChartDer.TabIndex = 1;
-            title2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.ForeColor = System.Drawing.Color.White;
-            title2.Name = "Title1";
-            title2.Text = "Cantidad de Articulos";
-            this.ChartDer.Titles.Add(title2);
+            title6.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title6.ForeColor = System.Drawing.Color.White;
+            title6.Name = "Title1";
+            title6.Text = "Cantidad de Articulos";
+            this.ChartDer.Titles.Add(title6);
             // 
             // TablaFechasBusqueda
             // 
@@ -4140,7 +4544,7 @@ namespace AdventureVillageEstadisticas
             this.TablaFechasBusqueda.RowCount = 2;
             this.TablaFechasBusqueda.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.TablaFechasBusqueda.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TablaFechasBusqueda.Size = new System.Drawing.Size(696, 67);
+            this.TablaFechasBusqueda.Size = new System.Drawing.Size(679, 67);
             this.TablaFechasBusqueda.TabIndex = 37;
             // 
             // LabelGraficIzqRango
@@ -4150,9 +4554,9 @@ namespace AdventureVillageEstadisticas
             this.LabelGraficIzqRango.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelGraficIzqRango.Font = new System.Drawing.Font("Agency FB", 11.75F);
             this.LabelGraficIzqRango.ForeColor = System.Drawing.Color.White;
-            this.LabelGraficIzqRango.Location = new System.Drawing.Point(234, 3);
+            this.LabelGraficIzqRango.Location = new System.Drawing.Point(229, 3);
             this.LabelGraficIzqRango.Name = "LabelGraficIzqRango";
-            this.LabelGraficIzqRango.Size = new System.Drawing.Size(110, 19);
+            this.LabelGraficIzqRango.Size = new System.Drawing.Size(107, 19);
             this.LabelGraficIzqRango.TabIndex = 13;
             this.LabelGraficIzqRango.Text = "Rango:";
             this.LabelGraficIzqRango.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4164,9 +4568,9 @@ namespace AdventureVillageEstadisticas
             this.LabelHastaGraficIzq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelHastaGraficIzq.Font = new System.Drawing.Font("Agency FB", 11.75F);
             this.LabelHastaGraficIzq.ForeColor = System.Drawing.Color.White;
-            this.LabelHastaGraficIzq.Location = new System.Drawing.Point(119, 3);
+            this.LabelHastaGraficIzq.Location = new System.Drawing.Point(116, 3);
             this.LabelHastaGraficIzq.Name = "LabelHastaGraficIzq";
-            this.LabelHastaGraficIzq.Size = new System.Drawing.Size(109, 19);
+            this.LabelHastaGraficIzq.Size = new System.Drawing.Size(107, 19);
             this.LabelHastaGraficIzq.TabIndex = 11;
             this.LabelHastaGraficIzq.Text = "Hasta:";
             this.LabelHastaGraficIzq.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4180,7 +4584,7 @@ namespace AdventureVillageEstadisticas
             this.LabelDeGraficIzq.ForeColor = System.Drawing.Color.White;
             this.LabelDeGraficIzq.Location = new System.Drawing.Point(3, 3);
             this.LabelDeGraficIzq.Name = "LabelDeGraficIzq";
-            this.LabelDeGraficIzq.Size = new System.Drawing.Size(110, 19);
+            this.LabelDeGraficIzq.Size = new System.Drawing.Size(107, 19);
             this.LabelDeGraficIzq.TabIndex = 0;
             this.LabelDeGraficIzq.Text = "Desde:";
             this.LabelDeGraficIzq.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4200,7 +4604,7 @@ namespace AdventureVillageEstadisticas
             this.DatePickGrafDeIzq.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DatePickGrafDeIzq.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DatePickGrafDeIzq.Name = "DatePickGrafDeIzq";
-            this.DatePickGrafDeIzq.Size = new System.Drawing.Size(110, 36);
+            this.DatePickGrafDeIzq.Size = new System.Drawing.Size(107, 36);
             this.DatePickGrafDeIzq.TabIndex = 10;
             this.DatePickGrafDeIzq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DatePickGrafDeIzq.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
@@ -4217,11 +4621,11 @@ namespace AdventureVillageEstadisticas
             this.DatePickGrafHastaIzq.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DatePickGrafHastaIzq.ForeColor = System.Drawing.Color.White;
             this.DatePickGrafHastaIzq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatePickGrafHastaIzq.Location = new System.Drawing.Point(119, 28);
+            this.DatePickGrafHastaIzq.Location = new System.Drawing.Point(116, 28);
             this.DatePickGrafHastaIzq.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DatePickGrafHastaIzq.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DatePickGrafHastaIzq.Name = "DatePickGrafHastaIzq";
-            this.DatePickGrafHastaIzq.Size = new System.Drawing.Size(109, 36);
+            this.DatePickGrafHastaIzq.Size = new System.Drawing.Size(107, 36);
             this.DatePickGrafHastaIzq.TabIndex = 12;
             this.DatePickGrafHastaIzq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DatePickGrafHastaIzq.Value = new System.DateTime(2024, 3, 11, 0, 0, 0, 0);
@@ -4257,13 +4661,13 @@ namespace AdventureVillageEstadisticas
             this.ComboBoxRangoIzq.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.ComboBoxRangoIzq.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxRangoIzq.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
-            this.ComboBoxRangoIzq.Location = new System.Drawing.Point(234, 28);
+            this.ComboBoxRangoIzq.Location = new System.Drawing.Point(229, 28);
             this.ComboBoxRangoIzq.Name = "ComboBoxRangoIzq";
             this.ComboBoxRangoIzq.ShadowDecoration.BorderRadius = 10;
             this.ComboBoxRangoIzq.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.ComboBoxRangoIzq.ShadowDecoration.Depth = 100;
             this.ComboBoxRangoIzq.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ComboBoxRangoIzq.Size = new System.Drawing.Size(110, 36);
+            this.ComboBoxRangoIzq.Size = new System.Drawing.Size(107, 36);
             this.ComboBoxRangoIzq.StartIndex = 1;
             this.ComboBoxRangoIzq.TabIndex = 21;
             this.ComboBoxRangoIzq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -4276,9 +4680,9 @@ namespace AdventureVillageEstadisticas
             this.LabelGraficDerRango.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelGraficDerRango.Font = new System.Drawing.Font("Agency FB", 11.75F);
             this.LabelGraficDerRango.ForeColor = System.Drawing.Color.White;
-            this.LabelGraficDerRango.Location = new System.Drawing.Point(419, 3);
+            this.LabelGraficDerRango.Location = new System.Drawing.Point(409, 3);
             this.LabelGraficDerRango.Name = "LabelGraficDerRango";
-            this.LabelGraficDerRango.Size = new System.Drawing.Size(202, 19);
+            this.LabelGraficDerRango.Size = new System.Drawing.Size(197, 19);
             this.LabelGraficDerRango.TabIndex = 16;
             this.LabelGraficDerRango.Text = "Opcion:";
             this.LabelGraficDerRango.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4310,13 +4714,13 @@ namespace AdventureVillageEstadisticas
             this.ComboBoxOpcionDer.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.ComboBoxOpcionDer.ItemsAppearance.SelectedFont = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxOpcionDer.ItemsAppearance.SelectedForeColor = System.Drawing.Color.White;
-            this.ComboBoxOpcionDer.Location = new System.Drawing.Point(419, 28);
+            this.ComboBoxOpcionDer.Location = new System.Drawing.Point(409, 28);
             this.ComboBoxOpcionDer.Name = "ComboBoxOpcionDer";
             this.ComboBoxOpcionDer.ShadowDecoration.BorderRadius = 10;
             this.ComboBoxOpcionDer.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(226)))), ((int)(((byte)(122)))));
             this.ComboBoxOpcionDer.ShadowDecoration.Depth = 100;
             this.ComboBoxOpcionDer.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ComboBoxOpcionDer.Size = new System.Drawing.Size(202, 36);
+            this.ComboBoxOpcionDer.Size = new System.Drawing.Size(197, 36);
             this.ComboBoxOpcionDer.StartIndex = 1;
             this.ComboBoxOpcionDer.TabIndex = 22;
             this.ComboBoxOpcionDer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -4329,7 +4733,7 @@ namespace AdventureVillageEstadisticas
             this.SeparadorReportes2.FillThickness = 2;
             this.SeparadorReportes2.Location = new System.Drawing.Point(10, 113);
             this.SeparadorReportes2.Name = "SeparadorReportes2";
-            this.SeparadorReportes2.Size = new System.Drawing.Size(696, 10);
+            this.SeparadorReportes2.Size = new System.Drawing.Size(679, 10);
             this.SeparadorReportes2.TabIndex = 36;
             // 
             // TablaPanelReportesTotales
@@ -4350,7 +4754,7 @@ namespace AdventureVillageEstadisticas
             this.TablaPanelReportesTotales.RowCount = 2;
             this.TablaPanelReportesTotales.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.TablaPanelReportesTotales.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TablaPanelReportesTotales.Size = new System.Drawing.Size(696, 70);
+            this.TablaPanelReportesTotales.Size = new System.Drawing.Size(679, 70);
             this.TablaPanelReportesTotales.TabIndex = 34;
             // 
             // LabelCantTotalUsuarios
@@ -4362,7 +4766,7 @@ namespace AdventureVillageEstadisticas
             this.LabelCantTotalUsuarios.ForeColor = System.Drawing.Color.White;
             this.LabelCantTotalUsuarios.Location = new System.Drawing.Point(3, 38);
             this.LabelCantTotalUsuarios.Name = "LabelCantTotalUsuarios";
-            this.LabelCantTotalUsuarios.Size = new System.Drawing.Size(168, 26);
+            this.LabelCantTotalUsuarios.Size = new System.Drawing.Size(163, 26);
             this.LabelCantTotalUsuarios.TabIndex = 12;
             this.LabelCantTotalUsuarios.Text = "0";
             this.LabelCantTotalUsuarios.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4374,9 +4778,9 @@ namespace AdventureVillageEstadisticas
             this.LabelCantTotalArticulos.Dock = System.Windows.Forms.DockStyle.Top;
             this.LabelCantTotalArticulos.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelCantTotalArticulos.ForeColor = System.Drawing.Color.White;
-            this.LabelCantTotalArticulos.Location = new System.Drawing.Point(177, 38);
+            this.LabelCantTotalArticulos.Location = new System.Drawing.Point(172, 38);
             this.LabelCantTotalArticulos.Name = "LabelCantTotalArticulos";
-            this.LabelCantTotalArticulos.Size = new System.Drawing.Size(168, 26);
+            this.LabelCantTotalArticulos.Size = new System.Drawing.Size(163, 26);
             this.LabelCantTotalArticulos.TabIndex = 11;
             this.LabelCantTotalArticulos.Text = "0";
             this.LabelCantTotalArticulos.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4388,9 +4792,9 @@ namespace AdventureVillageEstadisticas
             this.LabelTotalArticulosTittle.Dock = System.Windows.Forms.DockStyle.Top;
             this.LabelTotalArticulosTittle.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTotalArticulosTittle.ForeColor = System.Drawing.Color.White;
-            this.LabelTotalArticulosTittle.Location = new System.Drawing.Point(177, 3);
+            this.LabelTotalArticulosTittle.Location = new System.Drawing.Point(172, 3);
             this.LabelTotalArticulosTittle.Name = "LabelTotalArticulosTittle";
-            this.LabelTotalArticulosTittle.Size = new System.Drawing.Size(168, 26);
+            this.LabelTotalArticulosTittle.Size = new System.Drawing.Size(163, 26);
             this.LabelTotalArticulosTittle.TabIndex = 10;
             this.LabelTotalArticulosTittle.Text = "Total Articulos";
             this.LabelTotalArticulosTittle.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4404,7 +4808,7 @@ namespace AdventureVillageEstadisticas
             this.LabelTotalUsuariosTittle.ForeColor = System.Drawing.Color.White;
             this.LabelTotalUsuariosTittle.Location = new System.Drawing.Point(3, 3);
             this.LabelTotalUsuariosTittle.Name = "LabelTotalUsuariosTittle";
-            this.LabelTotalUsuariosTittle.Size = new System.Drawing.Size(168, 26);
+            this.LabelTotalUsuariosTittle.Size = new System.Drawing.Size(163, 26);
             this.LabelTotalUsuariosTittle.TabIndex = 9;
             this.LabelTotalUsuariosTittle.Text = "Total Usuarios";
             this.LabelTotalUsuariosTittle.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4416,7 +4820,7 @@ namespace AdventureVillageEstadisticas
             this.SeparadorReportes.FillThickness = 2;
             this.SeparadorReportes.Location = new System.Drawing.Point(10, 33);
             this.SeparadorReportes.Name = "SeparadorReportes";
-            this.SeparadorReportes.Size = new System.Drawing.Size(696, 10);
+            this.SeparadorReportes.Size = new System.Drawing.Size(679, 10);
             this.SeparadorReportes.TabIndex = 35;
             // 
             // PanelTituloReporte
@@ -4426,7 +4830,7 @@ namespace AdventureVillageEstadisticas
             this.PanelTituloReporte.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTituloReporte.Location = new System.Drawing.Point(10, 0);
             this.PanelTituloReporte.Name = "PanelTituloReporte";
-            this.PanelTituloReporte.Size = new System.Drawing.Size(696, 33);
+            this.PanelTituloReporte.Size = new System.Drawing.Size(679, 33);
             this.PanelTituloReporte.TabIndex = 29;
             // 
             // LabelTituloReportes
@@ -4438,7 +4842,7 @@ namespace AdventureVillageEstadisticas
             this.LabelTituloReportes.ForeColor = System.Drawing.Color.White;
             this.LabelTituloReportes.Location = new System.Drawing.Point(0, 0);
             this.LabelTituloReportes.Name = "LabelTituloReportes";
-            this.LabelTituloReportes.Size = new System.Drawing.Size(696, 33);
+            this.LabelTituloReportes.Size = new System.Drawing.Size(679, 33);
             this.LabelTituloReportes.TabIndex = 0;
             this.LabelTituloReportes.Text = "REPORTES";
             this.LabelTituloReportes.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5485,7 +5889,7 @@ namespace AdventureVillageEstadisticas
             this.BotonBuscarFiltroRegistro.BorderRadius = 8;
             this.BotonBuscarFiltroRegistro.BorderThickness = 2;
             this.BotonBuscarFiltroRegistro.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.BotonBuscarFiltroRegistro.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
+            this.BotonBuscarFiltroRegistro.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             this.BotonBuscarFiltroRegistro.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BotonBuscarFiltroRegistro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BotonBuscarFiltroRegistro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -5808,6 +6212,20 @@ namespace AdventureVillageEstadisticas
             this.guna2Panel3.Size = new System.Drawing.Size(111, 50);
             this.guna2Panel3.TabIndex = 4;
             // 
+            // LabelPTSTiempoPerfil
+            // 
+            this.LabelPTSTiempoPerfil.AutoSize = false;
+            this.LabelPTSTiempoPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPTSTiempoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPTSTiempoPerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPTSTiempoPerfil.ForeColor = System.Drawing.Color.White;
+            this.LabelPTSTiempoPerfil.Location = new System.Drawing.Point(40, 10);
+            this.LabelPTSTiempoPerfil.Name = "LabelPTSTiempoPerfil";
+            this.LabelPTSTiempoPerfil.Size = new System.Drawing.Size(71, 40);
+            this.LabelPTSTiempoPerfil.TabIndex = 4;
+            this.LabelPTSTiempoPerfil.Text = "PTS";
+            this.LabelPTSTiempoPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ImagenTiempoPerfil
             // 
             this.ImagenTiempoPerfil.Dock = System.Windows.Forms.DockStyle.Left;
@@ -5856,6 +6274,20 @@ namespace AdventureVillageEstadisticas
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(3, 13, 3, 3);
             this.guna2Panel2.Size = new System.Drawing.Size(109, 50);
             this.guna2Panel2.TabIndex = 4;
+            // 
+            // LabelPTSEspacioPerfil
+            // 
+            this.LabelPTSEspacioPerfil.AutoSize = false;
+            this.LabelPTSEspacioPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPTSEspacioPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPTSEspacioPerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPTSEspacioPerfil.ForeColor = System.Drawing.Color.White;
+            this.LabelPTSEspacioPerfil.Location = new System.Drawing.Point(37, 13);
+            this.LabelPTSEspacioPerfil.Name = "LabelPTSEspacioPerfil";
+            this.LabelPTSEspacioPerfil.Size = new System.Drawing.Size(69, 34);
+            this.LabelPTSEspacioPerfil.TabIndex = 4;
+            this.LabelPTSEspacioPerfil.Text = "PTS";
+            this.LabelPTSEspacioPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImagenEspacioPerfil
             // 
@@ -5906,6 +6338,20 @@ namespace AdventureVillageEstadisticas
             this.guna2Panel1.Size = new System.Drawing.Size(109, 50);
             this.guna2Panel1.TabIndex = 4;
             // 
+            // LabelPTSDefensaPerfil
+            // 
+            this.LabelPTSDefensaPerfil.AutoSize = false;
+            this.LabelPTSDefensaPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPTSDefensaPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPTSDefensaPerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPTSDefensaPerfil.ForeColor = System.Drawing.Color.White;
+            this.LabelPTSDefensaPerfil.Location = new System.Drawing.Point(36, 14);
+            this.LabelPTSDefensaPerfil.Name = "LabelPTSDefensaPerfil";
+            this.LabelPTSDefensaPerfil.Size = new System.Drawing.Size(69, 32);
+            this.LabelPTSDefensaPerfil.TabIndex = 4;
+            this.LabelPTSDefensaPerfil.Text = "PTS";
+            this.LabelPTSDefensaPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ImagenDefensaPerfil
             // 
             this.ImagenDefensaPerfil.Dock = System.Windows.Forms.DockStyle.Left;
@@ -5954,6 +6400,20 @@ namespace AdventureVillageEstadisticas
             this.PanelAtaquePerfil.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.PanelAtaquePerfil.Size = new System.Drawing.Size(109, 50);
             this.PanelAtaquePerfil.TabIndex = 3;
+            // 
+            // LabelPTSAtaquePerfil
+            // 
+            this.LabelPTSAtaquePerfil.AutoSize = false;
+            this.LabelPTSAtaquePerfil.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPTSAtaquePerfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPTSAtaquePerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPTSAtaquePerfil.ForeColor = System.Drawing.Color.White;
+            this.LabelPTSAtaquePerfil.Location = new System.Drawing.Point(40, 10);
+            this.LabelPTSAtaquePerfil.Name = "LabelPTSAtaquePerfil";
+            this.LabelPTSAtaquePerfil.Size = new System.Drawing.Size(69, 40);
+            this.LabelPTSAtaquePerfil.TabIndex = 3;
+            this.LabelPTSAtaquePerfil.Text = "PTS";
+            this.LabelPTSAtaquePerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImagenAtaquePerfil
             // 
@@ -6057,7 +6517,7 @@ namespace AdventureVillageEstadisticas
             this.LabelUsuarioPerfil.ForeColor = System.Drawing.Color.White;
             this.LabelUsuarioPerfil.Location = new System.Drawing.Point(98, 20);
             this.LabelUsuarioPerfil.Name = "LabelUsuarioPerfil";
-            this.LabelUsuarioPerfil.Size = new System.Drawing.Size(318, 22);
+            this.LabelUsuarioPerfil.Size = new System.Drawing.Size(318, 35);
             this.LabelUsuarioPerfil.TabIndex = 1;
             this.LabelUsuarioPerfil.Text = "Usuario";
             this.LabelUsuarioPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6244,62 +6704,6 @@ namespace AdventureVillageEstadisticas
             this.CambiarColor.Interval = 300;
             this.CambiarColor.Tick += new System.EventHandler(this.CambiarColor_Tick);
             // 
-            // LabelPTSAtaquePerfil
-            // 
-            this.LabelPTSAtaquePerfil.AutoSize = false;
-            this.LabelPTSAtaquePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPTSAtaquePerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelPTSAtaquePerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPTSAtaquePerfil.ForeColor = System.Drawing.Color.White;
-            this.LabelPTSAtaquePerfil.Location = new System.Drawing.Point(40, 10);
-            this.LabelPTSAtaquePerfil.Name = "LabelPTSAtaquePerfil";
-            this.LabelPTSAtaquePerfil.Size = new System.Drawing.Size(69, 40);
-            this.LabelPTSAtaquePerfil.TabIndex = 3;
-            this.LabelPTSAtaquePerfil.Text = "PTS";
-            this.LabelPTSAtaquePerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LabelPTSDefensaPerfil
-            // 
-            this.LabelPTSDefensaPerfil.AutoSize = false;
-            this.LabelPTSDefensaPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPTSDefensaPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelPTSDefensaPerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPTSDefensaPerfil.ForeColor = System.Drawing.Color.White;
-            this.LabelPTSDefensaPerfil.Location = new System.Drawing.Point(36, 14);
-            this.LabelPTSDefensaPerfil.Name = "LabelPTSDefensaPerfil";
-            this.LabelPTSDefensaPerfil.Size = new System.Drawing.Size(69, 32);
-            this.LabelPTSDefensaPerfil.TabIndex = 4;
-            this.LabelPTSDefensaPerfil.Text = "PTS";
-            this.LabelPTSDefensaPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LabelPTSEspacioPerfil
-            // 
-            this.LabelPTSEspacioPerfil.AutoSize = false;
-            this.LabelPTSEspacioPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPTSEspacioPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelPTSEspacioPerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPTSEspacioPerfil.ForeColor = System.Drawing.Color.White;
-            this.LabelPTSEspacioPerfil.Location = new System.Drawing.Point(37, 13);
-            this.LabelPTSEspacioPerfil.Name = "LabelPTSEspacioPerfil";
-            this.LabelPTSEspacioPerfil.Size = new System.Drawing.Size(69, 34);
-            this.LabelPTSEspacioPerfil.TabIndex = 4;
-            this.LabelPTSEspacioPerfil.Text = "PTS";
-            this.LabelPTSEspacioPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LabelPTSTiempoPerfil
-            // 
-            this.LabelPTSTiempoPerfil.AutoSize = false;
-            this.LabelPTSTiempoPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPTSTiempoPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelPTSTiempoPerfil.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPTSTiempoPerfil.ForeColor = System.Drawing.Color.White;
-            this.LabelPTSTiempoPerfil.Location = new System.Drawing.Point(40, 10);
-            this.LabelPTSTiempoPerfil.Name = "LabelPTSTiempoPerfil";
-            this.LabelPTSTiempoPerfil.Size = new System.Drawing.Size(71, 40);
-            this.LabelPTSTiempoPerfil.TabIndex = 4;
-            this.LabelPTSTiempoPerfil.Text = "PTS";
-            this.LabelPTSTiempoPerfil.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ModuloAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -6315,6 +6719,7 @@ namespace AdventureVillageEstadisticas
             this.Controls.Add(this.PanelControl);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(900, 560);
@@ -6324,6 +6729,7 @@ namespace AdventureVillageEstadisticas
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
             this.SizeChanged += new System.EventHandler(this.Inicio_SizeChanged);
             this.PanelControl.ResumeLayout(false);
+            this.PanelControl.PerformLayout();
             this.PanelMenu.ResumeLayout(false);
             this.PanelOpciones.ResumeLayout(false);
             this.PanelRegistro.ResumeLayout(false);
@@ -6336,6 +6742,8 @@ namespace AdventureVillageEstadisticas
             this.PanelSalida.ResumeLayout(false);
             this.PanelInicio.ResumeLayout(false);
             this.TabControlAll.ResumeLayout(false);
+            this.TpHome.ResumeLayout(false);
+            this.TpHome.PerformLayout();
             this.TpUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoJuegoOpcUser)).EndInit();
             this.PanelBotonesUser.ResumeLayout(false);
@@ -6381,6 +6789,10 @@ namespace AdventureVillageEstadisticas
             this.TpReportes.ResumeLayout(false);
             this.PanelAllReportes.ResumeLayout(false);
             this.TablaPanelReportesGraficos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ChartIzq3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartDer3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartDer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartIzq2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartIzq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDer)).EndInit();
             this.TablaFechasBusqueda.ResumeLayout(false);
@@ -6504,7 +6916,6 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2Panel PanelAllReportes;
         private Guna.UI2.WinForms.Guna2TextBox TexBoxCorreoUser;
         private System.Windows.Forms.Timer CambiarColor;
-        private Guna.UI2.WinForms.Guna2VScrollBar ScrollBarReportes;
         private System.Windows.Forms.TableLayoutPanel TablaPanelReportesGraficos;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartIzq;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartDer;
@@ -6606,14 +7017,6 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2GradientTileButton BotonGenerarReporteA;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelFiltroOrden;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Registro;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
-        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
-        private System.Windows.Forms.DataGridViewButtonColumn Bloquear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Relleno;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxOrdenarUsuarios;
         private Guna.UI2.WinForms.Guna2PictureBox ErrorModoStats;
         private Guna.UI2.WinForms.Guna2PictureBox ErrorTipoStats;
@@ -6721,5 +7124,23 @@ namespace AdventureVillageEstadisticas
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelPTSEspacioPerfil;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelPTSDefensaPerfil;
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelPTSAtaquePerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Registro;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn Bloquear;
+        private System.Windows.Forms.DataGridViewButtonColumn VerPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Relleno;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelCrearUsuario;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelCrearArticulo;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartIzq3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDer3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDer2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartIzq2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelBarra;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelHome2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelHome;
     }
 }
