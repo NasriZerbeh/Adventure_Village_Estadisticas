@@ -35,7 +35,7 @@ CREATE TABLE `inventario_usuario` (
 
 LOCK TABLES `inventario_usuario` WRITE;
 /*!40000 ALTER TABLE `inventario_usuario` DISABLE KEYS */;
-INSERT INTO `inventario_usuario` VALUES ('inv_ImKaos',30);
+INSERT INTO `inventario_usuario` VALUES ('INV_AdnCrazy',30),('INV_AñadirNuevo',30),('INV_AswagerKgzK',30),('INV_ckau',30),('INV_ImKaos',30),('INV_Magda',30),('INV_MikeSlovak',30),('INV_ProbandoNuevo',30),('INV_ProbandoReg',30);
 /*!40000 ALTER TABLE `inventario_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:09
+-- Dump completed on 2024-04-04  6:56:48

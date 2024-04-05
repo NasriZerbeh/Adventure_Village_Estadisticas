@@ -26,6 +26,7 @@ CREATE TABLE `usuario` (
   `idUsuario` varchar(20) NOT NULL,
   `idRol` varchar(20) NOT NULL,
   `Contraseña` varchar(45) DEFAULT NULL,
+  `Correo` varchar(60) DEFAULT 'No definido',
   `Fecha_Registro` datetime DEFAULT NULL,
   `Activo` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`idUsuario`,`idRol`),
@@ -40,7 +41,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('AswagerKgzK','ROL_ADMIN','AdminCreator1','2024-02-23 23:27:36',1),('ImKaos','ROL_USER','Elfrijol123','2024-01-27 14:58:00',0),('MikeSlovak','ROL_ADMIN','Admin$$$','2024-01-27 14:56:58',1);
+INSERT INTO `usuario` VALUES ('AdnCrazy','ROL_USER','Milo448.13','No definido','2024-02-27 10:36:49',0),('Añadirnuevo','ROL_USER','asasasas','No definido','2024-03-09 13:56:58',0),('AswagerKgzK','ROL_ADMIN','AdminCreator1','aswag.games@gmail.com','2024-02-23 23:27:36',1),('ckau','ROL_ADMIN','clau1234','No definido','2024-03-09 17:55:52',0),('ImKaos','ROL_USER','Elfrijol123','No definido','2024-01-27 14:58:00',1),('Magda','ROL_MODERADOR','mp1234**','No definido','2024-02-29 09:55:15',0),('MikeSlovak','ROL_ADMIN','Administrador$$$','No definido','2024-01-27 14:56:58',1),('ProbandoNuevo','ROL_USER','123456789','probando@gmail.com','2024-03-30 20:56:48',1),('ProbandoReg','ROL_USER','0987654321','Probandoreg@gmail.com','2024-03-31 19:36:27',1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:15
+-- Dump completed on 2024-04-04  6:56:52

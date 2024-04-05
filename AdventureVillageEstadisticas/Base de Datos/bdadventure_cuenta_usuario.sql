@@ -46,6 +46,7 @@ CREATE TABLE `cuenta_usuario` (
 
 LOCK TABLES `cuenta_usuario` WRITE;
 /*!40000 ALTER TABLE `cuenta_usuario` DISABLE KEYS */;
+INSERT INTO `cuenta_usuario` VALUES ('AdnCrazy','INV_AdnCrazy','SB_AdnCrazy',100,0,100,0),('AñadirNuevo','INV_AñadirNuevo','SB_AñadirNuevo',100,0,100,0),('AswagerKgzK','INV_AswagerKgzK','SB_AswagerKgzK',110,10,90,2),('ckau','INV_ckau','SB_ckau',100,0,100,0),('ImKaos','INV_ImKaos','SB_ImKaos',100,0,100,0),('Magda','INV_Magda','SB_Magda',100,0,100,0),('MikeSlovak','INV_MikeSlovak','SB_MikeSlovak',100,0,100,0),('ProbandoNuevo','INV_ProbandoNuevo','SB_ProbandoNuevo',100,0,100,0),('ProbandoReg','INV_ProbandoReg','SB_ProbandoReg',100,0,100,0);
 /*!40000 ALTER TABLE `cuenta_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:14
+-- Dump completed on 2024-04-04  6:56:54

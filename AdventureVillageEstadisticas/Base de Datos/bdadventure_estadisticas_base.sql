@@ -38,6 +38,7 @@ CREATE TABLE `estadisticas_base` (
 
 LOCK TABLES `estadisticas_base` WRITE;
 /*!40000 ALTER TABLE `estadisticas_base` DISABLE KEYS */;
+INSERT INTO `estadisticas_base` VALUES ('SB_AdnCrazy',13,14,110,150),('SB_AñadirNuevo',10,12,140,140),('SB_AswagerKgzK',15,18,180,200),('SB_ckau',13,15,120,160),('SB_ImKaos',13,15,120,160),('SB_Magda',14,16,160,160),('SB_MikeSlovak',14,16,190,190),('SB_ProbandoNuevo',10,12,140,140),('SB_ProbandoReg',10,12,140,140);
 /*!40000 ALTER TABLE `estadisticas_base` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:13
+-- Dump completed on 2024-04-04  6:56:50

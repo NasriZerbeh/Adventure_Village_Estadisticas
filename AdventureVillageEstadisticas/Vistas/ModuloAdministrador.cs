@@ -27,10 +27,11 @@ namespace AdventureVillageEstadisticas
 
         private void IniciarApp() 
         {
-            MinimizarPanel();
             QuitarBordes();
+            QuitarNombres();
             BotonMenu.BorderThickness = 3;
             BotonHome.BorderThickness = 3;
+            PanelMenu.Height = 530;
             TabControlAll.TabMenuVisible = false;
             DatePickFiltroHastaUsuarios.Value = DateTime.Now;
             DatePickFiltroHastaRegistro.Value = DateTime.Now;
@@ -56,19 +57,25 @@ namespace AdventureVillageEstadisticas
                 Top = Top + (e.Y - MoveY);
             }
         }
-        private void Inicio_SizeChanged(object sender, EventArgs e)
+        private void ModuloAdministrador_SizeChanged(object sender, EventArgs e)
         {
             PanelBotonesUser.Height = TabControlAll.Height;
             PanelFormUser.Height = TabControlAll.Height;
             PanelOpcionesArticulos.Height = TabControlAll.Height;
             PanelAjusteArticulos.Height = TabControlAll.Height;
+            PanelMenu.Height = this.Height - 30;
+            SeparadorMenuTab.Height = this.Height - 30;
         }
         private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 DialogResult Cerrar = GunaMessageBox.Show("Seguro deseas salir?", "¡Alerta!");
-                if (Cerrar == DialogResult.Yes) Application.Exit();
+                if (Cerrar == DialogResult.Yes)
+                {
+                    Login Regresar = new Login();
+                    Regresar.Show();
+                }
                 else e.Cancel = true;
             }
         }
@@ -165,8 +172,8 @@ namespace AdventureVillageEstadisticas
 
         private void MinimizarPanel()
         {
-            AnimacionMenu.Start();
             QuitarNombres();
+            AnimacionMenu.Start();
         }
         private void MaximizarPanel()
         {
@@ -222,7 +229,8 @@ namespace AdventureVillageEstadisticas
         {
             if (MenuExtendido)
             {
-                PanelMenu.Width -= 20;
+                PanelMenu.Width -= 15;
+                SeparadorMenuTab.Location = new Point(PanelMenu.Width, SeparadorMenuTab.Location.Y);
                 if (PanelMenu.Width <= PanelMenu.MinimumSize.Width)
                 {
                     MenuExtendido = false;
@@ -231,7 +239,8 @@ namespace AdventureVillageEstadisticas
             }
             else
             {
-                PanelMenu.Width += 20;
+                PanelMenu.Width += 15;
+                SeparadorMenuTab.Location = new Point(PanelMenu.Width, SeparadorMenuTab.Location.Y);
                 if (PanelMenu.Width >= PanelMenu.MaximumSize.Width)
                 {
                     MostrarNombres();

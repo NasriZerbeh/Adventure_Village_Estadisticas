@@ -25,11 +25,18 @@ DROP TABLE IF EXISTS `articulo`;
 CREATE TABLE `articulo` (
   `idArticulo` varchar(20) NOT NULL,
   `Nombre_Articulo` varchar(45) DEFAULT NULL,
-  `Url_Imagen` varchar(100) DEFAULT NULL,
+  `Url_Imagen` varchar(200) DEFAULT NULL,
   `idTipo` varchar(20) NOT NULL,
-  `Activo` tinyint(1) DEFAULT '1',
+  `idTipo_Stats` varchar(20) DEFAULT NULL,
+  `Cantidad_Stats` int DEFAULT NULL,
+  `idModo_Stats` varchar(20) DEFAULT NULL,
+  `Activo` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`idArticulo`,`idTipo`),
   KEY `fk_Articulo_Tipo_Articulo1_idx` (`idTipo`),
+  KEY `idTipo_Stats` (`idTipo_Stats`),
+  KEY `idModo_Stats` (`idModo_Stats`),
+  CONSTRAINT `articulo_ibfk_1` FOREIGN KEY (`idTipo_Stats`) REFERENCES `tipo_stats` (`idTipo_Stats`),
+  CONSTRAINT `articulo_ibfk_2` FOREIGN KEY (`idModo_Stats`) REFERENCES `modo_stats` (`idModo_Stats`),
   CONSTRAINT `fk_Articulo_Tipo_Articulo1` FOREIGN KEY (`idTipo`) REFERENCES `tipo_articulo` (`idTipo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,6 +47,7 @@ CREATE TABLE `articulo` (
 
 LOCK TABLES `articulo` WRITE;
 /*!40000 ALTER TABLE `articulo` DISABLE KEYS */;
+INSERT INTO `articulo` VALUES ('aa','Planta de patio','D:\\AdventureVillageEstadisticas\\AdventureVillageEstadisticas\\bin\\ImagenesOpenFile\\Articulos\\aa.png','TIPO_VESTIMENTA','TIPO_DEFENSIVO',20,'MODO_PUNTOS',0),('BOTON_VERDE','Boton de Confirmar','D:\\AdventureVillageEstadisticas\\AdventureVillageEstadisticas\\ImagenesOpenFile\\Articulos\\BOTON_VERDE.png','TIPO_BOTAS','TIPO_DEFENSIVO',10,'MODO_PORCENTAJE',1),('GATO_BERENJENA','Arturo The Mich','D:\\AdventureVillageEstadisticas\\AdventureVillageEstadisticas\\ImagenesOpenFile\\Articulos\\GATO_BERENJENA.png','TIPO_VESTIMENTA','TIPO_DEFENSIVO',90,'MODO_PORCENTAJE',1),('PLANTA_HOGAR_001','Planta de Hogar','D:\\AdventureVillageEstadisticas\\AdventureVillageEstadisticas\\ImagenesOpenFile\\Articulos\\PLANTA_HOGAR_001.png','TIPO_COMESTIBLE','TIPO_REGENERATIVO',12,'MODO_PUNTOS',1),('TABLA_DE_MADERA','Tabla de madera','D:\\AdventureVillageEstadisticas\\AdventureVillageEstadisticas\\ImagenesOpenFile\\Articulos\\TABLA_DE_MADERA.png','TIPO_ARMA','TIPO_OFENSIVO',13,'MODO_PUNTOS',1);
 /*!40000 ALTER TABLE `articulo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:10
+-- Dump completed on 2024-04-04  6:56:47

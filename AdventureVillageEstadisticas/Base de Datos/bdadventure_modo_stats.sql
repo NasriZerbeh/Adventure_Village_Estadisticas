@@ -16,32 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `defensivo`
+-- Table structure for table `modo_stats`
 --
 
-DROP TABLE IF EXISTS `defensivo`;
+DROP TABLE IF EXISTS `modo_stats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `defensivo` (
-  `idDefensivo` varchar(20) NOT NULL,
-  `idArticulo` varchar(20) NOT NULL,
-  `Defensa` int DEFAULT NULL,
-  `idParte` varchar(20) NOT NULL,
-  PRIMARY KEY (`idDefensivo`,`idArticulo`,`idParte`),
-  KEY `fk_Tipo_Defensivo_Parte_Defensivo1_idx` (`idParte`),
-  KEY `fk_Defensivo_Articulo1_idx` (`idArticulo`),
-  CONSTRAINT `fk_Defensivo_Articulo1` FOREIGN KEY (`idArticulo`) REFERENCES `articulo` (`idArticulo`),
-  CONSTRAINT `fk_Tipo_Defensivo_Parte_Defensivo1` FOREIGN KEY (`idParte`) REFERENCES `parte_defensivo` (`idParte_Defensivo`)
+CREATE TABLE `modo_stats` (
+  `idModo_Stats` varchar(20) NOT NULL,
+  `ModoStats` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idModo_Stats`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `defensivo`
+-- Dumping data for table `modo_stats`
 --
 
-LOCK TABLES `defensivo` WRITE;
-/*!40000 ALTER TABLE `defensivo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `defensivo` ENABLE KEYS */;
+LOCK TABLES `modo_stats` WRITE;
+/*!40000 ALTER TABLE `modo_stats` DISABLE KEYS */;
+INSERT INTO `modo_stats` VALUES ('MODO_PORCENTAJE','%'),('MODO_PUNTOS','Ptos');
+/*!40000 ALTER TABLE `modo_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:16
+-- Dump completed on 2024-04-04  6:56:49

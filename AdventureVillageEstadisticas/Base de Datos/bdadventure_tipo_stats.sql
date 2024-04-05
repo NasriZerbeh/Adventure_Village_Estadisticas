@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ofensivo`
+-- Table structure for table `tipo_stats`
 --
 
-DROP TABLE IF EXISTS `ofensivo`;
+DROP TABLE IF EXISTS `tipo_stats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ofensivo` (
-  `idOfensivo` varchar(20) NOT NULL,
-  `idArticulo` varchar(20) NOT NULL,
-  `Daño` int DEFAULT NULL,
-  PRIMARY KEY (`idOfensivo`,`idArticulo`),
-  KEY `fk_Ofensivo_Articulo1_idx` (`idArticulo`),
-  CONSTRAINT `fk_Ofensivo_Articulo1` FOREIGN KEY (`idArticulo`) REFERENCES `articulo` (`idArticulo`)
+CREATE TABLE `tipo_stats` (
+  `idTipo_Stats` varchar(20) NOT NULL,
+  `NombreStat` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idTipo_Stats`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ofensivo`
+-- Dumping data for table `tipo_stats`
 --
 
-LOCK TABLES `ofensivo` WRITE;
-/*!40000 ALTER TABLE `ofensivo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ofensivo` ENABLE KEYS */;
+LOCK TABLES `tipo_stats` WRITE;
+/*!40000 ALTER TABLE `tipo_stats` DISABLE KEYS */;
+INSERT INTO `tipo_stats` VALUES ('TIPO_DEFENSIVO','DEF'),('TIPO_OFENSIVO','ATQ'),('TIPO_REGENERATIVO','HP');
+/*!40000 ALTER TABLE `tipo_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:11
+-- Dump completed on 2024-04-04  6:56:54

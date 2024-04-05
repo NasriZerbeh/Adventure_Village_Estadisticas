@@ -35,6 +35,7 @@ CREATE TABLE `tipo_articulo` (
 
 LOCK TABLES `tipo_articulo` WRITE;
 /*!40000 ALTER TABLE `tipo_articulo` DISABLE KEYS */;
+INSERT INTO `tipo_articulo` VALUES ('TIPO_ARMA','Arma'),('TIPO_BOTAS','Zapatos'),('TIPO_COMESTIBLE','Comida'),('TIPO_VESTIMENTA','Armadura');
 /*!40000 ALTER TABLE `tipo_articulo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-25  8:17:10
+-- Dump completed on 2024-04-04  6:56:50
